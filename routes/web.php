@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LandingController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,4 +17,11 @@ use App\Http\Controllers\LandingController;
 
 //Landing
 Route::get('/', [LandingController::class, 'index']);
-Route::get('/materi', [LandingController::class, 'materi']);
+Route::get('/tentang', [LandingController::class, 'about']);
+//login
+Route::get('/login', [LandingController::class, 'login']);
+Route::post('/login', [LandingController::class, 'authenticate'])->name('login');
+Route::get('/gate', [LandingController::class, 'gate'])->middleware('auth');
+Route::post('/gate', [LandingController::class, 'check'])->middleware('auth');
+//Dashboard
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');

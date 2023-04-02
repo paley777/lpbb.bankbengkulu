@@ -1,4 +1,4 @@
-@extends('landing.layouts.main')
+@extends('landing.layouts.main2')
 
 @section('container')
     <style>
@@ -292,34 +292,11 @@
             }
         }
     </style>
-    <section class="magicpattern test py-4 py-xl-5" style="height: 750px;">
-        <div class="container h-100">
-            <div class="row h-100">
-                <div
-                    class="col-md-10 col-xl-11 text-center d-flex d-sm-flex d-md-flex justify-content-center align-items-center mx-auto justify-content-md-start align-items-md-center justify-content-xl-center">
-                    <div>
-                        <h5 class="fw-semibold mb-3 responsive-mini" style="color: rgb(255,255,255);">Learning Program Bank
-                            Bengkulu
-                        </h5>
-                        <h3 class="fw-bolder mb-3 responsive-header typewriter thick"
-                            style="text-align: center;color: rgb(255,255,255);">
-
-                        </h3>
-                        <p class="fw-semibold mb-4 responsive-p" style="color: rgb(255,255,255);">”Jika Kamu tidak sanggup
-                            menahan lelahnya belajar maka kamu harus sanggup menahan perihnya kebodohan" ~ Imam Asy Syafi'i</p>
-                        <a href="/login"
-                            class="btn btn-warning btn-lg fs-5 fw-semibold rounded-pill shadow-sm me-2 py-2 px-4"
-                            type="button" style="width: 166.475px;height: 45.375px;"
-                            data-bss-hover-animate="tada">Masuk</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    {{-- <div class="container py-4 py-xl-5 mb-5">
+ 
+    <div class="container py-4 py-xl-5 mb-5">
         <div class="row mb-5">
             <div class="col-md-8 col-xl-12 text-center mx-auto">
-                <h2 class="fw-bolder mb-3 responsive-header1">Akses Cepat</h2>
+                <h2 class="fw-bolder mb-3 responsive-header1">DASHBOARD SECTION BLANK</h2>
                 <p class="fw-semibold mb-4 responsive-p1">Kunjungi fitur utama dari sistem</p>
             </div>
         </div>
@@ -440,8 +417,8 @@
                 </div>
             </div>
         </div>
-    </div> --}}
-    {{-- <div class="container py-4 py-xl-5 mb-5">
+    </div>
+    <div class="container py-4 py-xl-5 mb-5">
         <div class="row row-cols-2 row-cols-md-4 px-5 mx-5" style="position: relative;display: padding-top: 14px;">
             <div class="col">
                 <div class="p-3">
@@ -468,9 +445,9 @@
                 </div>
             </div>
         </div>
-    </div> --}}
+    </div>
 
-    {{-- <script>
+    <script>
         let counts4 = setInterval(updated4);
         let upto4 = 0;
 
@@ -517,5 +494,5 @@
                 clearInterval(counts1);
             }
         }
-    </script> --}}
+    </script>
 @endsection
