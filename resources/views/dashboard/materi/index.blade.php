@@ -75,12 +75,22 @@
                             Bengkulu
                         </h5>
                         <h3 class="fw-bolder mb-3 responsive-header" style="text-align: center;color: rgb(255,255,255);">
-                            Halaman Informasi Kelas
+                            Informasi Kelas
                         </h3>
-                        <p class="fw-semibold mb-4 responsive-p" style="color: rgb(255,255,255);">Tersedia kelas dengan beragam topik materi yang dapat Anda ikuti. Klik kelas yang tersedia untuk melihat informasi kelas, tenggat dan kriteria kelulusan.</p>
-                        <button class="btn btn-warning btn-lg fs-5 fw-semibold rounded-pill shadow-sm me-2 py-2 px-4"
-                            type="button" style="width: 166.475px;height: 45.375px;" data-bss-hover-animate="tada">Lihat
-                            Kelas</button>
+                        <p class="fw-semibold mb-4 responsive-p" style="color: rgb(255,255,255);">Tersedia kelas dengan
+                            beragam topik materi yang dapat Anda ikuti. Klik kelas yang tersedia untuk melihat informasi
+                            kelas, tenggat dan kriteria kelulusan.</p>
+                        <a href="#scrollspyHeading1"
+                            class="btn btn-warning btn-lg fs-5 fw-semibold rounded-pill shadow-sm me-2 py-2 px-4"
+                            type="button" style="width: 215.475px;height: 65.375px;" data-bss-hover-animate="tada">Lihat
+                            Selengkapnya
+                            <?xml version="1.0" encoding="utf-8"?>
+                            <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                            <svg fill="#000000" width="30px" height="30px" viewBox="0 0 1024 1024"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M759.2 419.8L697.4 358 512 543.4 326.6 358l-61.8 61.8L512 667z" />
+                            </svg>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -88,10 +98,107 @@
     </section>
     <div class="container py-4 py-xl-5 mb-5">
         <div class="row mb-5">
-            <div class="col-md-8 col-xl-12 text-center mx-auto">
+            <div class="col-md-8 col-xl-12 text-center mx-auto" id="scrollspyHeading1">
                 <h2 class="fw-bolder mb-3 responsive-header1">Daftar Kelas</h2>
             </div>
         </div>
-       
+        <div class="row justify-content-center">
+            <div class="col-xl-6 col-9">
+                <form action="/materi">
+                    <div class="input-group input-group-lg mb-3">
+                        <input type="text" class="form-control" placeholder="Cari berdasarkan nama kelas..."
+                            name="search" value="{{ request('search') }}">
+                        <button class="btn btn-warning btn-lg" type="submit">
+                            <?xml version="1.0" encoding="utf-8"?>
+                            <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                            <svg width="25px" height="25px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"
+                                fill="none">
+                                <path fill="#000000" fill-rule="evenodd"
+                                    d="M4 9a5 5 0 1110 0A5 5 0 014 9zm5-7a7 7 0 104.2 12.6.999.999 0 00.093.107l3 3a1 1 0 001.414-1.414l-3-3a.999.999 0 00-.107-.093A7 7 0 009 2z" />
+                            </svg></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="container py-4 py-xl-5" style="font-family: Raleway;">
+            <div class="row gy-3 gx-3 row-cols-1 row-cols-md-2 row-cols-xl-4">
+                <div class="col">
+                    <a href="/materi/detail" style="text-decoration: none;">
+                        <div class="bg-warning bg-gradient border rounded-0 border-0 p-4" data-bss-hover-animate="pulse"
+                            style="color: rgb(0,0,0);background: var(--bs-yellow);"><span class="fw-semibold mb-2">Dibuka
+                                mulai
+                                27 Maret 2023 - 20 April 2023</span>
+                            <h3 class="fw-bold">Manajemen Resiko I</h3>
+                            <h6><span class="badge rounded-pill text-bg-success">10 Modul</span></h6>
+                        </div>
+                    </a>
+                </div>
+                <div class="col">
+                    <div class="bg-warning bg-gradient border rounded-0 border-0 p-4"
+                        style="color: rgb(0,0,0);background: var(--bs-yellow);" data-bss-hover-animate="pulse"><span
+                            class="fw-semibold mb-2">Dibuka mulai
+                            27 Maret 2023 - 20 April 2023</span>
+                        <h3 class="fw-bold">Manajemen Resiko II</h3>
+                        <h6><span class="badge rounded-pill text-bg-success">10 Modul</span></h6>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="bg-warning bg-gradient border rounded-0 border-0 p-4"
+                        style="color: rgb(0,0,0);background: var(--bs-yellow);" data-bss-hover-animate="pulse"><span
+                            class="fw-semibold mb-2">Dibuka mulai
+                            27 Maret 2023 - 20 April 2023</span>
+                        <h3 class="fw-bold">Manajemen Resiko III</h3>
+                        <h6><span class="badge rounded-pill text-bg-success">10 Modul</span></h6>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="bg-warning bg-gradient border rounded-0 border-0 p-4"
+                        style="color: rgb(0,0,0);background: var(--bs-yellow);" data-bss-hover-animate="pulse"><span
+                            class="fw-semibold mb-2">Dibuka mulai
+                            27 Maret 2023 - 20 April 2023</span>
+                        <h3 class="fw-bold">Anti-Fraud</h3>
+                        <h6><span class="badge rounded-pill text-bg-success">10 Modul</span></h6>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="bg-warning bg-gradient border rounded-0 border-0 p-4"
+                        style="color: rgb(0,0,0);background: var(--bs-yellow);" data-bss-hover-animate="pulse"><span
+                            class="fw-semibold mb-2">Dibuka
+                            mulai
+                            27 Maret 2023 - 20 April 2023</span>
+                        <h3 class="fw-bold">Marketing</h3>
+                        <h6><span class="badge rounded-pill text-bg-success">10 Modul</span></h6>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="bg-warning bg-gradient border rounded-0 border-0 p-4"
+                        style="color: rgb(0,0,0);background: var(--bs-yellow);" data-bss-hover-animate="pulse"><span
+                            class="fw-semibold mb-2">Dibuka
+                            mulai 27 Maret 2023 - 20 April 2023</span>
+                        <h3 class="fw-bold">Microblog I</h3>
+                        <h6><span class="badge rounded-pill text-bg-success">10 Modul</span></h6>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="bg-warning bg-gradient border rounded-0 border-0 p-4"
+                        style="color: rgb(0,0,0);background: var(--bs-yellow);" data-bss-hover-animate="pulse"><span
+                            class="fw-semibold mb-2">Dibuka
+                            mulai 27 Maret 2023 - 20 April 2023</span>
+                        <h3 class="fw-bold">Microblog II</h3>
+                        <h6><span class="badge rounded-pill text-bg-success">10 Modul</span></h6>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="bg-warning bg-gradient border rounded-0 border-0 p-4"
+                        style="color: rgb(0,0,0);background: var(--bs-yellow);" data-bss-hover-animate="pulse"><span
+                            class="fw-semibold mb-2">Dibuka
+                            mulai 27 Maret 2023 - 20 April 2023</span>
+                        <h3 class="fw-bold">Etika Profesi</h3>
+                        <h6><span class="badge rounded-pill text-bg-success">10 Modul</span></h6>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 @endsection

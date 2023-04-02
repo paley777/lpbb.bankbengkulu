@@ -22,12 +22,11 @@
 </head>
 
 <body style="font-family: Raleway, sans-serif;">
-    @include('landing.partials.navbar')
+    @include('landing.partials.navbar2')
     <div>
         @yield('container')
-        
+        @include('landing.partials.footer')
     </div>
-    @include('landing.partials.footer')
     <style>
         #btn-back-to-top {
             position: fixed;
