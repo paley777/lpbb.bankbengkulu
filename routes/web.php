@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PegawaiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +22,9 @@ Route::get('/tentang', [LandingController::class, 'about']);
 //login
 Route::get('/login', [LandingController::class, 'login']);
 Route::post('/login', [LandingController::class, 'authenticate'])->name('login');
-Route::get('/gate', [LandingController::class, 'gate'])->middleware('auth');
-Route::post('/gate', [LandingController::class, 'check'])->middleware('auth');
+// Route::get('/gate', [LandingController::class, 'gate'])->middleware('auth');
+// Route::post('/gate', [LandingController::class, 'check'])->middleware('auth');
 //Dashboard
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
+Route::post('/logout', [DashboardController::class, 'logout'])->middleware('auth');
+Route::resource('/dashboard/pegawai', PegawaiController::class)->middleware('auth');

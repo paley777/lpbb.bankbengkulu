@@ -103,10 +103,12 @@
                     <p class="mb-4 responsive-small opacity-70" style="color: hsl(218, 81%, 85%)">
                         Silakan isi email dan password di sini.
                         <br>
-                        Apabila lupa password/email silakan klik <a
-                            href="mailto:diklat.bankbengkulu@gmail.com?subject=Pengajuan%20Pemulihan%20Akun%20LPBB%20a%2Fn%20%5BNAMA%20ANDA%5D%20%5BNRPP%5D&body=Isi%20pengajuan%20Anda%20di%20sini%20dengan%20format%20yang%20rapi."
-                            class="link-light">Pulihkan
-                            Akun</a>
+                        Apabila lupa password/email silakan klik
+                        <!-- Button trigger modal -->
+                        <button type="button" class="bg-transparent link-light" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">
+                            Pulihkan Akun
+                        </button>
                         untuk
                         mengajukan prosedur pemulihan akun ke
                         operator sistem.
@@ -129,12 +131,12 @@
                             <form method="POST" action="/login">
                                 @csrf
                                 <div class="form-outline mb-4">
-                                    <input type="email" name="email" class="form-control" required />
-                                    <label class="form-label" for="form3Example3">Email Anda</label>
+                                    <input type="text" name="email" class="form-control responsive-small" required />
+                                    <label class="form-label responsive-small" for="form3Example3">Username Anda</label>
                                 </div>
                                 <div class="form-outline mb-4">
-                                    <input type="password" name="password" class="form-control" required />
-                                    <label class="form-label" for="form3Example4">Password Anda</label>
+                                    <input type="password" name="password" class="form-control responsive-small" required />
+                                    <label class="form-label responsive-small" for="form3Example4">Password Anda</label>
                                 </div>
                                 <button type="submit"
                                     class="btn btn-warning btn-sm fs-5 fw-semibold rounded-pill shadow-sm me-2 py-2 px-4"
@@ -148,4 +150,31 @@
             </div>
         </div>
     </section>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+        data-bs-backdrop="static" data-bs-keyboard="false">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Pulihkan Akun</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="responsive-small">Untuk pengajuan pemulihan akun silakan hubungi Bagian Pendidikan dan
+                        Pelatihan</p>
+                    <p class="responsive-small">Divisi Sumber Daya Manusia Bank Bengkulu</p>
+                    {{-- <a class="responsive-small"
+                        href="mailto:diklat.bankbengkulu@gmail.com?subject=Pengajuan%20Pemulihan%20Akun%20LPBB%20a%2Fn%20%5BNAMA%20ANDA%5D%20%5BNRPP%5D&body=Isi%20pengajuan%20Anda%20di%20sini%20dengan%20format%20yang%20rapi."
+                        class="link">Email ke diklat.bankbengkulu@gmail.com</a> --}}
+                    <p class="responsive-small fw-semibold">
+                        Email ke diklat.bankbengkulu@gmail.com
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection

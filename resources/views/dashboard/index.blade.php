@@ -1,19 +1,6 @@
-@extends('landing.layouts.main2')
+@extends('landing.layouts.main3')
 
 @section('container')
-    <style>
-        .magicpattern {
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center center;
-            background-repeat: repeat;
-            /* Create the parallax scrolling effect */
-            background-attachment: fixed;
-
-            background-image: url("data:image/svg+xml;utf8,%3Csvg viewBox=%220 0 1500 1100%22 xmlns=%22http:%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cmask id=%22b%22 x=%220%22 y=%220%22 width=%221500%22 height=%221100%22%3E%3Cpath fill=%22url(%23a)%22 d=%22M0 0h1500v1100H0z%22%2F%3E%3C%2Fmask%3E%3Cpath fill=%22%23000336%22 d=%22M0 0h1500v1100H0z%22%2F%3E%3Cg style=%22transform-origin:center center%22 stroke=%22%234c4e72%22 stroke-width=%221.5%22 mask=%22url(%23b)%22%3E%3Cpath fill=%22none%22 d=%22M0 0h75v75H0z%22%2F%3E%3Cpath fill=%22%234c4e72a5%22 d=%22M75 0h75v75H75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M150 0h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e729a%22 d=%22M225 0h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M300 0h75v75h-75zM375 0h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e7224%22 d=%22M450 0h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M525 0h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e723f%22 d=%22M600 0h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M675 0h75v75h-75zM750 0h75v75h-75zM825 0h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e722f%22 d=%22M900 0h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M975 0h75v75h-75zM1050 0h75v75h-75zM1125 0h75v75h-75zM1200 0h75v75h-75zM1275 0h75v75h-75zM1350 0h75v75h-75zM1425 0h75v75h-75zM0 75h75v75H0zM75 75h75v75H75zM150 75h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e7254%22 d=%22M225 75h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M300 75h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e723d%22 d=%22M375 75h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M450 75h75v75h-75zM525 75h75v75h-75zM600 75h75v75h-75zM675 75h75v75h-75zM750 75h75v75h-75zM825 75h75v75h-75zM900 75h75v75h-75zM975 75h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e720e%22 d=%22M1050 75h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1125 75h75v75h-75zM1200 75h75v75h-75zM1275 75h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e72cd%22 d=%22M1350 75h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e7257%22 d=%22M1425 75h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e72b8%22 d=%22M0 150h75v75H0z%22%2F%3E%3Cpath fill=%22%234c4e7260%22 d=%22M75 150h75v75H75z%22%2F%3E%3Cpath fill=%22%234c4e7287%22 d=%22M150 150h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e72d2%22 d=%22M225 150h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M300 150h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e729a%22 d=%22M375 150h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e72e1%22 d=%22M450 150h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e722a%22 d=%22M525 150h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M600 150h75v75h-75zM675 150h75v75h-75zM750 150h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e7206%22 d=%22M825 150h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M900 150h75v75h-75zM975 150h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e72d5%22 d=%22M1050 150h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e72c4%22 d=%22M1125 150h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1200 150h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e727c%22 d=%22M1275 150h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e720b%22 d=%22M1350 150h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e72b1%22 d=%22M1425 150h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M0 225h75v75H0zM75 225h75v75H75zM150 225h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e72e8%22 d=%22M225 225h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e7212%22 d=%22M300 225h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M375 225h75v75h-75zM450 225h75v75h-75zM525 225h75v75h-75zM600 225h75v75h-75zM675 225h75v75h-75zM750 225h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e72b1%22 d=%22M825 225h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M900 225h75v75h-75zM975 225h75v75h-75zM1050 225h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e7295%22 d=%22M1125 225h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1200 225h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e722f%22 d=%22M1275 225h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1350 225h75v75h-75zM1425 225h75v75h-75zM0 300h75v75H0zM75 300h75v75H75z%22%2F%3E%3Cpath fill=%22%234c4e729a%22 d=%22M150 300h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M225 300h75v75h-75zM300 300h75v75h-75zM375 300h75v75h-75zM450 300h75v75h-75zM525 300h75v75h-75zM600 300h75v75h-75zM675 300h75v75h-75zM750 300h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e7205%22 d=%22M825 300h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M900 300h75v75h-75zM975 300h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e72ce%22 d=%22M1050 300h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e7214%22 d=%22M1125 300h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1200 300h75v75h-75zM1275 300h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e727d%22 d=%22M1350 300h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1425 300h75v75h-75zM0 375h75v75H0zM75 375h75v75H75z%22%2F%3E%3Cpath fill=%22%234c4e7223%22 d=%22M150 375h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M225 375h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e72db%22 d=%22M300 375h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M375 375h75v75h-75zM450 375h75v75h-75zM525 375h75v75h-75zM600 375h75v75h-75zM675 375h75v75h-75zM750 375h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e72c0%22 d=%22M825 375h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e720a%22 d=%22M900 375h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M975 375h75v75h-75zM1050 375h75v75h-75zM1125 375h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e729b%22 d=%22M1200 375h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1275 375h75v75h-75zM1350 375h75v75h-75zM1425 375h75v75h-75zM0 450h75v75H0zM75 450h75v75H75zM150 450h75v75h-75zM225 450h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e72b4%22 d=%22M300 450h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e72fd%22 d=%22M375 450h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e7225%22 d=%22M450 450h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M525 450h75v75h-75zM600 450h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e72f1%22 d=%22M675 450h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e7264%22 d=%22M750 450h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M825 450h75v75h-75zM900 450h75v75h-75zM975 450h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e729b%22 d=%22M1050 450h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1125 450h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e724e%22 d=%22M1200 450h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1275 450h75v75h-75zM1350 450h75v75h-75zM1425 450h75v75h-75zM0 525h75v75H0z%22%2F%3E%3Cpath fill=%22%234c4e726f%22 d=%22M75 525h75v75H75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M150 525h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e72b4%22 d=%22M225 525h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M300 525h75v75h-75zM375 525h75v75h-75zM450 525h75v75h-75zM525 525h75v75h-75zM600 525h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e72e0%22 d=%22M675 525h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M750 525h75v75h-75zM825 525h75v75h-75zM900 525h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e72ab%22 d=%22M975 525h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1050 525h75v75h-75zM1125 525h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e7272%22 d=%22M1200 525h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1275 525h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e72e6%22 d=%22M1350 525h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e72c1%22 d=%22M1425 525h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M0 600h75v75H0zM75 600h75v75H75zM150 600h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e72a8%22 d=%22M225 600h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e7264%22 d=%22M300 600h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M375 600h75v75h-75zM450 600h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e7258%22 d=%22M525 600h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M600 600h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e726b%22 d=%22M675 600h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M750 600h75v75h-75zM825 600h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e7219%22 d=%22M900 600h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M975 600h75v75h-75zM1050 600h75v75h-75zM1125 600h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e72cb%22 d=%22M1200 600h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e7275%22 d=%22M1275 600h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1350 600h75v75h-75zM1425 600h75v75h-75zM0 675h75v75H0zM75 675h75v75H75zM150 675h75v75h-75zM225 675h75v75h-75zM300 675h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e7218%22 d=%22M375 675h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M450 675h75v75h-75zM525 675h75v75h-75zM600 675h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e72f5%22 d=%22M675 675h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e7218%22 d=%22M750 675h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e72a0%22 d=%22M825 675h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M900 675h75v75h-75zM975 675h75v75h-75zM1050 675h75v75h-75zM1125 675h75v75h-75zM1200 675h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e72a2%22 d=%22M1275 675h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1350 675h75v75h-75zM1425 675h75v75h-75zM0 750h75v75H0zM75 750h75v75H75z%22%2F%3E%3Cpath fill=%22%234c4e7293%22 d=%22M150 750h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M225 750h75v75h-75zM300 750h75v75h-75zM375 750h75v75h-75zM450 750h75v75h-75zM525 750h75v75h-75zM600 750h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e725c%22 d=%22M675 750h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M750 750h75v75h-75zM825 750h75v75h-75zM900 750h75v75h-75zM975 750h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e7259%22 d=%22M1050 750h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1125 750h75v75h-75zM1200 750h75v75h-75zM1275 750h75v75h-75zM1350 750h75v75h-75zM1425 750h75v75h-75zM0 825h75v75H0zM75 825h75v75H75zM150 825h75v75h-75zM225 825h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e7203%22 d=%22M300 825h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M375 825h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e7223%22 d=%22M450 825h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M525 825h75v75h-75zM600 825h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e7266%22 d=%22M675 825h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M750 825h75v75h-75zM825 825h75v75h-75zM900 825h75v75h-75zM975 825h75v75h-75zM1050 825h75v75h-75zM1125 825h75v75h-75zM1200 825h75v75h-75zM1275 825h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e7236%22 d=%22M1350 825h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e729a%22 d=%22M1425 825h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M0 900h75v75H0zM75 900h75v75H75zM150 900h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e720e%22 d=%22M225 900h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M300 900h75v75h-75zM375 900h75v75h-75zM450 900h75v75h-75zM525 900h75v75h-75zM600 900h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e7209%22 d=%22M675 900h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M750 900h75v75h-75zM825 900h75v75h-75zM900 900h75v75h-75zM975 900h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e72bc%22 d=%22M1050 900h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1125 900h75v75h-75zM1200 900h75v75h-75zM1275 900h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e7215%22 d=%22M1350 900h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1425 900h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e728a%22 d=%22M0 975h75v75H0z%22%2F%3E%3Cpath fill=%22none%22 d=%22M75 975h75v75H75zM150 975h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e726a%22 d=%22M225 975h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M300 975h75v75h-75zM375 975h75v75h-75zM450 975h75v75h-75zM525 975h75v75h-75zM600 975h75v75h-75zM675 975h75v75h-75zM750 975h75v75h-75zM825 975h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e72cb%22 d=%22M900 975h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M975 975h75v75h-75zM1050 975h75v75h-75zM1125 975h75v75h-75zM1200 975h75v75h-75zM1275 975h75v75h-75zM1350 975h75v75h-75zM1425 975h75v75h-75zM0 1050h75v75H0zM75 1050h75v75H75zM150 1050h75v75h-75zM225 1050h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e72be%22 d=%22M300 1050h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M375 1050h75v75h-75zM450 1050h75v75h-75zM525 1050h75v75h-75zM600 1050h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e729b%22 d=%22M675 1050h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M750 1050h75v75h-75zM825 1050h75v75h-75zM900 1050h75v75h-75zM975 1050h75v75h-75zM1050 1050h75v75h-75zM1125 1050h75v75h-75zM1200 1050h75v75h-75zM1275 1050h75v75h-75z%22%2F%3E%3Cpath fill=%22%234c4e72f6%22 d=%22M1350 1050h75v75h-75z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1425 1050h75v75h-75z%22%2F%3E%3C%2Fg%3E%3Cdefs%3E%3CradialGradient id=%22a%22%3E%3Cstop offset=%220%22 stop-color=%22%23fff%22%2F%3E%3Cstop offset=%221%22 stop-color=%22%23fff%22 stop-opacity=%220%22%2F%3E%3C%2FradialGradient%3E%3C%2Fdefs%3E%3C%2Fsvg%3E");
-        }
-    </style>
     <style>
         /* If the screen size is 1200px wide or more, set the font-size to 80px */
         @media (min-width: 1200px) {
@@ -63,388 +50,329 @@
             .responsive-mini {
                 font-size: 14px
             }
+
         }
     </style>
-    <style>
-        /* Typewriter effect 1 */
-        @keyframes typing {
-
-            0%,
-            1% {
-                content: "";
-            }
-
-            1%,
-            2% {
-                content: "S";
-            }
-
-            2%,
-            3% {
-                content: "Se";
-            }
-
-            3%,
-            4% {
-                content: "Sel";
-            }
-
-            4%,
-            5% {
-                content: "Sela";
-            }
-
-            5%,
-            6% {
-                content: "Selam";
-            }
-
-            6%,
-            7% {
-                content: "Selamat";
-            }
-
-            7%,
-            8% {
-                content: "Selamat Da";
-            }
-
-            8%,
-            9% {
-                content: "Selamat Data";
-            }
-
-            10%,
-            25% {
-                content: "Selamat Datang";
-            }
-
-            37%,
-            40% {
-                content: "";
-            }
-
-            41%,
-            42% {
-                content: "d";
-            }
-
-            43%,
-            44% {
-                content: "di";
-            }
-
-            45%,
-            46% {
-                content: "di";
-            }
-
-            46%,
-            47% {
-                content: "di";
-            }
-
-            48%,
-            49% {
-                content: "di";
-            }
-
-            50%,
-            51% {
-                content: "di";
-            }
-
-            52%,
-            55% {
-                content: "";
-            }
-
-            56%,
-            57% {
-                content: "L";
-            }
-
-            58%,
-            59% {
-                content: "Le";
-            }
-
-            60%,
-            61% {
-                content: "Lea";
-            }
-
-            62%,
-            63% {
-                content: "Lear";
-            }
-
-            64%,
-            65% {
-                content: "Learn";
-            }
-
-            66%,
-            67% {
-                content: "Learni";
-            }
-
-            68%,
-            69% {
-                content: "Learning";
-            }
-
-            70%,
-            71% {
-                content: "Learning Pro";
-            }
-
-            72%,
-            73% {
-                content: "Learning Program";
-            }
-
-            74%,
-            75% {
-                content: "Learning Program Bank";
-            }
-
-            76%,
-            77% {
-                content: "Learning Program Bank Beng";
-            }
-
-            78%,
-            79% {
-                content: "Learning Program Bank Bengku";
-            }
-
-            80%,
-            100% {
-                content: "Learning Program Bank Bengkulu";
-            }
-        }
-
-        @keyframes blink {
-
-            0%,
-            100% {
-                opacity: 1;
-            }
-
-            50% {
-                opacity: 0;
-            }
-        }
-
-        .typewriter {
-            --caret: currentcolor;
-        }
-
-        .typewriter::before {
-            content: "";
-            animation: typing 13.5s infinite;
-        }
-
-        .typewriter::after {
-            content: "";
-            border-right: 1px solid var(--caret);
-            animation: blink 0.5s linear infinite;
-        }
-
-        .typewriter.thick::after {
-            border-right: 1ch solid var(--caret);
-        }
-
-        .typewriter.nocaret::after {
-            border-right: 0;
-        }
-
-
-        @media (prefers-reduced-motion) {
-            .typewriter::after {
-                animation: none;
-            }
-
-            @keyframes sequencePopup {
-
-                0%,
-                100% {
-                    content: "Selamat Datang!";
-                }
-
-                25% {
-                    content: "E-Learning Bank Bengkulu";
-                }
-
-                50% {
-                    content: "reader";
-                }
-
-                75% {
-                    content: "human";
-                }
-            }
-
-            .typewriter::before {
-                content: "Selamat Datang!";
-                animation: sequencePopup 12s linear infinite;
-            }
-        }
-    </style>
- 
-    <div class="container py-4 py-xl-5 mb-5">
-        <div class="row mb-5">
-            <div class="col-md-8 col-xl-12 text-center mx-auto">
-                <h2 class="fw-bolder mb-3 responsive-header1">DASHBOARD SECTION BLANK</h2>
-                <p class="fw-semibold mb-4 responsive-p1">Kunjungi fitur utama dari sistem</p>
-            </div>
-        </div>
-        <div class="row px-5 gy-4 row-cols-1 row-cols-md-2 row-cols-xl-4">
-            <div class="col">
-                <div class="card border-0">
-                    <div class="card-body shadow p-4" data-bss-hover-animate="pulse">
-                        <div
-                            class="bs-icon-md bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center d-inline-block mb-3 bs-icon">
-                            <?xml version="1.0" encoding="UTF-8"?>
-                            <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
-                            <svg width="70px" height="70px" viewBox="0 0 512 512" version="1.1"
-                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                <title>question-filled</title>
-                                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                    <g id="add" fill="#000000" transform="translate(42.666667, 42.666667)">
-                                        <path
-                                            d="M213.333333,3.55271368e-14 C331.153707,3.55271368e-14 426.666667,95.51168 426.666667,213.333333 C426.666667,331.153707 331.153707,426.666667 213.333333,426.666667 C95.51296,426.666667 3.55271368e-14,331.153707 3.55271368e-14,213.333333 C3.55271368e-14,95.51168 95.51296,3.55271368e-14 213.333333,3.55271368e-14 Z M213.332053,282.666667 C198.60416,282.666667 186.665387,294.60544 186.665387,309.333333 C186.665387,324.061227 198.60416,336 213.332053,336 C228.059947,336 239.99872,324.061227 239.99872,309.333333 C239.99872,294.60544 228.059947,282.666667 213.332053,282.666667 Z M209.77344,93.3346133 C189.007787,93.3346133 171.554773,98.9922133 157.43488,110.274773 C140.703147,123.790507 132.34368,143.751253 132.34368,170.173227 L132.34368,170.173227 L177.7056,170.173227 L177.7056,169.868587 C177.7056,159.787733 179.829333,151.518293 184.065067,145.069013 C189.911467,136.398507 199.39328,132.059947 212.501333,132.059947 C220.56768,132.059947 227.4336,134.177067 233.070293,138.404907 C240.125013,144.26304 243.664,153.13024 243.664,165.028693 C243.664,172.49216 241.839787,179.143253 238.214827,184.994773 C235.188693,190.2368 230.350293,195.374933 223.686187,200.42048 C209.571627,210.098773 200.394453,219.679573 196.165333,229.162667 C192.53504,237.027413 190.710827,249.530027 190.710827,266.666667 L190.710827,266.666667 L233.376213,266.666667 C233.376213,255.371093 234.87744,246.90624 237.916587,241.257813 C240.331947,236.618667 245.378987,231.682347 253.042987,226.434987 C266.358187,216.549547 275.828267,207.371093 281.479253,198.90112 C288.33216,188.82176 291.76704,177.01952 291.76704,163.504 C291.76704,135.494827 280.37504,115.62624 257.571627,103.9232 C243.865813,96.86848 227.933653,93.3346133 209.77344,93.3346133 Z"
-                                            id="Combined-Shape">
-
-                                        </path>
-                                    </g>
-                                </g>
-                            </svg>
+    <div class="bg-success bg-gradient bg-opacity-10">
+        <div class="container py-5 py-xl-5 mx-5 justify-content-center mx-auto" style="font-family: Raleway;">
+            <div class="row mx-4">
+                <div class="col-md-8">
+                    <div class="card text-bg-success bg-gradient mb-3 bg-opacity-100">
+                        <div class="card-header fw-semibold">Dashboard Learning Program Bank Bengkulu</div>
+                        <div class="card-body">
+                            <h4 class=" responsive-p1 fw-semibold mb-3">Welcome back {{ Auth()->user()->name }}!</h4>
+                            <h5 class="fw-semibold">
+                                <span class="badge badge-lg rounded-pill text-bg-warning">{{ Auth()->user()->role }}</span>
+                            </h5>
                         </div>
-                        <h4 class="fw-bold responsive-p text-center">FAQ</h4>
                     </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card border-0">
-                    <div class="card-body shadow p-4" data-bss-hover-animate="pulse">
-                        <div
-                            class="bs-icon-md bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center d-inline-block mb-3 bs-icon">
-                            <?xml version="1.0" encoding="utf-8"?>
-
-                            <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
-                            <svg width="70px" height="70px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                                <title>dashboard-tile-solid</title>
-                                <g id="Layer_2" data-name="Layer 2">
-                                    <g id="invisible_box" data-name="invisible box">
-                                        <rect width="48" height="48" fill="none" />
-                                    </g>
-                                    <g id="icons_Q2" data-name="icons Q2">
-                                        <g>
-                                            <path
-                                                d="M20,30H8a2,2,0,0,0-2,2V42a2,2,0,0,0,2,2H20a2,2,0,0,0,2-2V32a2,2,0,0,0-2-2Z" />
-                                            <path
-                                                d="M20,4H8A2,2,0,0,0,6,6V24a2,2,0,0,0,2,2H20a2,2,0,0,0,2-2V6a2,2,0,0,0-2-2Z" />
-                                            <path
-                                                d="M40,4H28a2,2,0,0,0-2,2V16a2,2,0,0,0,2,2H40a2,2,0,0,0,2-2V6a2,2,0,0,0-2-2Z" />
-                                            <path
-                                                d="M40,22H28a2,2,0,0,0-2,2V42a2,2,0,0,0,2,2H40a2,2,0,0,0,2-2V24a2,2,0,0,0-2-2Z" />
+                    <div class="card shadow-sm bg-light bg-gradient mb-3">
+                        <div class="card-body">
+                            <div class="d-flex">
+                                <h4 class="card-title fw-semibold responsive-p1 me-auto">Today's Overview</h4>
+                                <a href="/report" class="btn btn-warning fw-semibold" type="button"
+                                    data-bss-hover-animate="tada">Manajemen Laporan
+                                    <?xml version="1.0" ?>
+                                    <svg width="20px" height="20px" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <title />
+                                        <g id="Complete">
+                                            <g id="arrow-up-right">
+                                                <g>
+                                                    <polyline data-name="Right" fill="none" id="Right-2"
+                                                        points="18.7 12.4 18.7 5.3 11.6 5.3" stroke="#000000"
+                                                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                                                    <line fill="none" stroke="#000000" stroke-linecap="round"
+                                                        stroke-linejoin="round" stroke-width="2" x1="5.3"
+                                                        x2="17.1" y1="18.7" y2="6.9" />
+                                                </g>
+                                            </g>
                                         </g>
-                                    </g>
-                                </g>
-                            </svg>
+                                    </svg>
+                                </a>
+                            </div>
+                            <hr>
+                            <div class="row g-2">
+                                <div class="col-md-3 col-6">
+                                    <div class="card text-white bg-success bg-gradient h-100">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Pengguna Terdaftar</h4>
+                                            <h1 class="fw-bold mb-0" id="counter1">3.822</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="card text-white bg-success bg-gradient h-100">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Kelas Materi</h4>
+                                            <h1 class="fw-bold mb-0" id="counter2">26</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="card text-white bg-success bg-gradient h-100">
+                                        <div class="card-body">
+                                            <h4 class="card-title ">Topik Materi</h4>
+                                            <h1 class="fw-bold mb-0" id="counter3">55</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="card text-white bg-success bg-gradient h-100">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Sertifikat Dikeluarkan</h4>
+                                            <h1 class="fw-bold mb-0" id="counter4">1003</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <h4 class="fw-bold responsive-p text-center">Dashboard Pegawai</h4>
+                    </div>
+                    <div class="card shadow-sm bg-light bg-gradient mb-3">
+                        <div class="card-body">
+                            <div class="d-flex">
+                                <h4 class="card-title fw-semibold responsive-p1 me-auto">Quick Navigation</h4>
+                            </div>
+                            <hr>
+                            <div class="row mb-3 g-2">
+                                <div class="col">
+                                    <div class="card text-white bg-success bg-gradient h-100"
+                                        data-bss-hover-animate="pulse">
+                                        <div class="d-flex justify-content-center align-items-center d-inline-block">
+                                            <!DOCTYPE svg
+                                                PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+                                            <!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools -->
+                                            <svg width="70px" height="70px" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+
+                                                <g id="SVGRepo_bgCarrier" stroke-width="0" />
+
+                                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+
+                                                <g id="SVGRepo_iconCarrier">
+                                                    <g id="System / Data">
+                                                        <path id="Vector"
+                                                            d="M18 12V17C18 18.6569 15.3137 20 12 20C8.68629 20 6 18.6569 6 17V12M18 12V7M18 12C18 13.6569 15.3137 15 12 15C8.68629 15 6 13.6569 6 12M18 7C18 5.34315 15.3137 4 12 4C8.68629 4 6 5.34315 6 7M18 7C18 8.65685 15.3137 10 12 10C8.68629 10 6 8.65685 6 7M6 12V7"
+                                                            stroke="#ffffff" stroke-width="2" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                    </g>
+                                                </g>
+
+                                            </svg>
+                                        </div>
+                                        <a href="/dashboard/pegawai" class="stretched-link"></a>
+                                        <h4 class="fw-bold text-center">Manajemen Data Pegawai</h4>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card text-white bg-success bg-gradient h-100"
+                                        data-bss-hover-animate="pulse">
+                                        <div class="d-flex justify-content-center align-items-center d-inline-block">
+                                            <!DOCTYPE svg
+                                                PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+                                            <div class="p-2 mt-1 mb-1">
+                                                <!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools -->
+                                                <svg fill="#ffffff" version="1.1" id="Capa_1"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 403.48 403.48"
+                                                    xml:space="preserve" width="50px" height="50px" stroke="#ffffff">
+
+                                                    <g id="SVGRepo_bgCarrier" stroke-width="0" />
+
+                                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+
+                                                    <g id="SVGRepo_iconCarrier">
+                                                        <g>
+                                                            <path
+                                                                d="M277.271,0H46.176v403.48h311.129V80.035L277.271,0z M281.664,25.607l50.033,50.034h-50.033V25.607z M61.176,388.48V15 h205.489v75.641h75.641v297.84H61.176z" />
+                                                            <path
+                                                                d="M101.439,117.58h55.18V62.4h-55.18V117.58z M116.439,77.4h25.18v25.18h-25.18V77.4z" />
+                                                            <path
+                                                                d="M101.439,192.08h55.18V136.9h-55.18V192.08z M116.439,151.9h25.18v25.18h-25.18V151.9z" />
+                                                            <path
+                                                                d="M101.439,266.581h55.18V211.4h-55.18V266.581z M116.439,226.4h25.18v25.181h-25.18V226.4z" />
+                                                            <path
+                                                                d="M101.439,341.081h55.18v-55.18h-55.18V341.081z M116.439,300.901h25.18v25.18h-25.18V300.901z" />
+                                                            <rect x="177.835" y="326.081" width="114.688"
+                                                                height="15" />
+                                                            <rect x="177.835" y="251.581" width="114.688"
+                                                                height="15" />
+                                                            <rect x="177.835" y="177.08" width="114.688"
+                                                                height="15" />
+                                                            <rect x="177.835" y="102.58" width="114.688"
+                                                                height="15" />
+                                                        </g>
+                                                    </g>
+
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <h4 class="fw-bold text-center">Manajemen Uji Kompetensi</h4>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card text-white bg-success bg-gradient h-100"
+                                        data-bss-hover-animate="pulse">
+                                        <div class="d-flex justify-content-center align-items-center d-inline-block">
+                                            <svg fill="#ffffff" width="70px" height="70px" viewBox="0 0 32 32"
+                                                version="1.1" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff">
+                                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
+                                                    stroke-linejoin="round"></g>
+                                                <g id="SVGRepo_iconCarrier">
+                                                    <title>book</title>
+                                                    <path
+                                                        d="M30.728 18.612l-2.112-0.697 0.050 0.052-11.683 4.24-11.184-11.823-2.745-0.906c-1.386 0.981-1.541 3.774-0.61 4.746l13.805 14.19 14.602-5.228c-1.33-0.727-2.409-2.796-0.123-4.573zM15.474 22.441l-11.504-11.928h0.344l11.453 11.693-0.294 0.235zM16.353 27.987c0 0-1.592-1.86 0.471-4.334l12.501-4.527c0 0-1.438 2.469 0.245 3.927l-13.217 4.935zM5.799 10.384l-0.382-0.404 11.654-4.138 11.544 12.073 2.112 0.697c-0.010 0.008-0.020 0.016-0.030 0.024l0.246-0.088-13.623-14.125-14.212 5.072 2.69 0.888z">
+                                                    </path>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                        <h4 class="fw-bold text-center">Manajemen Materi</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row g-2">
+                                <div class="col">
+                                    <div class="card text-white bg-success bg-gradient h-100"
+                                        data-bss-hover-animate="pulse">
+                                        <div class="d-flex justify-content-center align-items-center d-inline-block">
+                                            <svg width="70px" height="70px" viewBox="0 0 512 512" version="1.1"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                xmlns:xlink="http://www.w3.org/1999/xlink" fill="#ffffff"
+                                                stroke="#ffffff">
+                                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
+                                                    stroke-linejoin="round"></g>
+                                                <g id="SVGRepo_iconCarrier">
+                                                    <title>report-text</title>
+                                                    <g id="Page-1" stroke="none" stroke-width="1" fill="none"
+                                                        fill-rule="evenodd">
+                                                        <g id="add" fill="#ffffff"
+                                                            transform="translate(42.666667, 85.333333)">
+                                                            <path
+                                                                d="M341.333333,1.42108547e-14 L426.666667,85.3333333 L426.666667,341.333333 L3.55271368e-14,341.333333 L3.55271368e-14,1.42108547e-14 L341.333333,1.42108547e-14 Z M330.666667,42.6666667 L42.6666667,42.6666667 L42.6666667,298.666667 L384,298.666667 L384,96 L330.666667,42.6666667 Z M149.333333,234.666667 L149.333333,266.666667 L85.3333333,266.666667 L85.3333333,234.666667 L149.333333,234.666667 Z M341.333333,234.666667 L341.333333,266.666667 L192,266.666667 L192,234.666667 L341.333333,234.666667 Z M149.333333,170.666667 L149.333333,202.666667 L85.3333333,202.666667 L85.3333333,170.666667 L149.333333,170.666667 Z M341.333333,170.666667 L341.333333,202.666667 L192,202.666667 L192,170.666667 L341.333333,170.666667 Z M149.333333,106.666667 L149.333333,138.666667 L85.3333333,138.666667 L85.3333333,106.666667 L149.333333,106.666667 Z M341.333333,106.666667 L341.333333,138.666667 L192,138.666667 L192,106.666667 L341.333333,106.666667 Z"
+                                                                id="Combined-Shape"> </path>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                        <h4 class="fw-bold text-center">Manajemen Laporan</h4>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card text-white bg-success bg-gradient h-100"
+                                        data-bss-hover-animate="pulse">
+                                        <div class="d-flex justify-content-center align-items-center d-inline-block">
+                                            <!DOCTYPE svg
+                                                PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+                                            <!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools -->
+                                            <svg width="70px" height="70px" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+
+                                                <g id="SVGRepo_bgCarrier" stroke-width="0" />
+
+                                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+
+                                                <g id="SVGRepo_iconCarrier">
+                                                    <g id="System / Data">
+                                                        <path id="Vector"
+                                                            d="M18 12V17C18 18.6569 15.3137 20 12 20C8.68629 20 6 18.6569 6 17V12M18 12V7M18 12C18 13.6569 15.3137 15 12 15C8.68629 15 6 13.6569 6 12M18 7C18 5.34315 15.3137 4 12 4C8.68629 4 6 5.34315 6 7M18 7C18 8.65685 15.3137 10 12 10C8.68629 10 6 8.65685 6 7M6 12V7"
+                                                            stroke="#ffffff" stroke-width="2" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                    </g>
+                                                </g>
+
+                                            </svg>
+                                        </div>
+                                        <h4 class="fw-bold text-center">Manajemen Data Petugas</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col">
-                <a href="/materi" style="text-decoration: none;" class="text-black">
-                    <div class="card border-0">
-                        <div class="card-body shadow p-4" data-bss-hover-animate="pulse">
-                            <div
-                                class="bs-icon-md bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center d-inline-block mb-3 bs-icon">
+                <div class="col-md-4">
+                    <div class="card bg-light bg-gradient shadow-sm sticky-top">
+                        <div class="card-body">
+                            <div class="container align-items-center justify-content-center d-flex">
                                 <?xml version="1.0" encoding="utf-8"?>
-                                <!DOCTYPE svg
-                                    PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
                                 <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
-                                <svg height="70px" width="70px" version="1.1" id="_x32_"
-                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    viewBox="0 0 512 512" xml:space="preserve">
-                                    <style type="text/css">
-                                        .st0 {
-                                            fill: #000000;
-                                        }
-                                    </style>
-                                    <g>
-                                        <path class="st0"
-                                            d="M164.128,155.406c-0.017-11.098-0.017-20.759,1.346-29.9l-7.987,9.166
-                                    c-14.001,16.134-49.379,26.563-79.029,23.301c-29.666-3.262-42.346-18.986-28.345-35.128l105.4-110.292
-                                    c2.049-2.15,2.626-5.311,1.456-8.054c-1.163-2.727-3.856-4.5-6.825-4.5h-16.978c-4.968,0-9.719,1.982-13.206,5.52L28.527,98.174
-                                    c-18.76,19.638-17.89,30.544-17.89,61.089c0,21.812,0,301.06,0,301.06c0,26.196,32.92,47.824,62.578,51.078
-                                    c29.65,3.27,70.272-7.168,84.273-23.302l9.317-10.832c-1.673-5.402-2.676-11.04-2.676-16.945V155.406z" />
-                                        <path class="st0"
-                                            d="M493.952,0h-18.375c-5.36,0-10.454,2.324-13.984,6.356l-111.84,128.316c-14,16.134-49.379,26.563-79.02,23.301
-                                    c-29.667-3.262-42.346-18.986-28.345-35.128l105.4-110.292c2.041-2.15,2.626-5.311,1.456-8.054c-1.172-2.727-3.856-4.5-6.825-4.5
-                                    H325.44c-4.968,0-9.727,1.982-13.206,5.52l-91.432,92.654c-18.76,19.638-17.89,30.544-17.89,61.089c0,21.812,0,301.06,0,301.06
-                                    c0,26.196,32.92,47.824,62.569,51.078c29.658,3.27,70.272-7.168,84.272-23.302L487.896,327.64
-                                    c8.69-10.103,13.474-22.984,13.474-36.315V7.418C501.37,3.328,498.051,0,493.952,0z" />
-                                    </g>
+                                <svg width="100px" height="100px" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path opacity="0.4"
+                                        d="M12 22.01C17.5228 22.01 22 17.5329 22 12.01C22 6.48716 17.5228 2.01001 12 2.01001C6.47715 2.01001 2 6.48716 2 12.01C2 17.5329 6.47715 22.01 12 22.01Z"
+                                        fill="#292D32" />
+                                    <path
+                                        d="M12 6.93994C9.93 6.93994 8.25 8.61994 8.25 10.6899C8.25 12.7199 9.84 14.3699 11.95 14.4299C11.98 14.4299 12.02 14.4299 12.04 14.4299C12.06 14.4299 12.09 14.4299 12.11 14.4299C12.12 14.4299 12.13 14.4299 12.13 14.4299C14.15 14.3599 15.74 12.7199 15.75 10.6899C15.75 8.61994 14.07 6.93994 12 6.93994Z"
+                                        fill="#292D32" />
+                                    <path
+                                        d="M18.7807 19.36C17.0007 21 14.6207 22.01 12.0007 22.01C9.3807 22.01 7.0007 21 5.2207 19.36C5.4607 18.45 6.1107 17.62 7.0607 16.98C9.7907 15.16 14.2307 15.16 16.9407 16.98C17.9007 17.62 18.5407 18.45 18.7807 19.36Z"
+                                        fill="#292D32" />
                                 </svg>
                             </div>
-                            <h4 class="fw-bold responsive-p text-center">Informasi Kelas</h4>
+                            <h4 class="card-title fw-semibold text-center">{{ Auth()->user()->name }}</h4>
+                            <h6 class="text-muted card-subtitle fw-semibold text-center mb-2"><span
+                                    class="badge badge-lg rounded-pill text-bg-warning">{{ Auth()->user()->role }}</span>
+                            </h6>
+                            <br>
+                            <table class="table table-hover responsive-small">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Nama</td>
+                                        <td>:</td>
+                                        <td>{{ Auth()->user()->name }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>NRPP</td>
+                                        <td>:</td>
+                                        <td>{{ Auth()->user()->nrpp }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>Jabatan</td>
+                                        <td>:</td>
+                                        <td>{{ Auth()->user()->jabatan }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">4</th>
+                                        <td>Unit Kerja</td>
+                                        <td>:</td>
+                                        <td>{{ Auth()->user()->unit_kerja }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">5</th>
+                                        <td>E-Mail</td>
+                                        <td>:</td>
+                                        <td>{{ Auth()->user()->email }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="align-items-center justify-content-center d-flex">
+                                <a href="/profile" class="btn btn-success" type="button"
+                                    data-bss-hover-animate="tada">Ubah
+                                    Profil</a>
+                                <form action="/logout" method="post">
+                                    @csrf
+                                    <button class="btn btn-danger mx-2" type="submit"
+                                        data-bss-hover-animate="tada">Keluar
+                                        Akun</button>
+                                </form>
+                            </div>
                         </div>
-                </a>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card border-0">
-                <div class="card-body shadow p-4" data-bss-hover-animate="pulse">
-                    <div
-                        class="bs-icon-md bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center d-inline-block mb-3 bs-icon">
-                        <?xml version="1.0" encoding="utf-8"?>
-                        <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
-                        <svg fill="#000000" width="70px" height="70px" viewBox="0 0 32 32" version="1.1"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <title>book</title>
-                            <path
-                                d="M15 25.875v-19.625c0 0-2.688-2.25-6.5-2.25s-6.5 2-6.5 2v19.875c0 0 2.688-1.938 6.5-1.938s6.5 1.938 6.5 1.938zM29 25.875v-19.625c0 0-2.688-2.25-6.5-2.25s-6.5 2-6.5 2v19.875c0 0 2.688-1.938 6.5-1.938s6.5 1.938 6.5 1.938zM31 8h-1v19h-12v1h-5v-1h-12v-19h-1v20h12v1h7.062l-0.062-1h12v-20z">
-                            </path>
-                        </svg>
                     </div>
-                    <h4 class="fw-bold responsive-p text-center">Panduan</h4>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container py-4 py-xl-5 mb-5">
-        <div class="row row-cols-2 row-cols-md-4 px-5 mx-5" style="position: relative;display: padding-top: 14px;">
-            <div class="col">
-                <div class="p-3">
-                    <h4 class="fw-bold mb-0 responsive-header1" id="counter1">3.822</h4>
-                    <p class="fw-bold mb-0 responsive-mini">Pengguna Terdaftar</p>
-                </div>
-            </div>
-            <div class="col">
-                <div class="p-3">
-                    <h4 class="fw-bold mb-0 responsive-header1" id="counter2">24</h4>
-                    <p class="fw-semibold mb-0 responsive-mini">Kelas Materi</p>
-                </div>
-            </div>
-            <div class="col">
-                <div class="p-3">
-                    <h4 class="fw-bold mb-0 responsive-header1" id="counter3">230</h4>
-                    <p class="fw-semibold mb-0 responsive-mini">Topik Materi</p>
-                </div>
-            </div>
-            <div class="col">
-                <div class="p-3">
-                    <h4 class="fw-bold mb-0 responsive-header1" id="counter4">1.080</h4>
-                    <p class="fw-semibold mb-0 responsive-mini">Sertifikat Dikeluarkan</p>
-                </div>
-            </div>
-        </div>
+
+
     </div>
 
     <script>

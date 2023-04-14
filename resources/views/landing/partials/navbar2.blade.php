@@ -15,7 +15,7 @@
         /* NON-IE */
     }
 </style>
-<nav class="navbar sticky-top navbar-dark navbar-expand-md py-3"
+<nav class="navbar navbar-dark navbar-expand-md py-3"
     style="font-family: Raleway, sans-serif;padding-left: 35px;padding-right: 35px;background: rgb(0, 0, 0);">
     <div class="container">
         <a class="navbar-brand d-flex align-items-center" href="/">

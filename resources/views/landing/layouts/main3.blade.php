@@ -22,7 +22,7 @@
 </head>
 
 <body style="font-family: Raleway, sans-serif;">
-    @include('landing.partials.navbar2')
+    @include('landing.partials.navbar3')
     <div>
         @yield('container')
     </div>

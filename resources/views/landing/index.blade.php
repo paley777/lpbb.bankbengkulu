@@ -119,41 +119,6 @@
                 content: "Selamat Datang";
             }
 
-            37%,
-            40% {
-                content: "";
-            }
-
-            41%,
-            42% {
-                content: "d";
-            }
-
-            43%,
-            44% {
-                content: "di";
-            }
-
-            45%,
-            46% {
-                content: "di";
-            }
-
-            46%,
-            47% {
-                content: "di";
-            }
-
-            48%,
-            49% {
-                content: "di";
-            }
-
-            50%,
-            51% {
-                content: "di";
-            }
-
             52%,
             55% {
                 content: "";
@@ -306,7 +271,8 @@
 
                         </h3>
                         <p class="fw-semibold mb-4 responsive-p" style="color: rgb(255,255,255);">”Jika Kamu tidak sanggup
-                            menahan lelahnya belajar maka kamu harus sanggup menahan perihnya kebodohan" ~ Imam Asy Syafi'i</p>
+                            menahan lelahnya belajar maka kamu harus sanggup menahan perihnya kebodohan" ~ Imam Asy Syafi'i
+                        </p>
                         <a href="/login"
                             class="btn btn-warning btn-lg fs-5 fw-semibold rounded-pill shadow-sm me-2 py-2 px-4"
                             type="button" style="width: 166.475px;height: 45.375px;"
