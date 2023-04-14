@@ -32,14 +32,14 @@ class LandingController extends Controller
             'active' => 'login',
         ]);
     }
-    //Gate
-    public function gate()
-    {
-        return view('landing.gate', [
-            'active' => 'login',
-            'gate' => Gate::inRandomOrder()->first(),
-        ]);
-    }
+    // //Gate
+    // public function gate()
+    // {
+    //     return view('landing.gate', [
+    //         'active' => 'login',
+    //         'gate' => Gate::inRandomOrder()->first(),
+    //     ]);
+    // }
 
     /**
      * Handle an authentication attempt.
@@ -53,38 +53,39 @@ class LandingController extends Controller
             'email' => ['required'],
             'password' => ['required'],
         ]);
-
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect('/gate');
+            return redirect()
+                ->intended('/dashboard')
+                ->with('success', 'Selamat Datang di Dashboard LPBB!');
         }
         return back()->with('loginError', 'E-mail/Password Anda Salah, Coba Lagi!');
     }
 
-    /**
-     * Handle an authentication attempt.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function check(Request $request)
-    {
-        $answer = $request->validate([
-            'answer' => ['required'],
-        ]);
+    // /**
+    //  * Handle an authentication attempt.
+    //  *
+    //  * @param  \Illuminate\Http\Request  $request
+    //  * @return \Illuminate\Http\Response
+    //  */
+    // public function check(Request $request)
+    // {
+    //     $answer = $request->validate([
+    //         'answer' => ['required'],
+    //     ]);
 
-        $answerdb = Gate::where('id', $request->id)->first('answer');
-        if (strtolower($request->answer) == strtolower($answerdb->answer)) {
-            Session::put('active', 'dashboard');
-            return redirect('/dashboard')->with('success', 'Selamat Datang di Dashboard LPBB!');
-        } else {
-            Auth::logout();
+    //     $answerdb = Gate::where('id', $request->id)->first('answer');
+    //     if (strtolower($request->answer) == strtolower($answerdb->answer)) {
+    //         Session::put('active', 'dashboard');
+    //         return redirect('/dashboard')->with('success', 'Selamat Datang di Dashboard LPBB!');
+    //     } else {
+    //         Auth::logout();
 
-            $request->session()->invalidate();
+    //         $request->session()->invalidate();
 
-            $request->session()->regenerateToken();
+    //         $request->session()->regenerateToken();
 
-            return redirect('/login')->with('loginError', 'Yah! Sepertinya Anda salah menjawab pertanyaan yang diberikan :( Jangan lupa untuk memperhatikan jawaban Anda untuk menghindari salah ketik!');
-        }
-    }
+    //         return redirect('/login')->with('loginError', 'Yah! Sepertinya Anda salah menjawab pertanyaan yang diberikan :( Jangan lupa untuk memperhatikan jawaban Anda untuk menghindari salah ketik!');
+    //     }
+    // }
 }
