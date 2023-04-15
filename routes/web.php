@@ -28,3 +28,14 @@ Route::post('/login', [LandingController::class, 'authenticate'])->name('login')
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
 Route::post('/logout', [DashboardController::class, 'logout'])->middleware('auth');
 Route::resource('/dashboard/pegawai', PegawaiController::class)->middleware('auth');
+Route::get('/dashboard/pegawai/{user}/suspend', [PegawaiController::class, 'suspend'])->middleware('auth');
+Route::get('/dashboard/pegawai/{user}/activate', [PegawaiController::class, 'activate'])->middleware('auth');
+Route::post('file-import', [PegawaiController::class, 'fileImport'])
+    ->name('file-import')
+    ->middleware('auth');
+Route::post('file-edit', [PegawaiController::class, 'fileEdit'])
+    ->name('file-edit')
+    ->middleware('auth');
+Route::post('multipleusersdelete', [PegawaiController::class, 'multipleusersdelete'])
+    ->name('multipleusersdelete')
+    ->middleware('auth');

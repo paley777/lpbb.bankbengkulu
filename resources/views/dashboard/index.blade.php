@@ -69,9 +69,9 @@
                     <div class="card shadow-sm bg-light bg-gradient mb-3">
                         <div class="card-body">
                             <div class="d-flex">
-                                <h4 class="card-title fw-semibold responsive-p1 me-auto">Today's Overview</h4>
-                                <a href="/report" class="btn btn-warning fw-semibold" type="button"
-                                    data-bss-hover-animate="tada">Manajemen Laporan
+                                <h4 class="card-title fw-semibold responsive-p1 me-auto">Sedang Berlangsung</h4>
+                                <a href="/materi" class="btn btn-warning fw-semibold" type="button"
+                                    data-bss-hover-animate="tada">Manajemen Materi
                                     <?xml version="1.0" ?>
                                     <svg width="20px" height="20px" viewBox="0 0 24 24"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -94,10 +94,118 @@
                             <hr>
                             <div class="row g-2">
                                 <div class="col-md-3 col-6">
+                                    <a href="/materi/detail" style="text-decoration: none;">
+                                        <div class="card bg-success text-white bg-gradient border border-0 p-4 h-100"
+                                            data-bss-hover-animate="pulse"
+                                            style="color: rgb(0,0,0);background: var(--bs-yellow);"><span
+                                                class="fw-semibold mb-2">Dibuka
+                                                mulai
+                                                27 Maret 2023 - 20 April 2023</span>
+                                            <h3 class="fw-bold">Manajemen Resiko I</h3>
+                                            <h6><span class="badge rounded-pill text-bg-warning">10 Modul</span> <span class="badge rounded-pill text-bg-warning">Berlangsung</span></h6>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="card bg-success bg-gradient text-white border rounded-0 border-0 p-4 h-100"
+                                        style="color: rgb(0,0,0);background: var(--bs-yellow);"
+                                        data-bss-hover-animate="pulse"><span class="fw-semibold mb-2">Dibuka mulai
+                                            27 Maret 2023 - 20 April 2023</span>
+                                        <h3 class="fw-bold">Manajemen Resiko II</h3>
+                                        <h6><span class="badge rounded-pill text-bg-warning">10 Modul</span> <span class="badge rounded-pill text-bg-warning">Berlangsung</span></h6>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="card bg-success bg-gradient text-white border rounded-0 border-0 p-4 h-100"
+                                        style="color: rgb(0,0,0);background: var(--bs-yellow);"
+                                        data-bss-hover-animate="pulse"><span class="fw-semibold mb-2">Dibuka mulai
+                                            27 Maret 2023 - 20 April 2023</span>
+                                        <h3 class="fw-bold">Manajemen Resiko III</h3>
+                                        <h6><span class="badge rounded-pill text-bg-warning">10 Modul</span> <span class="badge rounded-pill text-bg-warning">Berlangsung</span></h6>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="card bg-success bg-gradient text-white border rounded-0 border-0 p-4 h-100"
+                                        style="color: rgb(0,0,0);background: var(--bs-yellow);"
+                                        data-bss-hover-animate="pulse"><span class="fw-semibold mb-2">Dibuka mulai
+                                            27 Maret 2023 - 20 April 2023</span>
+                                        <h3 class="fw-bold">Anti-Fraud</h3>
+                                        <h6><span class="badge rounded-pill text-bg-warning">10 Modul</span> <span class="badge rounded-pill text-bg-warning">Berlangsung</span></h6>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="card bg-success bg-gradient text-white border rounded-0 border-0 p-4 h-100"
+                                        style="color: rgb(0,0,0);background: var(--bs-yellow);"
+                                        data-bss-hover-animate="pulse"><span class="fw-semibold mb-2">Dibuka
+                                            mulai
+                                            27 Maret 2023 - 20 April 2023</span>
+                                        <h3 class="fw-bold">Marketing</h3>
+                                        <h6><span class="badge rounded-pill text-bg-warning">10 Modul</span> <span class="badge rounded-pill text-bg-warning">Berlangsung</span></h6>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="card bg-success bg-gradient text-white border rounded-0 border-0 p-4 h-100"
+                                        style="color: rgb(0,0,0);background: var(--bs-yellow);"
+                                        data-bss-hover-animate="pulse"><span class="fw-semibold mb-2">Dibuka
+                                            mulai 27 Maret 2023 - 20 April 2023</span>
+                                        <h3 class="fw-bold">Microblog I</h3>
+                                        <h6><span class="badge rounded-pill text-bg-warning">10 Modul</span> <span class="badge rounded-pill text-bg-warning">Berlangsung</span></h6>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="card bg-success bg-gradient text-white border rounded-0 border-0 p-4 h-100"
+                                        style="color: rgb(0,0,0);background: var(--bs-yellow);"
+                                        data-bss-hover-animate="pulse"><span class="fw-semibold mb-2">Dibuka
+                                            mulai 27 Maret 2023 - 20 April 2023</span>
+                                        <h3 class="fw-bold">Microblog II</h3>
+                                        <h6><span class="badge rounded-pill text-bg-warning">10 Modul</span> <span class="badge rounded-pill text-bg-warning">Berlangsung</span></h6>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="card bg-success bg-gradient text-white border rounded-0 border-0 p-4 h-100"
+                                        style="color: rgb(0,0,0);background: var(--bs-yellow);"
+                                        data-bss-hover-animate="pulse"><span class="fw-semibold mb-2">Dibuka
+                                            mulai 27 Maret 2023 - 20 April 2023</span>
+                                        <h3 class="fw-bold">Etika Profesi</h3>
+                                        <h6><span class="badge rounded-pill text-bg-warning">10 Modul</span> <span class="badge rounded-pill text-bg-warning">Berlangsung</span></h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card shadow-sm bg-light bg-gradient mb-3">
+                        <div class="card-body">
+                            <div class="d-flex">
+                                <h4 class="card-title fw-semibold responsive-p1 me-auto">Today's Overview</h4>
+                                <a href="/report" class="btn btn-warning fw-semibold" type="button"
+                                    data-bss-hover-animate="tada">Manajemen Laporan
+                                    <?xml version="1.0" ?>
+                                    <svg width="20px" height="20px" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <title />
+                                        <g id="Complete">
+                                            <g id="arrow-up-right">
+                                                <g>
+                                                    <polyline data-name="Right" fill="none" id="Right-2"
+                                                        points="18.7 12.4 18.7 5.3 11.6 5.3" stroke="#000000"
+                                                        stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2" />
+                                                    <line fill="none" stroke="#000000" stroke-linecap="round"
+                                                        stroke-linejoin="round" stroke-width="2" x1="5.3"
+                                                        x2="17.1" y1="18.7" y2="6.9" />
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </a>
+                            </div>
+                            <hr>
+                            <div class="row g-2">
+                                <div class="col-md-3 col-6">
                                     <div class="card text-white bg-success bg-gradient h-100">
                                         <div class="card-body">
                                             <h4 class="card-title">Pengguna Terdaftar</h4>
-                                            <h1 class="fw-bold mb-0" id="counter1">3.822</h1>
+                                            <h1 class="fw-bold mb-0" id="counter1">{{ $countpegawai }}</h1>
                                         </div>
                                     </div>
                                 </div>
@@ -349,7 +457,7 @@
                                     </tr>
                                     <tr>
                                         <th scope="row">5</th>
-                                        <td>E-Mail</td>
+                                        <td>Username</td>
                                         <td>:</td>
                                         <td>{{ Auth()->user()->email }}</td>
                                     </tr>
@@ -414,11 +522,12 @@
     <script>
         let counts1 = setInterval(updated1);
         let upto1 = 0;
+        let limit = {!! json_encode($countpegawai) !!};
 
         function updated1() {
             var count1 = document.getElementById("counter1");
             count1.innerHTML = ++upto1;
-            if (upto1 === 3279) {
+            if (upto1 === limit) {
                 clearInterval(counts1);
             }
         }
