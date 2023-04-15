@@ -108,7 +108,9 @@
                                 <div class="col-md-3">
                                     <label for="validationCustom01" class="form-label">Unit Kerja<span
                                             class="text-danger">*</span></label>
-                                    <select class="form-select responsive-small" name="unit_kerja"
+                                    <input type="text" id="validationCustom01" class="form-control responsive-small"
+                                        name="unit_kerja" placeholder="Isi Unit Kerja" required>
+                                    {{-- <select class="form-select responsive-small" name="unit_kerja"
                                         aria-label="Default select example" required>
                                         <option selected>Pilih Unit Kerja</option>
                                         <option value="Divisi Perencanaan dan Pengembangan">Divisi Perencanaan dan
@@ -125,7 +127,7 @@
                                         <option value="Divisi Manajemen Risiko">Divisi Manajemen Risiko</option>
                                         <option value="ivisi Pemasaran dan Pengembangan Produk">Divisi Pemasaran dan
                                             Pengembangan Produk</option>
-                                    </select>
+                                    </select> --}}
                                 </div>
                                 <div class="col-md-6 position-relative">
                                     <label for="validationCustom01" class="form-label">Username<span
