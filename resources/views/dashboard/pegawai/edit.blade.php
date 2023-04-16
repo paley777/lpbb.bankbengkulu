@@ -53,6 +53,11 @@
 
         }
     </style>
+    <style>
+        form i {
+            cursor: pointer;
+        }
+    </style>
     <div class="bg-success bg-gradient bg-opacity-10">
         <div class="container py-5 py-xl-5 mx-5 justify-content-center mx-auto" style="font-family: Raleway;">
             <div class="row mx-4">
@@ -146,9 +151,16 @@
                                 </div>
                                 <div class="col-md-6 position-relative">
                                     <label for="inputCity" class="form-label">Password<span
-                                            class="text-danger">*</span></label>
-                                    <input type="password" class="form-control responsive-small" id="inputCity"
-                                        placeholder="Isi Password" name="password" required>
+                                        class="text-danger">*</span></label>
+                                    <div class="row">
+                                        <div class="col-10">
+                                            <input type="password" class="form-control responsive-small" id="password"
+                                                placeholder="Isi Password" name="password" required>
+                                        </div>
+                                        <div class="col-auto">
+                                            <h3><i class="bi bi-eye-slash" id="togglePassword"></i></h3>
+                                        </div>
+                                    </div>
                                 </div>
                                 <p>
                                     (Wajib terisi untuk kolom dengan tanda "<span class="text-danger">*</span>").
@@ -163,4 +175,24 @@
             </div>
         </div>
     </div>
+    <script>
+        const togglePassword = document
+            .querySelector('#togglePassword');
+
+        const password = document.querySelector('#password');
+
+        togglePassword.addEventListener('click', () => {
+
+            // Toggle the type attribute using
+            // getAttribure() method
+            const type = password
+                .getAttribute('type') === 'password' ?
+                'text' : 'password';
+
+            password.setAttribute('type', type);
+
+            // Toggle the eye and bi-eye icon
+            this.classList.toggle('bi-eye');
+        });
+    </script>
 @endsection
