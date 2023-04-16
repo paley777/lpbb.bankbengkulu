@@ -107,7 +107,7 @@
                                     </a>
                                 </div>
                                 <div class="col-md-3 col-6">
-                                    <div class="card bg-success bg-gradient text-white border rounded-0 border-0 p-4 h-100"
+                                    <div class="card bg-success text-white bg-gradient border border-0 p-4 h-100"
                                         style="color: rgb(0,0,0);background: var(--bs-yellow);"
                                         data-bss-hover-animate="pulse"><span class="fw-semibold mb-2">Dibuka mulai
                                             27 Maret 2023 - 20 April 2023</span>
@@ -116,7 +116,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-3 col-6">
-                                    <div class="card bg-success bg-gradient text-white border rounded-0 border-0 p-4 h-100"
+                                    <div class="card bg-success text-white bg-gradient border border-0 p-4 h-100"
                                         style="color: rgb(0,0,0);background: var(--bs-yellow);"
                                         data-bss-hover-animate="pulse"><span class="fw-semibold mb-2">Dibuka mulai
                                             27 Maret 2023 - 20 April 2023</span>
@@ -125,7 +125,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-3 col-6">
-                                    <div class="card bg-success bg-gradient text-white border rounded-0 border-0 p-4 h-100"
+                                    <div class="card bg-success text-white bg-gradient border border-0 p-4 h-100"
                                         style="color: rgb(0,0,0);background: var(--bs-yellow);"
                                         data-bss-hover-animate="pulse"><span class="fw-semibold mb-2">Dibuka mulai
                                             27 Maret 2023 - 20 April 2023</span>
@@ -134,7 +134,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-3 col-6">
-                                    <div class="card bg-success bg-gradient text-white border rounded-0 border-0 p-4 h-100"
+                                    <div class="card bg-success text-white bg-gradient border border-0 p-4 h-100"
                                         style="color: rgb(0,0,0);background: var(--bs-yellow);"
                                         data-bss-hover-animate="pulse"><span class="fw-semibold mb-2">Dibuka
                                             mulai
@@ -144,7 +144,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-3 col-6">
-                                    <div class="card bg-success bg-gradient text-white border rounded-0 border-0 p-4 h-100"
+                                    <div class="card bg-success text-white bg-gradient border border-0 p-4 h-100"
                                         style="color: rgb(0,0,0);background: var(--bs-yellow);"
                                         data-bss-hover-animate="pulse"><span class="fw-semibold mb-2">Dibuka
                                             mulai 27 Maret 2023 - 20 April 2023</span>
@@ -153,7 +153,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-3 col-6">
-                                    <div class="card bg-success bg-gradient text-white border rounded-0 border-0 p-4 h-100"
+                                    <div class="card bg-success text-white bg-gradient border border-0 p-4 h-100"
                                         style="color: rgb(0,0,0);background: var(--bs-yellow);"
                                         data-bss-hover-animate="pulse"><span class="fw-semibold mb-2">Dibuka
                                             mulai 27 Maret 2023 - 20 April 2023</span>
@@ -162,7 +162,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-3 col-6">
-                                    <div class="card bg-success bg-gradient text-white border rounded-0 border-0 p-4 h-100"
+                                    <div class="card bg-success text-white bg-gradient border border-0 p-4 h-100"
                                         style="color: rgb(0,0,0);background: var(--bs-yellow);"
                                         data-bss-hover-animate="pulse"><span class="fw-semibold mb-2">Dibuka
                                             mulai 27 Maret 2023 - 20 April 2023</span>
@@ -204,7 +204,7 @@
                                 <div class="col-md-3 col-6">
                                     <div class="card text-white bg-success bg-gradient h-100">
                                         <div class="card-body">
-                                            <h4 class="card-title">Pengguna Terdaftar</h4>
+                                            <h4 class="card-title">Pegawai Terdaftar</h4>
                                             <h1 class="fw-bold mb-0" id="counter1">{{ $countpegawai }}</h1>
                                         </div>
                                     </div>
@@ -464,9 +464,8 @@
                                 </tbody>
                             </table>
                             <div class="align-items-center justify-content-center d-flex">
-                                <a href="/profile" class="btn btn-success" type="button"
-                                    data-bss-hover-animate="tada">Ubah
-                                    Profil</a>
+                                <a href="/dashboard/profile" class="btn btn-success" type="button"
+                                    data-bss-hover-animate="tada">Profil Anda</a>
                                 <form action="/logout" method="post">
                                     @csrf
                                     <button class="btn btn-danger mx-2" type="submit"

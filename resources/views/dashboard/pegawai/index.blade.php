@@ -89,7 +89,7 @@
                         <div class="card-body">
                             <div class="d-flex">
                                 <h4 class="card-title fw-semibold responsive-p1 me-3">Tabel Data</h4>
-                                <div class="col-5">
+                                <div class="col-lg-5 col-md-4 me-3">
                                     <form action="/dashboard/pegawai">
                                         <div class="input-group">
                                             <input type="text" class="form-control responsive-small"

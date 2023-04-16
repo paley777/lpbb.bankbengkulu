@@ -26,6 +26,9 @@ Route::post('/login', [LandingController::class, 'authenticate'])->name('login')
 // Route::post('/gate', [LandingController::class, 'check'])->middleware('auth');
 //Dashboard
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
+Route::get('/dashboard/profile', [DashboardController::class, 'profile'])->middleware('auth');
+Route::get('/dashboard/profile/edit', [DashboardController::class, 'edit'])->middleware('auth');
+Route::post('/dashboard/profile/edit', [DashboardController::class, 'update'])->middleware('auth');
 Route::post('/logout', [DashboardController::class, 'logout'])->middleware('auth');
 Route::resource('/dashboard/pegawai', PegawaiController::class)->middleware('auth');
 Route::get('/dashboard/pegawai/{user}/suspend', [PegawaiController::class, 'suspend'])->middleware('auth');

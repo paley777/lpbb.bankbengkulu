@@ -65,14 +65,14 @@
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb responsive-small">
                             <li class="breadcrumb-item"><a href="/dashboard">Beranda</a></li>
-                            <li class="breadcrumb-item"><a href="/dashboard/pegawai">Manajemen Data Pegawai</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Tambah Pegawai</li>
+                            <li class="breadcrumb-item"><a href="/dashboard/pegawai">Manajemen Profil</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Edit Profil</li>
                         </ol>
                     </nav>
                     <div class="card text-bg-success bg-gradient mb-3 bg-opacity-100">
                         <div class="card-header fw-semibold">Dashboard Learning Program Bank Bengkulu</div>
                         <div class="card-body">
-                            <h4 class=" responsive-p1 fw-semibold mb-3">Manajemen Data Pegawai</h4>
+                            <h4 class=" responsive-p1 fw-semibold mb-3">Manajemen Profil</h4>
                             @if ($errors->any())
                                 <div class="alert alert-danger">
                                     <ul>
@@ -87,34 +87,37 @@
                     <div class="card shadow-sm bg-light bg-gradient mb-3">
                         <div class="card-body">
                             <div class="d-flex">
-                                <h4 class="card-title fw-semibold responsive-p1 me-3">Tambah Pegawai</h4>
+                                <h4 class="card-title fw-semibold responsive-p1 me-3">Edit Profil</h4>
                             </div>
                             <hr>
-                            <form class="row g-2 responsive-small fw-semibold" method="post" action="/dashboard/pegawai">
+                            <form class="row g-2 responsive-small fw-semibold" method="post"
+                                action="/dashboard/profile/edit">
                                 @csrf
                                 <div class="col-md-4 position-relative">
                                     <label for="validationCustom01" class="form-label ">Nama Lengkap<span
                                             class="text-danger">*</span></label>
                                     <input type="text" id="validationCustom01" class="form-control responsive-small"
-                                        name="name" placeholder="Isi Nama" required>
+                                        name="name" value="{{ Auth()->user()->name }}" placeholder="Isi Nama" required>
                                 </div>
                                 <div class="col-md-2 position-relative">
                                     <label for="validationCustom01" class="form-label">NRPP<span
                                             class="text-danger">*</span></label>
                                     <input type="text" id="validationCustom01" class="form-control responsive-small"
-                                        name="nrpp" placeholder="Isi NRPP" required>
+                                        name="nrpp" value="{{ Auth()->user()->nrpp }}" placeholder="Isi NRPP" required>
                                 </div>
                                 <div class="col-md-3">
                                     <label for="validationCustom01" class="form-label">Jabatan<span
                                             class="text-danger">*</span></label>
-                                    <input type="text" id="validationCustom01" class="form-control responsive-small"
-                                        name="jabatan" placeholder="Isi Jabatan"required>
+                                    <input type="text" value="{{ Auth()->user()->jabatan }}" id="validationCustom01"
+                                        class="form-control responsive-small" name="jabatan"
+                                        placeholder="Isi Jabatan"required>
                                 </div>
                                 <div class="col-md-3">
                                     <label for="validationCustom01" class="form-label">Unit Kerja<span
                                             class="text-danger">*</span></label>
-                                    <input type="text" id="validationCustom01" class="form-control responsive-small"
-                                        name="unit_kerja" placeholder="Isi Unit Kerja" required>
+                                    <input type="text" value="{{ Auth()->user()->unit_kerja }}" id="validationCustom01"
+                                        class="form-control responsive-small" name="unit_kerja" placeholder="Isi Unit Kerja"
+                                        required>
                                     {{-- <select class="form-select responsive-small" name="unit_kerja"
                                         aria-label="Default select example" required>
                                         <option selected>Pilih Unit Kerja</option>
@@ -137,10 +140,11 @@
                                 <div class="col-md-6 position-relative">
                                     <label for="validationCustom01" class="form-label">Username<span
                                             class="text-danger">*</span></label>
+                                    <input type="text" value="{{ Auth()->user()->email }}" id="validationCustom01"
+                                        class="form-control responsive-small" name="email" placeholder="Isi Username"
+                                        required>
                                     <input type="text" id="validationCustom01" class="form-control responsive-small"
-                                        name="email" placeholder="Isi Username" required>
-                                    <input type="text" id="validationCustom01" class="form-control responsive-small"
-                                        name="role" value="Pegawai" required hidden>
+                                        name="role" value="Super Administrator" required hidden>
                                 </div>
                                 <div class="col-md-6 position-relative">
                                     <label for="inputCity" class="form-label">Password<span
@@ -159,7 +163,7 @@
                                     (Wajib terisi untuk kolom dengan tanda "<span class="text-danger">*</span>").
                                 </p>
                                 <button class="btn btn-outline-primary responsive-small fw-semibold" type="submit">
-                                    Simpan Data
+                                    Ubah Data
                                 </button>
                             </form>
                         </div>
