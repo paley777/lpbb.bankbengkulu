@@ -102,7 +102,8 @@
                                                 mulai
                                                 27 Maret 2023 - 20 April 2023</span>
                                             <h3 class="fw-bold">Manajemen Resiko I</h3>
-                                            <h6><span class="badge rounded-pill text-bg-warning">10 Modul</span> <span class="badge rounded-pill text-bg-warning">Berlangsung</span></h6>
+                                            <h6><span class="badge rounded-pill text-bg-warning">10 Modul</span> <span
+                                                    class="badge rounded-pill text-bg-warning">Berlangsung</span></h6>
                                         </div>
                                     </a>
                                 </div>
@@ -112,7 +113,8 @@
                                         data-bss-hover-animate="pulse"><span class="fw-semibold mb-2">Dibuka mulai
                                             27 Maret 2023 - 20 April 2023</span>
                                         <h3 class="fw-bold">Manajemen Resiko II</h3>
-                                        <h6><span class="badge rounded-pill text-bg-warning">10 Modul</span> <span class="badge rounded-pill text-bg-warning">Berlangsung</span></h6>
+                                        <h6><span class="badge rounded-pill text-bg-warning">10 Modul</span> <span
+                                                class="badge rounded-pill text-bg-warning">Berlangsung</span></h6>
                                     </div>
                                 </div>
                                 <div class="col-md-3 col-6">
@@ -121,7 +123,8 @@
                                         data-bss-hover-animate="pulse"><span class="fw-semibold mb-2">Dibuka mulai
                                             27 Maret 2023 - 20 April 2023</span>
                                         <h3 class="fw-bold">Manajemen Resiko III</h3>
-                                        <h6><span class="badge rounded-pill text-bg-warning">10 Modul</span> <span class="badge rounded-pill text-bg-warning">Berlangsung</span></h6>
+                                        <h6><span class="badge rounded-pill text-bg-warning">10 Modul</span> <span
+                                                class="badge rounded-pill text-bg-warning">Berlangsung</span></h6>
                                     </div>
                                 </div>
                                 <div class="col-md-3 col-6">
@@ -130,7 +133,8 @@
                                         data-bss-hover-animate="pulse"><span class="fw-semibold mb-2">Dibuka mulai
                                             27 Maret 2023 - 20 April 2023</span>
                                         <h3 class="fw-bold">Anti-Fraud</h3>
-                                        <h6><span class="badge rounded-pill text-bg-warning">10 Modul</span> <span class="badge rounded-pill text-bg-warning">Berlangsung</span></h6>
+                                        <h6><span class="badge rounded-pill text-bg-warning">10 Modul</span> <span
+                                                class="badge rounded-pill text-bg-warning">Berlangsung</span></h6>
                                     </div>
                                 </div>
                                 <div class="col-md-3 col-6">
@@ -140,7 +144,8 @@
                                             mulai
                                             27 Maret 2023 - 20 April 2023</span>
                                         <h3 class="fw-bold">Marketing</h3>
-                                        <h6><span class="badge rounded-pill text-bg-warning">10 Modul</span> <span class="badge rounded-pill text-bg-warning">Berlangsung</span></h6>
+                                        <h6><span class="badge rounded-pill text-bg-warning">10 Modul</span> <span
+                                                class="badge rounded-pill text-bg-warning">Berlangsung</span></h6>
                                     </div>
                                 </div>
                                 <div class="col-md-3 col-6">
@@ -149,7 +154,8 @@
                                         data-bss-hover-animate="pulse"><span class="fw-semibold mb-2">Dibuka
                                             mulai 27 Maret 2023 - 20 April 2023</span>
                                         <h3 class="fw-bold">Microblog I</h3>
-                                        <h6><span class="badge rounded-pill text-bg-warning">10 Modul</span> <span class="badge rounded-pill text-bg-warning">Berlangsung</span></h6>
+                                        <h6><span class="badge rounded-pill text-bg-warning">10 Modul</span> <span
+                                                class="badge rounded-pill text-bg-warning">Berlangsung</span></h6>
                                     </div>
                                 </div>
                                 <div class="col-md-3 col-6">
@@ -158,7 +164,8 @@
                                         data-bss-hover-animate="pulse"><span class="fw-semibold mb-2">Dibuka
                                             mulai 27 Maret 2023 - 20 April 2023</span>
                                         <h3 class="fw-bold">Microblog II</h3>
-                                        <h6><span class="badge rounded-pill text-bg-warning">10 Modul</span> <span class="badge rounded-pill text-bg-warning">Berlangsung</span></h6>
+                                        <h6><span class="badge rounded-pill text-bg-warning">10 Modul</span> <span
+                                                class="badge rounded-pill text-bg-warning">Berlangsung</span></h6>
                                     </div>
                                 </div>
                                 <div class="col-md-3 col-6">
@@ -167,7 +174,8 @@
                                         data-bss-hover-animate="pulse"><span class="fw-semibold mb-2">Dibuka
                                             mulai 27 Maret 2023 - 20 April 2023</span>
                                         <h3 class="fw-bold">Etika Profesi</h3>
-                                        <h6><span class="badge rounded-pill text-bg-warning">10 Modul</span> <span class="badge rounded-pill text-bg-warning">Berlangsung</span></h6>
+                                        <h6><span class="badge rounded-pill text-bg-warning">10 Modul</span> <span
+                                                class="badge rounded-pill text-bg-warning">Berlangsung</span></h6>
                                     </div>
                                 </div>
                             </div>
@@ -200,7 +208,7 @@
                                 </a>
                             </div>
                             <hr>
-                            <div class="row g-2">
+                            <div class="row g-2 mb-3">
                                 <div class="col-md-3 col-6">
                                     <div class="card text-white bg-success bg-gradient h-100">
                                         <div class="card-body">
@@ -230,6 +238,40 @@
                                         <div class="card-body">
                                             <h4 class="card-title">Sertifikat Dikeluarkan</h4>
                                             <h1 class="fw-bold mb-0" id="counter4">1003</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row g-2">
+                                <div class="col-md-3 col-6">
+                                    <div class="card text-white bg-success bg-gradient h-100">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Petugas Terdaftar</h4>
+                                            <h1 class="fw-bold mb-0" id="counter5">4</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="card text-white bg-success bg-gradient h-100">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Bank Soal</h4>
+                                            <h1 class="fw-bold mb-0" id="counter6">{{ $countbank }}</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="card text-white bg-success bg-gradient h-100">
+                                        <div class="card-body">
+                                            <h4 class="card-title ">Pre-Test</h4>
+                                            <h1 class="fw-bold mb-0" id="counter7">34</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="card text-white bg-success bg-gradient h-100">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Post-Test</h4>
+                                            <h1 class="fw-bold mb-0" id="counter4">55</h1>
                                         </div>
                                     </div>
                                 </div>
@@ -318,6 +360,7 @@
                                                 </svg>
                                             </div>
                                         </div>
+                                        <a href="/dashboard/uji-kompetensi" class="stretched-link"></a>
                                         <h4 class="fw-bold text-center">Manajemen Uji Kompetensi</h4>
                                     </div>
                                 </div>
@@ -478,8 +521,6 @@
                 </div>
             </div>
         </div>
-
-
     </div>
 
     <script>
@@ -524,10 +565,31 @@
         let limit = {!! json_encode($countpegawai) !!};
 
         function updated1() {
-            var count1 = document.getElementById("counter1");
-            count1.innerHTML = ++upto1;
-            if (upto1 === limit) {
-                clearInterval(counts1);
+            if (limit == 0) {
+                count1.innerHTML = 0;
+            } else {
+                var count1 = document.getElementById("counter1");
+                count1.innerHTML = ++upto1;
+                if (upto1 === limit) {
+                    clearInterval(counts1);
+                }
+            }
+        }
+    </script>
+    <script>
+        let counts7 = setInterval(updated7);
+        let upto7 = 0;
+        let limit = {!! json_encode($countbank) !!};
+
+        function updated7() {
+            if (limit == 0) {
+                count7.innerHTML = 0;
+            } else {
+                var count7 = document.getElementById("counter7");
+                count7.innerHTML = ++upto7;
+                if (upto7 === limit) {
+                    clearInterval(counts7);
+                }
             }
         }
     </script>
