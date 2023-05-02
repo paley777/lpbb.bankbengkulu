@@ -65,7 +65,7 @@
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb responsive-small">
                             <li class="breadcrumb-item"><a href="/dashboard">Beranda</a></li>
-                            <li class="breadcrumb-item"><a href="/dashboard/pegawai">Manajemen Profil</a></li>
+                            <li class="breadcrumb-item"><a href="/dashboard/profile">Manajemen Profil</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Edit Profil</li>
                         </ol>
                     </nav>

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Session;
 use App\Models\User;
+use App\Models\BankSoal;
 use App\Http\Requests\UpdateUserRequest;
 use App\Http\Requests\UpdateProfileRequest;
 use Illuminate\Support\Facades\Hash;
@@ -27,6 +28,7 @@ class DashboardController extends Controller
         return view('dashboard.index', [
             'active' => 'index',
             'countpegawai' => User::where('role', 'Pegawai')->count(),
+            'countbank' => BankSoal::count(),
         ]);
     }
     //Profile
