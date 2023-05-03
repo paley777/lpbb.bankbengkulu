@@ -7,6 +7,10 @@ use App\Models\BankSoal;
 use App\Http\Requests\StoreSoalRequest;
 use App\Http\Requests\UpdateSoalRequest;
 use Illuminate\Http\Request;
+use App\Imports\SoalsImport;
+use DB;
+use Illuminate\Support\Arr;
+use Maatwebsite\Excel\Facades\Excel;
 
 class SoalController extends Controller
 {
@@ -145,6 +149,17 @@ class SoalController extends Controller
             'pesan' => 'Soal berhasil dihapus!',
         ]);
     }
+    /**
+     * @return \Illuminate\Support\Collection
+     */
+    public function soalImport(Request $request)
+    {
+        Excel::import(new SoalsImport(), $request->file('file')->store('temp'));
+        return back()->with('success', 'Data telah diimpor!');
+    }
+    //
+    //
+
     public function multiplesoalsdelete(Request $request)
     {
         $id = $request->id;

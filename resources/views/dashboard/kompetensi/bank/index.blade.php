@@ -150,16 +150,21 @@
                                         </thead>
                                         <tbody>
                                             @foreach ($banks as $key => $bank)
-                                                <tr>
-                                                    <td>
-                                                        <input name='nama_bank[]' type="checkbox" id="checkItem"
-                                                            value="<?php echo $banks[$key]->nama_bank; ?>">
-                                                    </td>
+                                                @foreach ($soalcounts as $soalcount)
+                                                    <tr>
+                                                        <td>
+                                                            <input name='nama_bank[]' type="checkbox" id="checkItem"
+                                                                value="<?php echo $banks[$key]->nama_bank; ?>">
+                                                        </td>
                             </form>
                             <td>{{ $banks->firstItem() + $key }}</td>
                             <td>{{ $bank->nama_bank }}</td>
                             <td><span class="badge rounded-pill text-bg-success">{{ $bank->jenis }}</span></td>
-                            <td>25 Soal</td>
+                            <td>
+                                @if ($bank->nama_bank == $soalcount->nama_bank)
+                                    <span class="badge rounded-pill text-bg-warning">{{ $soalcount->total }} Soal</span>
+                                @endif
+                            </td>
                             <td>
                                 <a href="/dashboard/bank-soal/{{ $bank->id }}/edit"
                                     class="badge bg-warning border-0 text-black">Edit</a>
@@ -173,6 +178,7 @@
                                     Soal</a>
                             </td>
                             </tr>
+                            @endforeach
                             @endforeach
                             </tbody>
                             </table>

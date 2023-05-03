@@ -60,3 +60,6 @@ Route::post('/dashboard/soal/cari', [SoalController::class, 'cari'])->middleware
 Route::post('multiplesoalsdelete', [SoalController::class, 'multiplesoalsdelete'])
     ->name('multiplesoalsdelete')
     ->middleware('auth');
+Route::post('soal-import', [SoalController::class, 'soalImport'])
+    ->name('soal-import')
+    ->middleware('auth');
