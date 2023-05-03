@@ -7,6 +7,7 @@ use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\UjiKompetensiController;
 use App\Http\Controllers\BankSoalController;
 use App\Http\Controllers\SoalController;
+use App\Http\Controllers\PreTestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,4 +63,10 @@ Route::post('multiplesoalsdelete', [SoalController::class, 'multiplesoalsdelete'
     ->middleware('auth');
 Route::post('soal-import', [SoalController::class, 'soalImport'])
     ->name('soal-import')
+    ->middleware('auth');
+
+// ROUTE TO MANAJEMEN PRE TEST
+Route::resource('/dashboard/pre-test', PreTestController::class)->middleware('auth');
+Route::post('multiplepretestsdelete', [PreTestController::class, 'multiplepretestsdelete'])
+    ->name('multiplepretestsdelete')
     ->middleware('auth');
