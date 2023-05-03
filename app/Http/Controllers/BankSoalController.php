@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\BankSoal;
 use App\Models\Soal;
+use App\Models\PreTest;
 use App\Http\Requests\StoreBankSoalRequest;
 use App\Http\Requests\UpdateBankSoalRequest;
 use Illuminate\Http\Request;
@@ -78,6 +79,9 @@ class BankSoalController extends Controller
     public function update(UpdateBankSoalRequest $request, BankSoal $bank_soal)
     {
         Soal::where('nama_bank', $bank_soal['nama_bank'])->update([
+            'nama_bank' => $request['nama_bank'],
+        ]);
+        PreTest::where('nama_bank', $bank_soal['nama_bank'])->update([
             'nama_bank' => $request['nama_bank'],
         ]);
 

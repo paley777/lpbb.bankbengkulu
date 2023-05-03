@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\BankSoal;
+use App\Models\PreTest;
 
 class UjiKompetensiController extends Controller
 {
@@ -13,6 +14,7 @@ class UjiKompetensiController extends Controller
         return view('dashboard.kompetensi.index', [
             'active' => 'index',
             'countbank' => BankSoal::count(),
+            'countpretest' => PreTest::count(),
         ]);
     }
 }

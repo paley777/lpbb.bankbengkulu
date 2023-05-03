@@ -120,7 +120,8 @@
                                                 <div class="d-flex flex-column">
                                                     <a href="/dashboard/bank-soal" class="stretched-link"></a>
                                                     <h2 class="fw-bold m-0">Manajemen Bank Soal</h2>
-                                                    <h4 id="counter1">{{ $countbank }} Bank Soal Tersedia</h4>
+                                                    <h4><span id="counter1">{{ $countbank }}</span> Bank Soal Tersedia
+                                                    </h4>
                                                 </div>
                                             </div>
                                         </div>
@@ -155,9 +156,10 @@
                                             </div>
                                             <div class="d-flex align-items-center">
                                                 <div class="d-flex flex-column">
-                                                    <a href="/dashboard/pegawai" class="stretched-link"></a>
+                                                    <a href="/dashboard/pre-test" class="stretched-link"></a>
                                                     <h2 class="fw-bold m-0">Manajemen Pre-Test</h2>
-                                                    <h4 class="">187 Ujian Tersedia</h4>
+                                                    <h4><span id="counter2">{{ $countpretest }}</span> Pre Test Tersedia
+                                                    </h4>
                                                 </div>
                                             </div>
                                         </div>
@@ -219,6 +221,23 @@
                     count1.innerHTML = ++upto1;
                     if (upto1 === limit) {
                         clearInterval(counts1);
+                    }
+                }
+            }
+        </script>
+        <script>
+            let counts2 = setInterval(updated2);
+            let upto2 = 0;
+            let limit1 = {!! json_encode($countpretest) !!};
+
+            function updated2() {
+                if (limit1 == 0) {
+                    count2.innerHTML = 0;
+                } else {
+                    var count2 = document.getElementById("counter2");
+                    count2.innerHTML = ++upto2;
+                    if (upto2 === limit1) {
+                        clearInterval(counts2);
                     }
                 }
             }
