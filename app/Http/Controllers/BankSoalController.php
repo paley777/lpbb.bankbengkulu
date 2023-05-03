@@ -7,6 +7,7 @@ use App\Models\Soal;
 use App\Http\Requests\StoreBankSoalRequest;
 use App\Http\Requests\UpdateBankSoalRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class BankSoalController extends Controller
 {
@@ -15,12 +16,16 @@ class BankSoalController extends Controller
      */
     public function index()
     {
+        $soalcounts = Soal::select('nama_bank', DB::raw('count(*) as total'))
+            ->groupBy('nama_bank')
+            ->get();          
         return view('dashboard.kompetensi.bank.index', [
             'active' => 'bank',
             'banks' => BankSoal::orderBy('nama_bank', 'desc')
                 ->filter(request(['search']))
                 ->paginate(20)
                 ->withQueryString(),
+            'soalcounts' => $soalcounts,
         ]);
     }
 
@@ -75,7 +80,7 @@ class BankSoalController extends Controller
         Soal::where('nama_bank', $bank_soal['nama_bank'])->update([
             'nama_bank' => $request['nama_bank'],
         ]);
-        
+
         $validated = $request->validated();
         BankSoal::where('id', $bank_soal['id'])->update($validated);
 
