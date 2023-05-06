@@ -194,9 +194,9 @@
                                             </div>
                                             <div class="d-flex align-items-center">
                                                 <div class="d-flex flex-column">
-                                                    <a href="/dashboard/pegawai" class="stretched-link"></a>
+                                                    <a href="/dashboard/post-test" class="stretched-link"></a>
                                                     <h2 class="fw-bold m-0">Manajemen Post Test</h2>
-                                                    <h4 class="">50 Ujian Tersedia</h4>
+                                                    <h4 id="counter3">{{ $countposttest }} Ujian Tersedia</h4>
                                                 </div>
                                             </div>
                                         </div>
@@ -238,6 +238,23 @@
                     count2.innerHTML = ++upto2;
                     if (upto2 === limit1) {
                         clearInterval(counts2);
+                    }
+                }
+            }
+        </script>
+        <script>
+            let counts3 = setInterval(updated3);
+            let upto3 = 0;
+            let limit2 = {!! json_encode($countposttest) !!};
+
+            function updated2() {
+                if (limit2 == 0) {
+                    count3.innerHTML = 0;
+                } else {
+                    var count3 = document.getElementById("counter3");
+                    count3.innerHTML = ++upto3;
+                    if (upto3 === limit2) {
+                        clearInterval(counts3);
                     }
                 }
             }

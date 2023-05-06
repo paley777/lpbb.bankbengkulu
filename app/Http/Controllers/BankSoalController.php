@@ -19,7 +19,8 @@ class BankSoalController extends Controller
     {
         $soalcounts = Soal::select('nama_bank', DB::raw('count(*) as total'))
             ->groupBy('nama_bank')
-            ->get();          
+            ->get();
+   
         return view('dashboard.kompetensi.bank.index', [
             'active' => 'bank',
             'banks' => BankSoal::orderBy('nama_bank', 'desc')
@@ -47,7 +48,6 @@ class BankSoalController extends Controller
     {
         $validatedData = $request->validate([
             'nama_bank' => 'required|unique:bank_soals',
-            'jenis' => 'required',
         ]);
         BankSoal::create($validatedData);
 

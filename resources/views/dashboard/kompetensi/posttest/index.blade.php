@@ -61,13 +61,13 @@
                         <ol class="breadcrumb responsive-small">
                             <li class="breadcrumb-item"><a href="/dashboard">Beranda</a></li>
                             <li class="breadcrumb-item"><a href="/dashboard/uji-kompetensi">Manajemen Uji Kompetensi</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Manajemen Bank Soal</li>
+                            <li class="breadcrumb-item active" aria-current="page">Manajemen Post Test</li>
                         </ol>
                     </nav>
                     <div class="card text-bg-success bg-gradient mb-3 bg-opacity-100">
                         <div class="card-header fw-semibold">Dashboard Learning Program Bank Bengkulu</div>
                         <div class="card-body">
-                            <h4 class=" responsive-p1 fw-semibold mb-3">Manajemen Bank Soal</h4>
+                            <h4 class=" responsive-p1 fw-semibold mb-3">Manajemen Post Test</h4>
                             @if (session()->has('success'))
                                 <div class="alert alert-success alert-dismissible fade show" role="alert">
                                     <strong>{{ session('success') }}</strong>
@@ -91,10 +91,10 @@
                             <div class="d-flex">
                                 <h4 class="card-title fw-semibold responsive-p1 me-3">Tabel Data</h4>
                                 <div class="col-lg-5 col-md-4 me-3">
-                                    <form action="/dashboard/bank-soal">
+                                    <form action="/dashboard/post-test">
                                         <div class="input-group">
                                             <input type="text" class="form-control responsive-small"
-                                                placeholder="Cari Berdasarkan Nama Bank Soal" name="search"
+                                                placeholder="Cari Berdasarkan Nama Post Test" name="search"
                                                 value="{{ request('search') }}">
                                             <button class="btn btn-warning" type="submit"><svg width="20px"
                                                     height="20px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"
@@ -111,8 +111,8 @@
                                         </div>
                                     </form>
                                 </div>
-                                <a href="/dashboard/bank-soal/create" class="btn btn-warning fw-semibold ms-3 ms-auto"
-                                    type="button" data-bss-hover-animate="tada">Tambah Bank Soal
+                                <a href="/dashboard/post-test/create" class="btn btn-warning fw-semibold ms-3 ms-auto"
+                                    type="button" data-bss-hover-animate="tada">Tambah Post Test
                                     <?xml version="1.0" ?>
                                     <svg width="20px" height="20px" viewBox="0 0 24 24"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -133,7 +133,7 @@
                                 </a>
                             </div>
                             <hr>
-                            <form method="post" action="{{ url('multiplebanksdelete') }}">
+                            <form method="post" action="{{ url('multipleposttestsdelete') }}">
                                 @csrf
                                 <input class="btn btn-danger" type="submit" name="submit" value="Delete Selected" />
                                 <div class="table-responsive">
@@ -142,41 +142,35 @@
                                             <tr>
                                                 <th class="text-center"> <input type="checkbox" id="checkAll"></th>
                                                 <th scope="col">No.</th>
+                                                <th scope="col">Nama Post Test</th>
                                                 <th scope="col">Nama Bank Soal</th>
                                                 <th scope="col">Jumlah Soal</th>
+                                                <th scope="col">Durasi</th>
                                                 <th scope="col">Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($banks as $key => $bank)
+                                            @foreach ($posttests as $key => $posttest)
                                                 <tr>
                                                     <td>
-                                                        <input name='nama_bank[]' type="checkbox" id="checkItem"
-                                                            value="<?php echo $banks[$key]->nama_bank; ?>">
+                                                        <input name='id[]' type="checkbox" id="checkItem"
+                                                            value="<?php echo $posttests[$key]->id; ?>">
                                                     </td>
                             </form>
-                            <td>{{ $banks->firstItem() + $key }}</td>
-                            <td>{{ $bank->nama_bank }}</td>
+                            <td>{{ $posttests->firstItem() + $key }}</td>
+                            <td>{{ $posttest->nama_posttest }}</td>
+                            <td><span class="badge rounded-pill text-bg-success">{{ $posttest->nama_bank }}</span></td>
+                            <td><span class="badge rounded-pill text-bg-success">{{ $posttest->jumlah_soal }}</span></td>
+                            <td><span class="badge rounded-pill text-bg-success">{{ $posttest->durasi }}</span></td>
                             <td>
-                                @foreach ($soalcounts as $soalcount)
-                                    @if ($bank->nama_bank == $soalcount->nama_bank)
-                                        <span class="badge rounded-pill text-bg-warning">{{ $soalcount->total }}
-                                            Soal</span>
-                                    @endif
-                                @endforeach
-
-                            </td>
-                            <td>
-                                <a href="/dashboard/bank-soal/{{ $bank->id }}/edit"
+                                <a href="/dashboard/post-test/{{ $posttest->id }}/edit"
                                     class="badge bg-warning border-0 text-black">Edit</a>
-                                <form action="/dashboard/bank-soal/{{ $bank->id }}" method="post" class="d-inline">
+                                <form action="/dashboard/post-test/{{ $posttest->id }}" method="post" class="d-inline">
                                     @method('delete')
                                     @csrf
                                     <button class="badge bg-danger border-0"
                                         onclick="return confirm('Anda yakin untuk menghapus data ini?')">Hapus</button>
                                 </form>
-                                <a href="/dashboard/soal/{{ $bank->id }}" class="badge bg-success border-0">Manajemen
-                                    Soal</a>
                             </td>
                             </tr>
                             @endforeach
@@ -185,7 +179,7 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="d-flex justify-content-center">
-                                        {{ $banks->links() }}
+                                        {{ $posttests->links() }}
                                     </div>
                                 </div>
                             </div>

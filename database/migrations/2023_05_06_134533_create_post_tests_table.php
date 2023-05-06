@@ -10,9 +10,12 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('bank_soals', function (Blueprint $table) {
+        Schema::create('post_tests', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_bank')->unique();
+            $table->string('nama_posttest')->unique();
+            $table->string('nama_bank');
+            $table->integer('jumlah_soal');
+            $table->time('durasi')->format('i:s');
             $table->timestamps();
         });
     }
@@ -22,6 +25,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('bank_soals');
+        Schema::dropIfExists('post_tests');
     }
 };

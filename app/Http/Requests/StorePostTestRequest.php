@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
 
-class UpdateBankSoalRequest extends FormRequest
+class StorePostTestRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,7 +23,10 @@ class UpdateBankSoalRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'nama_bank' => 'required|unique:bank_soals,id,' . $this->bank_soal->id . ',id',
+            'nama_posttest' => 'required|unique:post_tests,nama_posttest',
+            'nama_bank' => 'required',
+            'jumlah_soal' => 'required',
+            'durasi' => 'required',
         ];
     }
 }

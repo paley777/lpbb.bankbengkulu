@@ -114,15 +114,17 @@
                                     <label for="validationCustom01" class="form-label">Jumlah Soal<span
                                             class="text-danger">*</span></label>
                                     <input type="text"
-                                        onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"x
-                                        id="validationCustom01" class="form-control responsive-small" name="jumlah_soal"
-                                        placeholder="Isi Jumlah Soal" required>
+                                        onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"
+                                        id="yyy" class="form-control responsive-small" name="jumlah_soal"
+                                        placeholder="Isi Jumlah Soal" onkeyup="integerInRange(this.value, 1, 100, 'yyy')"
+                                        required>
                                 </div>
                                 <div class="col-md-6 position-relative">
                                     <label for="validationCustom01" class="form-label">Durasi<span
                                             class="text-danger">*</span></label>
-                                    <input type="time" step="1" id="validationCustom01" class="form-control responsive-small"
-                                        name="durasi" placeholder="Isi Durasi" required>
+                                    <input type="time" step="1" id="validationCustom01"
+                                        class="form-control responsive-small" name="durasi" placeholder="Isi Durasi"
+                                        required>
                                 </div>
                                 <p>
                                     (Wajib terisi untuk kolom dengan tanda "<span class="text-danger">*</span>").
@@ -138,4 +140,13 @@
         </div>
     </div>
 
+    <script>
+        function integerInRange(value, min, max, name) {
+
+            if (value < min) {
+                document.getElementById(name).value = "1";
+                alert("Batas minimum jumlah soal adalah 1 Soal");
+            }
+        }
+    </script>
 @endsection
