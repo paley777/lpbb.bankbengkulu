@@ -94,16 +94,6 @@
                                     <input type="text" id="validationCustom01" class="form-control responsive-small"
                                         name="nama_bank" placeholder="Isi Nama Bank" required>
                                 </div>
-                                <div class="col-md-2 position-relative">
-                                    <label for="validationCustom01" class="form-label">Jenis<span
-                                            class="text-danger">*</span></label>
-                                    <select class="form-select responsive-small" name="jenis"
-                                        aria-label="Default select example" required>
-                                        <option selected>Pilih Jenis</option>
-                                        <option value="Pre-Test">Pre-Test</option>
-                                        <option value="Post-Test">Post-Test</option>
-                                    </select>
-                                </div>
                                 <p>
                                     (Wajib terisi untuk kolom dengan tanda "<span class="text-danger">*</span>").
                                 </p>

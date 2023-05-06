@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\PreTest;
 use App\Models\BankSoal;
+use App\Models\Soal;
 use App\Http\Requests\StorePreTestRequest;
 use App\Http\Requests\UpdatePreTestRequest;
 use Illuminate\Http\Request;
@@ -41,8 +42,13 @@ class PreTestController extends Controller
     public function store(StorePreTestRequest $request)
     {
         $validated = $request->validated();
-        PreTest::create($validated);
-        return redirect('/dashboard/pre-test')->with('success', 'Pre Test telah ditambahkan!');
+        $maksimum = Soal::select('nama_bank', $validated['nama_bank'])->count();
+        if ($validated['jumlah_soal'] > $maksimum) {
+            return redirect('/dashboard/pre-test')->withErrors(['msg' => 'Jumlah soal melebihi bank soal yang tersedia!']);
+        } else {
+            PreTest::create($validated);
+            return redirect('/dashboard/pre-test')->with('success', 'Pre Test telah ditambahkan!');
+        }
     }
 
     /**
@@ -71,9 +77,14 @@ class PreTestController extends Controller
     public function update(UpdatePreTestRequest $request, PreTest $preTest)
     {
         $validated = $request->validated();
-        PreTest::where('id', $preTest['id'])->update($validated);
+        $maksimum = Soal::select('nama_bank', $validated['nama_bank'])->count();
 
-        return redirect('/dashboard/pre-test')->with('success', 'Pre Test telah diubah!');
+        if ($validated['jumlah_soal'] > $maksimum) {
+            return redirect('/dashboard/pre-test')->withErrors(['msg' => 'Jumlah soal melebihi bank soal yang tersedia!']);
+        } else {
+            PreTest::where('id', $preTest['id'])->update($validated);
+            return redirect('/dashboard/pre-test')->with('success', 'Pre Test telah diubah!');
+        }
     }
 
     /**
@@ -84,6 +95,7 @@ class PreTestController extends Controller
         PreTest::destroy($preTest->id);
         return redirect('/dashboard/pre-test')->with('success', 'Pre Test telah dihapus!');
     }
+
     public function multiplepretestsdelete(Request $request)
     {
         $id = $request->id;

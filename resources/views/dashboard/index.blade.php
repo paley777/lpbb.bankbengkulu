@@ -263,7 +263,7 @@
                                     <div class="card text-white bg-success bg-gradient h-100">
                                         <div class="card-body">
                                             <h4 class="card-title ">Pre-Test</h4>
-                                            <h1 class="fw-bold mb-0" id="counter7">34</h1>
+                                            <h1 class="fw-bold mb-0" id="counter7">{{ $countpretest }}</h1>
                                         </div>
                                     </div>
                                 </div>
@@ -271,7 +271,7 @@
                                     <div class="card text-white bg-success bg-gradient h-100">
                                         <div class="card-body">
                                             <h4 class="card-title">Post-Test</h4>
-                                            <h1 class="fw-bold mb-0" id="counter4">55</h1>
+                                            <h1 class="fw-bold mb-0" id="counter8">{{ $countposttest }}</h1>
                                         </div>
                                     </div>
                                 </div>
@@ -562,16 +562,33 @@
     <script>
         let counts1 = setInterval(updated1);
         let upto1 = 0;
-        let limit = {!! json_encode($countpegawai) !!};
+        let limit1 = {!! json_encode($countpegawai) !!};
 
         function updated1() {
-            if (limit == 0) {
+            if (limit1 == 0) {
                 count1.innerHTML = 0;
             } else {
                 var count1 = document.getElementById("counter1");
                 count1.innerHTML = ++upto1;
-                if (upto1 === limit) {
+                if (upto1 === limit1) {
                     clearInterval(counts1);
+                }
+            }
+        }
+    </script>
+    <script>
+        let counts6 = setInterval(updated6);
+        let upto6 = 0;
+        let limit6 = {!! json_encode($countbank) !!};
+
+        function updated7() {
+            if (limit6 == 0) {
+                count6.innerHTML = 0;
+            } else {
+                var count6 = document.getElementById("counter6");
+                count6.innerHTML = ++upto6;
+                if (upto6 === limit6) {
+                    clearInterval(counts6);
                 }
             }
         }
@@ -579,16 +596,33 @@
     <script>
         let counts7 = setInterval(updated7);
         let upto7 = 0;
-        let limit = {!! json_encode($countbank) !!};
+        let limit7 = {!! json_encode($countpretest) !!};
 
         function updated7() {
-            if (limit == 0) {
+            if (limit7 == 0) {
                 count7.innerHTML = 0;
             } else {
                 var count7 = document.getElementById("counter7");
                 count7.innerHTML = ++upto7;
-                if (upto7 === limit) {
+                if (upto7 === limit7) {
                     clearInterval(counts7);
+                }
+            }
+        }
+    </script>
+    <script>
+        let counts8 = setInterval(updated8);
+        let upto8 = 0;
+        let limit8 = {!! json_encode($countposttest) !!};
+
+        function updated7() {
+            if (limit8 == 0) {
+                count8.innerHTML = 0;
+            } else {
+                var count8 = document.getElementById("counter8");
+                count8.innerHTML = ++upto8;
+                if (upto8 === limit8) {
+                    clearInterval(counts8);
                 }
             }
         }
