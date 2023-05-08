@@ -33,6 +33,9 @@ class DashboardController extends Controller
             'countbank' => BankSoal::count(),
             'countpretest' => PreTest::count(),
             'countposttest' => PostTest::count(),
+            'countpetugas' => User::where('role', 'Super Administrator')
+                ->orWhere('role', 'Operator')
+                ->count(),
         ]);
     }
     //Profile
