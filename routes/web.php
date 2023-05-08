@@ -9,6 +9,7 @@ use App\Http\Controllers\BankSoalController;
 use App\Http\Controllers\SoalController;
 use App\Http\Controllers\PreTestController;
 use App\Http\Controllers\PostTestController;
+use App\Http\Controllers\PetugasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,18 +25,24 @@ use App\Http\Controllers\PostTestController;
 //Landing
 Route::get('/', [LandingController::class, 'index']);
 Route::get('/tentang', [LandingController::class, 'about']);
+
 //login
 Route::get('/login', [LandingController::class, 'login']);
 Route::post('/login', [LandingController::class, 'authenticate'])->name('login');
+
 //Dashboard
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
+Route::post('/logout', [DashboardController::class, 'logout'])->middleware('auth');
+
+// ROUTE TO MANAJEMEN PROFILE
 Route::get('/dashboard/profile', [DashboardController::class, 'profile'])->middleware('auth');
-Route::get('/dashboard/uji-kompetensi', [UjiKompetensiController::class, 'index'])->middleware('auth');
 Route::get('/dashboard/profile/edit', [DashboardController::class, 'edit'])->middleware('auth');
 Route::post('/dashboard/profile/edit', [DashboardController::class, 'update'])->middleware('auth');
-Route::post('/logout', [DashboardController::class, 'logout'])->middleware('auth');
+
+Route::get('/dashboard/uji-kompetensi', [UjiKompetensiController::class, 'index'])->middleware('auth');
+
+// ROUTE TO MANAJEMEN PEGAWAI
 Route::resource('/dashboard/pegawai', PegawaiController::class)->middleware('auth');
-Route::resource('/dashboard/bank-soal', BankSoalController::class)->middleware('auth');
 Route::get('/dashboard/pegawai/{user}/suspend', [PegawaiController::class, 'suspend'])->middleware('auth');
 Route::get('/dashboard/pegawai/{user}/activate', [PegawaiController::class, 'activate'])->middleware('auth');
 Route::post('file-import', [PegawaiController::class, 'fileImport'])
@@ -47,6 +54,9 @@ Route::post('file-edit', [PegawaiController::class, 'fileEdit'])
 Route::post('multipleusersdelete', [PegawaiController::class, 'multipleusersdelete'])
     ->name('multipleusersdelete')
     ->middleware('auth');
+
+//ROUTE TO MANAJEMEN BANK SOAL
+Route::resource('/dashboard/bank-soal', BankSoalController::class)->middleware('auth');
 Route::post('multiplebanksdelete', [BankSoalController::class, 'multiplebanksdelete'])
     ->name('multiplebanksdelete')
     ->middleware('auth');
@@ -76,4 +86,16 @@ Route::post('multiplepretestsdelete', [PreTestController::class, 'multiplepretes
 Route::resource('/dashboard/post-test', PostTestController::class)->middleware('auth');
 Route::post('multipleposttestsdelete', [PostTestController::class, 'multipleposttestsdelete'])
     ->name('multipleposttestsdelete')
+    ->middleware('auth');
+
+// ROUTE TO MANAJEMEN PETUGAS
+Route::resource('/dashboard/petugas', PetugasController::class)->middleware('auth');
+Route::post('multiplepetugassdelete', [PetugasController::class, 'multiplepetugassdelete'])
+    ->name('multiplepetugassdelete')
+    ->middleware('auth');
+Route::post('petugas-import', [PetugasController::class, 'petugasImport'])
+    ->name('petugas-import')
+    ->middleware('auth');
+Route::post('petugas-edit', [PetugasController::class, 'petugasEdit'])
+    ->name('petugas-edit')
     ->middleware('auth');

@@ -5,24 +5,23 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use Maatwebsite\Excel\Facades\Excel;
-use App\Imports\UsersImport;
-use DB;
 use Illuminate\Support\Arr;
-use App\Http\Requests\UpdateUserRequest;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\PetugasImport;
+use App\Http\Requests\UpdatePetugasRequest;
+use DB;
 
-class PegawaiController extends Controller
+class PetugasController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        return view('dashboard.pegawai.index', [
+        return view('dashboard.petugas.index', [
             'active' => 'users',
-            'users' => User::where('role', 'Pegawai')
+            'users' => User::where('role', 'Super Administrator')
+                ->orWhere('role', 'Operator')
                 ->orderBy('name', 'desc')
                 ->filter(request(['search']))
                 ->paginate(20)
@@ -35,7 +34,7 @@ class PegawaiController extends Controller
      */
     public function create()
     {
-        return view('dashboard.pegawai.create', [
+        return view('dashboard.petugas.create', [
             'active' => 'users',
         ]);
     }
@@ -57,7 +56,7 @@ class PegawaiController extends Controller
         $validatedData['password'] = Hash::make($validatedData['password']);
         User::create($validatedData);
 
-        return redirect('/dashboard/pegawai')->with('success', 'Pegawai telah ditambahkan!');
+        return redirect('/dashboard/petugas')->with('success', 'Petugas telah ditambahkan!');
     }
 
     /**
@@ -74,10 +73,10 @@ class PegawaiController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $pegawai)
+    public function edit(User $petuga)
     {
-        return view('dashboard.pegawai.edit', [
-            'user' => $pegawai,
+        return view('dashboard.petugas.edit', [
+            'user' => $petuga,
             'active' => 'users',
         ]);
     }
@@ -85,65 +84,47 @@ class PegawaiController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateUserRequest $request, User $pegawai)
+    public function update(UpdatePetugasRequest $request, User $petuga)
     {
         $validated = $request->validated();
-        User::where('id', $pegawai['id'])->update($validated);
+        User::where('id', $petuga['id'])->update($validated);
 
-        return redirect('/dashboard/pegawai')->with('success', 'Pegawai telah diubah!');
+        return redirect('/dashboard/petugas')->with('success', 'Petugas telah diubah!');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(User $pegawai)
+    public function destroy(User $petuga)
     {
-        User::destroy($pegawai->id);
-        return redirect('/dashboard/pegawai')->with('success', 'Pegawai telah dihapus!');
+        User::destroy($petuga->id);
+        return redirect('/dashboard/petugas')->with('success', 'Petugas telah dihapus!');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\User  $product
-     * @return \Illuminate\Http\Response
-     */
-    public function suspend(User $user)
+    public function multiplepetugassdelete(Request $request)
     {
-        $suspend = 0;
-
-        User::where('id', $user->id)->update(['status' => $suspend]);
-
-        return redirect('/dashboard/pegawai')->with('success', 'Akun pegawai telah ditangguhkan!');
+        $id = $request->id;
+        foreach ($id as $user) {
+            User::where('id', $user)->delete();
+        }
+        return redirect('/dashboard/petugas')->with('success', 'Petugas telah dihapus!');
     }
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\User  $product
-     * @return \Illuminate\Http\Response
-     */
-    public function activate(User $user)
-    {
-        $suspend = 1;
 
-        User::where('id', $user->id)->update(['status' => $suspend]);
-
-        return redirect('/dashboard/pegawai')->with('success', 'Akun pegawai telah diaktifkan!');
-    }
     /**
      * @return \Illuminate\Support\Collection
      */
-    public function fileImport(Request $request)
+    public function petugasImport(Request $request)
     {
-        Excel::import(new UsersImport(), $request->file('file')->store('temp'));
+        Excel::import(new PetugasImport(), $request->file('file')->store('temp'));
         return back()->with('success', 'Data telah diimpor!');
     }
+
     /**
      * @return \Illuminate\Support\Collection
      */
-    public function fileEdit(Request $request)
+    public function petugasEdit(Request $request)
     {
-        $data = Excel::toArray(new UsersImport(), request()->file('file'));
+        $data = Excel::toArray(new PetugasImport(), request()->file('file'));
 
         collect(head($data))->each(function ($row, $key) {
             DB::table('users')
@@ -154,18 +135,9 @@ class PegawaiController extends Controller
                     'jabatan' => $row[3],
                     'unit_kerja' => $row[4],
                     'password' => Hash::make($row[5]),
-                    'status' => $row[6],
+                    'role' => $row[6],
                 ]);
         });
         return back()->with('success', 'Data telah diupdate!');
-    }
-
-    public function multipleusersdelete(Request $request)
-    {
-        $id = $request->id;
-        foreach ($id as $user) {
-            User::where('id', $user)->delete();
-        }
-        return redirect('/dashboard/pegawai')->with('success', 'Pegawai telah dihapus!');
     }
 }

@@ -247,7 +247,7 @@
                                     <div class="card text-white bg-success bg-gradient h-100">
                                         <div class="card-body">
                                             <h4 class="card-title">Petugas Terdaftar</h4>
-                                            <h1 class="fw-bold mb-0" id="counter5">4</h1>
+                                            <h1 class="fw-bold mb-0" id="counter5">{{ $countpetugas }}</h1>
                                         </div>
                                     </div>
                                 </div>
@@ -441,6 +441,7 @@
 
                                             </svg>
                                         </div>
+                                        <a href="/dashboard/petugas" class="stretched-link"></a>
                                         <h4 class="fw-bold text-center">Manajemen Data Petugas</h4>
                                     </div>
                                 </div>
@@ -623,6 +624,23 @@
                 count8.innerHTML = ++upto8;
                 if (upto8 === limit8) {
                     clearInterval(counts8);
+                }
+            }
+        }
+    </script>
+    <script>
+        let counts5 = setInterval(updated5);
+        let upto5 = 0;
+        let limit5 = {!! json_encode($countpetugas) !!};
+
+        function updated7() {
+            if (limit5 == 0) {
+                count5.innerHTML = 0;
+            } else {
+                var count5 = document.getElementById("counter5");
+                count5.innerHTML = ++upto5;
+                if (upto5 === limit5) {
+                    clearInterval(counts5);
                 }
             }
         }
