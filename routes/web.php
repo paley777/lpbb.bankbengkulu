@@ -10,6 +10,8 @@ use App\Http\Controllers\SoalController;
 use App\Http\Controllers\PreTestController;
 use App\Http\Controllers\PostTestController;
 use App\Http\Controllers\PetugasController;
+use App\Http\Controllers\KelasController;
+use App\Http\Controllers\MateriListController;
 
 /*
 |--------------------------------------------------------------------------
@@ -99,3 +101,27 @@ Route::post('petugas-import', [PetugasController::class, 'petugasImport'])
 Route::post('petugas-edit', [PetugasController::class, 'petugasEdit'])
     ->name('petugas-edit')
     ->middleware('auth');
+
+// ROUTE TO MANAJEMEN KELAS
+Route::resource('/dashboard/kelas', KelasController::class)->middleware('auth');
+Route::get('/dashboard/materi-list/{kelas}', [MateriListController::class, 'index'])->middleware('auth');
+
+//PRETEST
+Route::get('/dashboard/materi-list/{kelas}/create-pretest', [MateriListController::class, 'create_pretest'])->middleware('auth');
+Route::get('/dashboard/materi-list/{kelas}/edit-pretest', [MateriListController::class, 'edit_pretest'])->middleware('auth');
+Route::put('/dashboard/materi-list/{kelas}/edit-pretest', [MateriListController::class, 'update_pretest'])->middleware('auth');
+Route::post('/dashboard/materi-list/{kelas}/create-pretest', [MateriListController::class, 'store_pretest'])->middleware('auth');
+Route::delete('/dashboard/materi-list/{kelas}', [MateriListController::class, 'destroy'])->middleware('auth');
+
+//POSTTEST
+Route::get('/dashboard/materi-list/{kelas}/create-posttest', [MateriListController::class, 'create_posttest'])->middleware('auth');
+Route::post('/dashboard/materi-list/{kelas}/create-posttest', [MateriListController::class, 'store_posttest'])->middleware('auth');
+Route::get('/dashboard/materi-list/{kelas}/edit-posttest', [MateriListController::class, 'edit_posttest'])->middleware('auth');
+Route::put('/dashboard/materi-list/{kelas}/edit-posttest', [MateriListController::class, 'update_posttest'])->middleware('auth');
+
+//MATERI
+Route::get('/dashboard/materi-list/{kelas}/create-materi', [MateriListController::class, 'create_materi'])->middleware('auth');
+Route::post('/dashboard/materi-list/{kelas}/create-materi', [MateriListController::class, 'store_materi'])->middleware('auth');
+Route::get('/dashboard/materi-list/{kelas}/edit-materi', [MateriListController::class, 'edit_materi'])->middleware('auth');
+Route::put('/dashboard/materi-list/{kelas}/edit-materi', [MateriListController::class, 'update_materi'])->middleware('auth');
+Route::delete('/dashboard/materi-list/{kelas}/materi', [MateriListController::class, 'destroy_materi'])->middleware('auth');
