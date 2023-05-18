@@ -149,13 +149,16 @@
                                                 <th scope="col">Aksi</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                            @foreach ($pretests as $key => $pretest)
-                                                <tr>
-                                                    <td>
-                                                        <input name='id[]' type="checkbox" id="checkItem"
-                                                            value="<?php echo $pretests[$key]->id; ?>">
-                                                    </td>
+                                        @if ($pretests->count() == 0)
+                                            <h4 class="fw-semibold responsive-p1 me-3">No Data</h4>
+                                        @else
+                                            <tbody>
+                                                @foreach ($pretests as $key => $pretest)
+                                                    <tr>
+                                                        <td>
+                                                            <input name='id[]' type="checkbox" id="checkItem"
+                                                                value="<?php echo $pretests[$key]->id; ?>">
+                                                        </td>
                             </form>
                             <td>{{ $pretests->firstItem() + $key }}</td>
                             <td>{{ $pretest->nama_pretest }}</td>
@@ -175,6 +178,7 @@
                             </tr>
                             @endforeach
                             </tbody>
+                            @endif
                             </table>
                             <div class="row">
                                 <div class="col">

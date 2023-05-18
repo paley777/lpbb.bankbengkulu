@@ -98,7 +98,6 @@
                             <div class="d-flex">
                                 <h4 class="card-title fw-semibold responsive-p1 me-3">Manajemen Kelas</h4>
                             </div>
-                            <hr>
                             <div class="row g-2 mb-2">
                                 @if ($materi_lists->where('jenis', 'Pre Test')->count() === 0)
                                     <div class="col-md-4 col-12">
@@ -376,35 +375,40 @@
                                             <th scope="col">Aksi</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        @foreach ($materi_lists as $key => $materi_list)
-                                            @if ($materi_list->jenis == 'Materi')
-                                                <tr>
-                                                    <td>{{ $materi_list->nama_materi }}</td>
-                                                    <td>{{ $materi_list->jenis }}</td>
-                                                    <td>
-                                                        @foreach ($materis as $materi)
-                                                            @if ($materi->nama_materi == $materi_list->nama_materi)
-                                                                <a href="{{ asset('storage/' . $materi->materi) }}">Download
-                                                                </a>
-                                                            @endif
-                                                        @endforeach
-                                                    </td>
-                                                    <td>
-                                                        <a href="/dashboard/materi-list/{{ $materi_list->id }}/edit-materi"
-                                                            class="badge bg-warning border-0 text-black">Edit</a>
-                                                        <form action="/dashboard/materi-list/{{ $materi_list->id }}/materi"
-                                                            method="post" class="d-inline">
-                                                            @method('delete')
-                                                            @csrf
-                                                            <button class="badge bg-danger border-0"
-                                                                onclick="return confirm('Anda yakin untuk menghapus data ini?')">Hapus</button>
-                                                        </form>
-                                                    </td>
-                                                </tr>
-                                            @endif
-                                        @endforeach
-                                    </tbody>
+                                    @if ($materi_lists->count() == 0)
+                                        <h4 class="fw-semibold responsive-p1 me-3">No Data</h4>
+                                    @else
+                                        <tbody>
+                                            @foreach ($materi_lists as $key => $materi_list)
+                                                @if ($materi_list->jenis == 'Materi')
+                                                    <tr>
+                                                        <td>{{ $materi_list->nama_materi }}</td>
+                                                        <td>{{ $materi_list->jenis }}</td>
+                                                        <td>
+                                                            @foreach ($materis as $materi)
+                                                                @if ($materi->nama_materi == $materi_list->nama_materi)
+                                                                    <a href="{{ asset('storage/' . $materi->materi) }}">Download
+                                                                    </a>
+                                                                @endif
+                                                            @endforeach
+                                                        </td>
+                                                        <td>
+                                                            <a href="/dashboard/materi-list/{{ $materi_list->id }}/edit-materi"
+                                                                class="badge bg-warning border-0 text-black">Edit</a>
+                                                            <form
+                                                                action="/dashboard/materi-list/{{ $materi_list->id }}/materi"
+                                                                method="post" class="d-inline">
+                                                                @method('delete')
+                                                                @csrf
+                                                                <button class="badge bg-danger border-0"
+                                                                    onclick="return confirm('Anda yakin untuk menghapus data ini?')">Hapus</button>
+                                                            </form>
+                                                        </td>
+                                                    </tr>
+                                                @endif
+                                            @endforeach
+                                        </tbody>
+                                        @endif
                                 </table>
                                 <div class="row">
                                     <div class="col">

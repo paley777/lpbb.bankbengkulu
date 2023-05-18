@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\BankSoal;
 use App\Models\Soal;
 use App\Models\PreTest;
+use App\Models\PostTest;
+use App\Models\Materi_List;
 use App\Http\Requests\StoreBankSoalRequest;
 use App\Http\Requests\UpdateBankSoalRequest;
 use Illuminate\Http\Request;
@@ -20,7 +22,7 @@ class BankSoalController extends Controller
         $soalcounts = Soal::select('nama_bank', DB::raw('count(*) as total'))
             ->groupBy('nama_bank')
             ->get();
-   
+
         return view('dashboard.kompetensi.bank.index', [
             'active' => 'bank',
             'banks' => BankSoal::orderBy('nama_bank', 'desc')
@@ -84,6 +86,9 @@ class BankSoalController extends Controller
         PreTest::where('nama_bank', $bank_soal['nama_bank'])->update([
             'nama_bank' => $request['nama_bank'],
         ]);
+        PostTest::where('nama_bank', $bank_soal['nama_bank'])->update([
+            'nama_bank' => $request['nama_bank'],
+        ]);
 
         $validated = $request->validated();
         BankSoal::where('id', $bank_soal['id'])->update($validated);
@@ -96,7 +101,14 @@ class BankSoalController extends Controller
      */
     public function destroy(BankSoal $bank_soal)
     {
+        Materi_List::where('jenis', 'Pre Test')
+            ->orWhere('jenis', 'Post Test')
+            ->where('nama_materi', $bank_soal->nama_bank)
+            ->delete();
         Soal::where('nama_bank', $bank_soal->nama_bank)->delete();
+        PreTest::where('nama_bank', $bank_soal->nama_bank)->delete();
+        PostTest::where('nama_bank', $bank_soal->nama_bank)->delete();
+
         BankSoal::destroy($bank_soal->id);
         return redirect('/dashboard/bank-soal')->with('success', 'Bank Soal telah dihapus!');
     }
@@ -106,6 +118,12 @@ class BankSoalController extends Controller
         $nama_bank = $request->nama_bank;
         foreach ($nama_bank as $nama_bank) {
             Soal::where('nama_bank', $nama_bank)->delete();
+            Materi_List::where('jenis', 'Pre Test')
+                ->orWhere('jenis', 'Post Test')
+                ->where('nama_materi', $nama_bank)
+                ->delete();
+            PreTest::where('nama_bank', $nama_bank)->delete();
+            PostTest::where('nama_bank', $nama_bank)->delete();
             BankSoal::where('nama_bank', $nama_bank)->delete();
         }
         return redirect('/dashboard/bank-soal')->with('success', 'Bank Soal telah dihapus!');

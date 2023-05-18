@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\PreTest;
+use App\Models\Materi_List;
 use App\Models\BankSoal;
 use App\Models\Soal;
 use App\Http\Requests\StorePreTestRequest;
@@ -83,6 +84,11 @@ class PreTestController extends Controller
             return redirect('/dashboard/pre-test')->withErrors(['msg' => 'Jumlah soal melebihi bank soal yang tersedia!']);
         } else {
             PreTest::where('id', $preTest['id'])->update($validated);
+            Materi_List::where('jenis', 'Pre Test')
+                ->where('nama_materi', $preTest->nama_pretest)
+                ->update([
+                    'nama_materi' => $request->nama_pretest,
+                ]);
             return redirect('/dashboard/pre-test')->with('success', 'Pre Test telah diubah!');
         }
     }
@@ -92,6 +98,9 @@ class PreTestController extends Controller
      */
     public function destroy(PreTest $preTest)
     {
+        Materi_List::where('jenis', 'Pre Test')
+            ->where('nama_materi', $preTest->nama_pretest)
+            ->delete();
         PreTest::destroy($preTest->id);
         return redirect('/dashboard/pre-test')->with('success', 'Pre Test telah dihapus!');
     }
@@ -100,6 +109,10 @@ class PreTestController extends Controller
     {
         $id = $request->id;
         foreach ($id as $pretest) {
+            $nama_pretest = PreTest::where('id', $pretest)->first('nama_pretest');
+            Materi_List::where('jenis', 'Pre Test')
+                ->where('nama_materi', $nama_pretest->nama_pretest)
+                ->delete();
             PreTest::where('id', $pretest)->delete();
         }
         return redirect('/dashboard/pre-test')->with('success', 'Pre Test telah dihapus!');

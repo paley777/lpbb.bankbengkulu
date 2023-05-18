@@ -185,37 +185,41 @@
                                             <th scope="col">Aksi</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        @foreach ($soals as $key => $soal)
-                                            <tr>
-                                                <td>
-                                                    <input name='id[]' type="checkbox" id="checkItem"
-                                                        value="<?php echo $soals[$key]->id; ?>">
-                                                </td>
-                                                </form>
-                                                <td>{{ $soals->firstItem() + $key }}</td>
-                                                <td>{{ $soal->soal }}</td>
-                                                <td>{{ $soal->ans_a }}</td>
-                                                <td>{{ $soal->ans_b }}</td>
-                                                <td>{{ $soal->ans_c }}</td>
-                                                <td>{{ $soal->ans_d }}</td>
-                                                <td> <span
-                                                        class="badge rounded-pill text-bg-success">{{ $soal->correct_ans }}</span>
-                                                </td>
-                                                <td>
-                                                    <a href="/dashboard/soal/{{ $soal->id }}/edit"
-                                                        class="badge bg-warning border-0 text-black">Edit</a>
-                                                    <form action="/dashboard/soal/{{ $soal->id }}" method="post"
-                                                        class="d-inline">
-                                                        @method('delete')
-                                                        @csrf
-                                                        <button class="badge bg-danger border-0"
-                                                            onclick="return confirm('Anda yakin untuk menghapus data ini?')">Hapus</button>
+                                    @if ($soals->count() == 0)
+                                        <h4 class="fw-semibold responsive-p1 me-3">No Data</h4>
+                                    @else
+                                        <tbody>
+                                            @foreach ($soals as $key => $soal)
+                                                <tr>
+                                                    <td>
+                                                        <input name='id[]' type="checkbox" id="checkItem"
+                                                            value="<?php echo $soals[$key]->id; ?>">
+                                                    </td>
                                                     </form>
-                                                </td>
-                                            </tr>
-                                        @endforeach
-                                    </tbody>
+                                                    <td>{{ $soals->firstItem() + $key }}</td>
+                                                    <td>{{ $soal->soal }}</td>
+                                                    <td>{{ $soal->ans_a }}</td>
+                                                    <td>{{ $soal->ans_b }}</td>
+                                                    <td>{{ $soal->ans_c }}</td>
+                                                    <td>{{ $soal->ans_d }}</td>
+                                                    <td> <span
+                                                            class="badge rounded-pill text-bg-success">{{ $soal->correct_ans }}</span>
+                                                    </td>
+                                                    <td>
+                                                        <a href="/dashboard/soal/{{ $soal->id }}/edit"
+                                                            class="badge bg-warning border-0 text-black">Edit</a>
+                                                        <form action="/dashboard/soal/{{ $soal->id }}" method="post"
+                                                            class="d-inline">
+                                                            @method('delete')
+                                                            @csrf
+                                                            <button class="badge bg-danger border-0"
+                                                                onclick="return confirm('Anda yakin untuk menghapus data ini?')">Hapus</button>
+                                                        </form>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                    @endif
                                 </table>
                                 <div class="row">
                                     <div class="col">

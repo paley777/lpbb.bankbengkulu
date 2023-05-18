@@ -6,6 +6,7 @@ use App\Models\Kelas;
 use App\Models\PreTest;
 use App\Models\PostTest;
 use App\Models\Materi_List;
+use App\Models\Materi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use App\Http\Requests\StoreKelasRequest;
@@ -110,6 +111,9 @@ class KelasController extends Controller
     {
         $validated = $request->validated();
         Kelas::where('id', $kela['id'])->update($validated);
+        Materi_List::where('nama_modul', $kela->nama_modul)->update([
+            'nama_modul' => $request->nama_modul,
+        ]);
 
         return redirect('/dashboard/kelas')->with('success', 'Kelas telah diubah!');
     }
@@ -119,6 +123,11 @@ class KelasController extends Controller
      */
     public function destroy(Kelas $kela)
     {
+        $nama_list = Materi_List::where('nama_modul', $kela->nama_modul)->get();
+        foreach ($nama_list as $nama_list) {
+            Materi::where('nama_materi', $nama_list->nama_materi)->delete();
+        }
+        Materi_List::where('nama_modul', $kela->nama_modul)->delete();
         Kelas::destroy($kela->id);
         return redirect('/dashboard/kelas')->with('success', 'Kelas telah dihapus!');
     }

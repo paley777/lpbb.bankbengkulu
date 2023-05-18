@@ -147,13 +147,16 @@
                                                 <th scope="col">Aksi</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                            @foreach ($banks as $key => $bank)
-                                                <tr>
-                                                    <td>
-                                                        <input name='nama_bank[]' type="checkbox" id="checkItem"
-                                                            value="<?php echo $banks[$key]->nama_bank; ?>">
-                                                    </td>
+                                        @if ($banks->count() == 0)
+                                            <h4 class="fw-semibold responsive-p1 me-3">No Data</h4>
+                                        @else
+                                            <tbody>
+                                                @foreach ($banks as $key => $bank)
+                                                    <tr>
+                                                        <td>
+                                                            <input name='nama_bank[]' type="checkbox" id="checkItem"
+                                                                value="<?php echo $banks[$key]->nama_bank; ?>">
+                                                        </td>
                             </form>
                             <td>{{ $banks->firstItem() + $key }}</td>
                             <td>{{ $bank->nama_bank }}</td>
@@ -181,6 +184,7 @@
                             </tr>
                             @endforeach
                             </tbody>
+                            @endif
                             </table>
                             <div class="row">
                                 <div class="col">
