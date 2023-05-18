@@ -9,6 +9,8 @@ use App\Models\User;
 use App\Models\BankSoal;
 use App\Models\PreTest;
 use App\Models\PostTest;
+use App\Models\Kelas;
+use App\Models\Materi;
 use App\Http\Requests\UpdateUserRequest;
 use App\Http\Requests\UpdateProfileRequest;
 use Illuminate\Support\Facades\Hash;
@@ -33,6 +35,8 @@ class DashboardController extends Controller
             'countbank' => BankSoal::count(),
             'countpretest' => PreTest::count(),
             'countposttest' => PostTest::count(),
+            'countkelas' => Kelas::count(),
+            'countmateri' => Materi::count(),
             'countpetugas' => User::where('role', 'Super Administrator')
                 ->orWhere('role', 'Operator')
                 ->count(),

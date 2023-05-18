@@ -70,7 +70,7 @@
                         <div class="card-body">
                             <div class="d-flex">
                                 <h4 class="card-title fw-semibold responsive-p1 me-auto">Sedang Berlangsung</h4>
-                                <a href="/materi" class="btn btn-warning fw-semibold" type="button"
+                                <a href="/dashboard/kelas" class="btn btn-warning fw-semibold" type="button"
                                     data-bss-hover-animate="tada">Manajemen Materi
                                     <?xml version="1.0" ?>
                                     <svg width="20px" height="20px" viewBox="0 0 24 24"
@@ -221,7 +221,7 @@
                                     <div class="card text-white bg-success bg-gradient h-100">
                                         <div class="card-body">
                                             <h4 class="card-title">Kelas Materi</h4>
-                                            <h1 class="fw-bold mb-0" id="counter2">26</h1>
+                                            <h1 class="fw-bold mb-0" id="counter2">{{ $countkelas }}</h1>
                                         </div>
                                     </div>
                                 </div>
@@ -229,7 +229,7 @@
                                     <div class="card text-white bg-success bg-gradient h-100">
                                         <div class="card-body">
                                             <h4 class="card-title ">Topik Materi</h4>
-                                            <h1 class="fw-bold mb-0" id="counter3">55</h1>
+                                            <h1 class="fw-bold mb-0" id="counter3">{{ $countmateri }}</h1>
                                         </div>
                                     </div>
                                 </div>
@@ -381,7 +381,8 @@
                                                 </g>
                                             </svg>
                                         </div>
-                                        <h4 class="fw-bold text-center">Manajemen Materi</h4>
+                                        <a href="/dashboard/kelas" class="stretched-link"></a>
+                                        <h4 class="fw-bold text-center">Manajemen Kelas</h4>
                                     </div>
                                 </div>
                             </div>
@@ -539,11 +540,12 @@
     <script>
         let counts3 = setInterval(updated3);
         let upto3 = 0;
+        let limit3 = {!! json_encode($countmateri) !!};
 
         function updated3() {
             var count3 = document.getElementById("counter3");
             count3.innerHTML = ++upto3;
-            if (upto3 === 560) {
+            if (upto3 === limit3) {
                 clearInterval(counts3);
             }
         }
@@ -551,11 +553,12 @@
     <script>
         let counts2 = setInterval(updated2);
         let upto2 = 0;
+        let limit2 = {!! json_encode($countkelas) !!};
 
         function updated2() {
             var count2 = document.getElementById("counter2");
             count2.innerHTML = ++upto2;
-            if (upto2 === 124) {
+            if (upto2 === limit2) {
                 clearInterval(counts2);
             }
         }
