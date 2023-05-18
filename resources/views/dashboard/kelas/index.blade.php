@@ -143,35 +143,39 @@
                                             <th scope="col">Aksi</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        @foreach ($kelases as $key => $kelas)
-                                            <tr>
-                                                <td>{{ $kelases->firstItem() + $key }}</td>
-                                                <td>{{ $kelas->nama_modul }}</td>
-                                                <td><span
-                                                        class="badge rounded-pill text-bg-success">{{ $kelas->date_start }}</span>
-                                                </td>
-                                                <td><span
-                                                        class="badge rounded-pill text-bg-success">{{ $kelas->date_end }}</span>
-                                                </td>
-                                                <td>
-                                                    <a href="/dashboard/kelas/{{ $kelas->id }}"
-                                                        class="badge bg-primary border-0">Preview</a>
-                                                    <a href="/dashboard/kelas/{{ $kelas->id }}/edit"
-                                                        class="badge bg-warning border-0 text-black">Edit</a>
-                                                    <form action="/dashboard/kelas/{{ $kelas->id }}" method="post"
-                                                        class="d-inline">
-                                                        @method('delete')
-                                                        @csrf
-                                                        <button class="badge bg-danger border-0"
-                                                            onclick="return confirm('Anda yakin untuk menghapus data ini?')">Hapus</button>
-                                                    </form>
-                                                    <a href="/dashboard/materi-list/{{ $kelas->id }}"
-                                                        class="badge bg-success border-0">Daftar Materi</a>
-                                                </td>
-                                            </tr>
-                                        @endforeach
-                                    </tbody>
+                                    @if ($kelases->count() == 0)
+                                        <h4 class="fw-semibold responsive-p1 me-3">No Data</h4>
+                                    @else
+                                        <tbody>
+                                            @foreach ($kelases as $key => $kelas)
+                                                <tr>
+                                                    <td>{{ $kelases->firstItem() + $key }}</td>
+                                                    <td>{{ $kelas->nama_modul }}</td>
+                                                    <td><span
+                                                            class="badge rounded-pill text-bg-success">{{ $kelas->date_start }}</span>
+                                                    </td>
+                                                    <td><span
+                                                            class="badge rounded-pill text-bg-success">{{ $kelas->date_end }}</span>
+                                                    </td>
+                                                    <td>
+                                                        <a href="/dashboard/kelas/{{ $kelas->id }}"
+                                                            class="badge bg-primary border-0">Preview</a>
+                                                        <a href="/dashboard/kelas/{{ $kelas->id }}/edit"
+                                                            class="badge bg-warning border-0 text-black">Edit</a>
+                                                        <form action="/dashboard/kelas/{{ $kelas->id }}" method="post"
+                                                            class="d-inline">
+                                                            @method('delete')
+                                                            @csrf
+                                                            <button class="badge bg-danger border-0"
+                                                                onclick="return confirm('Anda yakin untuk menghapus data ini?')">Hapus</button>
+                                                        </form>
+                                                        <a href="/dashboard/materi-list/{{ $kelas->id }}"
+                                                            class="badge bg-success border-0">Daftar Materi</a>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                    @endif
                                 </table>
                                 <div class="row">
                                     <div class="col">
