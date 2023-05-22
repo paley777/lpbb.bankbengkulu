@@ -125,3 +125,7 @@ Route::post('/dashboard/materi-list/{kelas}/create-materi', [MateriListControlle
 Route::get('/dashboard/materi-list/{kelas}/edit-materi', [MateriListController::class, 'edit_materi'])->middleware('auth');
 Route::put('/dashboard/materi-list/{kelas}/edit-materi', [MateriListController::class, 'update_materi'])->middleware('auth');
 Route::delete('/dashboard/materi-list/{kelas}/materi', [MateriListController::class, 'destroy_materi'])->middleware('auth');
+
+//KELAS - PEGAWAI
+//MATERI
+Route::get('/kelas/{kelas}', [KelasController::class, 'detail'])->middleware('auth');

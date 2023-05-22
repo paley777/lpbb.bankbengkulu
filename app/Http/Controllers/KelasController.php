@@ -7,11 +7,13 @@ use App\Models\PreTest;
 use App\Models\PostTest;
 use App\Models\Materi_List;
 use App\Models\Materi;
+use App\Models\Kemajuan_Pegawai;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use App\Http\Requests\StoreKelasRequest;
 use App\Http\Requests\UpdateKelasRequest;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class KelasController extends Controller
 {
@@ -91,6 +93,79 @@ class KelasController extends Controller
             'jumlah_materi' => $jumlah_materi,
             'active' => 'users',
         ]);
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function detail(Kelas $kelas)
+    {
+        $find_modul = Kemajuan_Pegawai::where('nrpp', Auth::user()->nrpp)
+            ->where('nama_modul', $kelas->nama_modul)
+            ->first();
+        if (is_null($find_modul)) {
+            $nama_pretest = Materi_List::where('nama_modul', $kelas->nama_modul)
+                ->where('jenis', 'Pre Test')
+                ->first('nama_materi');
+            $jumlahsoal_pretest = PreTest::where('nama_pretest', $nama_pretest->nama_materi)->first('jumlah_soal');
+            $durasi_pretest = PreTest::where('nama_pretest', $nama_pretest->nama_materi)->first('durasi');
+            $nama_posttest = Materi_List::where('nama_modul', $kelas->nama_modul)
+                ->where('jenis', 'Post Test')
+                ->first('nama_materi');
+            $jumlahsoal_posttest = PostTest::where('nama_posttest', $nama_posttest->nama_materi)->first('jumlah_soal');
+            $durasi_posttest = PostTest::where('nama_posttest', $nama_posttest->nama_materi)->first('durasi');
+            $jumlah_materi = Materi_List::where('nama_modul', $kelas->nama_modul)
+                ->where('jenis', 'Materi')
+                ->count();
+            $kelas['date_start'] = Carbon::parse($kelas->date_start)
+                ->locale('id')
+                ->settings(['formatFunction' => 'translatedFormat'])
+                ->format('l, j F Y ');
+            $kelas['date_end'] = Carbon::parse($kelas->date_end)
+                ->locale('id')
+                ->settings(['formatFunction' => 'translatedFormat'])
+                ->format('l, j F Y ');
+            return view('pegawai.kelas.detail', [
+                'kelas' => $kelas,
+                'jumlahsoal_pretest' => $jumlahsoal_pretest,
+                'durasi_pretest' => $durasi_pretest,
+                'jumlahsoal_posttest' => $jumlahsoal_posttest,
+                'durasi_posttest' => $durasi_posttest,
+                'jumlah_materi' => $jumlah_materi,
+                'active' => 'unregist',
+            ]);
+        } else {
+            $nama_pretest = Materi_List::where('nama_modul', $kelas->nama_modul)
+                ->where('jenis', 'Pre Test')
+                ->first('nama_materi');
+            $jumlahsoal_pretest = PreTest::where('nama_pretest', $nama_pretest->nama_materi)->first('jumlah_soal');
+            $durasi_pretest = PreTest::where('nama_pretest', $nama_pretest->nama_materi)->first('durasi');
+            $nama_posttest = Materi_List::where('nama_modul', $kelas->nama_modul)
+                ->where('jenis', 'Post Test')
+                ->first('nama_materi');
+            $jumlahsoal_posttest = PostTest::where('nama_posttest', $nama_posttest->nama_materi)->first('jumlah_soal');
+            $durasi_posttest = PostTest::where('nama_posttest', $nama_posttest->nama_materi)->first('durasi');
+            $jumlah_materi = Materi_List::where('nama_modul', $kelas->nama_modul)
+                ->where('jenis', 'Materi')
+                ->count();
+            $kelas['date_start'] = Carbon::parse($kelas->date_start)
+                ->locale('id')
+                ->settings(['formatFunction' => 'translatedFormat'])
+                ->format('l, j F Y ');
+            $kelas['date_end'] = Carbon::parse($kelas->date_end)
+                ->locale('id')
+                ->settings(['formatFunction' => 'translatedFormat'])
+                ->format('l, j F Y ');
+            return view('pegawai.kelas.detail', [
+                'kelas' => $kelas,
+                'jumlahsoal_pretest' => $jumlahsoal_pretest,
+                'durasi_pretest' => $durasi_pretest,
+                'jumlahsoal_posttest' => $jumlahsoal_posttest,
+                'durasi_posttest' => $durasi_posttest,
+                'jumlah_materi' => $jumlah_materi,
+                'active' => 'regist',
+            ]);
+        }
     }
 
     /**

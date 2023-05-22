@@ -144,7 +144,7 @@
                                         class="form-control responsive-small" name="email" placeholder="Isi Username"
                                         required>
                                     <input type="text" id="validationCustom01" class="form-control responsive-small"
-                                        name="role" value="Super Administrator" required hidden>
+                                        name="role" value="{{ Auth()->user()->role }}" required hidden>
                                 </div>
                                 <div class="col-md-6 position-relative">
                                     <label for="inputCity" class="form-label">Password<span

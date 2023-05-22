@@ -11,9 +11,11 @@ use App\Models\PreTest;
 use App\Models\PostTest;
 use App\Models\Kelas;
 use App\Models\Materi;
+use App\Models\Materi_List;
 use App\Http\Requests\UpdateUserRequest;
 use App\Http\Requests\UpdateProfileRequest;
 use Illuminate\Support\Facades\Hash;
+use Carbon\Carbon;
 
 class DashboardController extends Controller
 {
@@ -29,18 +31,28 @@ class DashboardController extends Controller
         //     Auth::logout();
         //     return redirect('/login');
         // }
-        return view('dashboard.index', [
-            'active' => 'index',
-            'countpegawai' => User::where('role', 'Pegawai')->count(),
-            'countbank' => BankSoal::count(),
-            'countpretest' => PreTest::count(),
-            'countposttest' => PostTest::count(),
-            'countkelas' => Kelas::count(),
-            'countmateri' => Materi::count(),
-            'countpetugas' => User::where('role', 'Super Administrator')
-                ->orWhere('role', 'Operator')
-                ->count(),
-        ]);
+        if (Auth::user()->role == 'Super Administrator') {
+            return view('dashboard.index', [
+                'active' => 'index',
+                'countpegawai' => User::where('role', 'Pegawai')->count(),
+                'countbank' => BankSoal::count(),
+                'countpretest' => PreTest::count(),
+                'countposttest' => PostTest::count(),
+                'countkelas' => Kelas::count(),
+                'countmateri' => Materi::count(),
+                'countpetugas' => User::where('role', 'Super Administrator')
+                    ->orWhere('role', 'Operator')
+                    ->count(),
+            ]);
+        } elseif (Auth::user()->role == 'Pegawai') {
+            $dt = Carbon::now()->format('Y-m-d');
+            return view('pegawai.index', [
+                'active' => 'index',
+                'kelases' => Kelas::get(),
+                'materi_lists' => Materi_List::where('jenis', 'materi')->get(),
+                'dt' => $dt,
+            ]);
+        }
     }
     //Profile
     public function profile()
