@@ -69,9 +69,9 @@
                     <div class="card shadow-sm bg-light bg-gradient mb-3">
                         <div class="card-body">
                             <div class="d-flex">
-                                <h4 class="card-title fw-semibold responsive-p1 me-auto">Sedang Berlangsung</h4>
-                                <a href="/dashboard/kelas" class="btn btn-warning fw-semibold" type="button"
-                                    data-bss-hover-animate="tada">Manajemen Materi
+                                <h4 class="card-title fw-semibold responsive-p1 me-auto">Today's Overview</h4>
+                                <a href="/report" class="btn btn-warning fw-semibold" type="button"
+                                    data-bss-hover-animate="tada">Manajemen Laporan
                                     <?xml version="1.0" ?>
                                     <svg width="20px" height="20px" viewBox="0 0 24 24"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -82,6 +82,103 @@
                                                     <polyline data-name="Right" fill="none" id="Right-2"
                                                         points="18.7 12.4 18.7 5.3 11.6 5.3" stroke="#000000"
                                                         stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                                                    <line fill="none" stroke="#000000" stroke-linecap="round"
+                                                        stroke-linejoin="round" stroke-width="2" x1="5.3"
+                                                        x2="17.1" y1="18.7" y2="6.9" />
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </a>
+                            </div>
+                            <hr>
+                            <div class="row g-2 mb-3">
+                                <div class="col-md-3 col-6">
+                                    <div class="card text-white bg-success bg-gradient h-100">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Pegawai Terdaftar</h4>
+                                            <h1 class="fw-bold mb-0" id="counter1">{{ $countpegawai }}</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="card text-white bg-success bg-gradient h-100">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Kelas Materi</h4>
+                                            <h1 class="fw-bold mb-0" id="counter2">{{ $countkelas }}</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="card text-white bg-success bg-gradient h-100">
+                                        <div class="card-body">
+                                            <h4 class="card-title ">Topik Materi</h4>
+                                            <h1 class="fw-bold mb-0" id="counter3">{{ $countmateri }}</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="card text-white bg-success bg-gradient h-100">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Sertifikat Dikeluarkan</h4>
+                                            <h1 class="fw-bold mb-0" id="counter4">1003</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row g-2">
+                                <div class="col-md-3 col-6">
+                                    <div class="card text-white bg-success bg-gradient h-100">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Petugas Terdaftar</h4>
+                                            <h1 class="fw-bold mb-0" id="counter5">{{ $countpetugas }}</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="card text-white bg-success bg-gradient h-100">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Bank Soal</h4>
+                                            <h1 class="fw-bold mb-0" id="counter6">{{ $countbank }}</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="card text-white bg-success bg-gradient h-100">
+                                        <div class="card-body">
+                                            <h4 class="card-title ">Pre-Test</h4>
+                                            <h1 class="fw-bold mb-0" id="counter7">{{ $countpretest }}</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="card text-white bg-success bg-gradient h-100">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Post-Test</h4>
+                                            <h1 class="fw-bold mb-0" id="counter8">{{ $countposttest }}</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card shadow-sm bg-light bg-gradient mb-3">
+                        <div class="card-body">
+                            <div class="d-flex">
+                                <h4 class="card-title fw-semibold responsive-p1 me-auto">Kemajuan Pembelajaran Pegawai</h4>
+                                <a href="/dashboard/kelas" class="btn btn-warning fw-semibold" type="button"
+                                    data-bss-hover-animate="tada">Manajemen Kemajuan Pembelajaran
+                                    <?xml version="1.0" ?>
+                                    <svg width="20px" height="20px" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <title />
+                                        <g id="Complete">
+                                            <g id="arrow-up-right">
+                                                <g>
+                                                    <polyline data-name="Right" fill="none" id="Right-2"
+                                                        points="18.7 12.4 18.7 5.3 11.6 5.3" stroke="#000000"
+                                                        stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2" />
                                                     <line fill="none" stroke="#000000" stroke-linecap="round"
                                                         stroke-linejoin="round" stroke-width="2" x1="5.3"
                                                         x2="17.1" y1="18.7" y2="6.9" />
@@ -181,103 +278,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card shadow-sm bg-light bg-gradient mb-3">
-                        <div class="card-body">
-                            <div class="d-flex">
-                                <h4 class="card-title fw-semibold responsive-p1 me-auto">Today's Overview</h4>
-                                <a href="/report" class="btn btn-warning fw-semibold" type="button"
-                                    data-bss-hover-animate="tada">Manajemen Laporan
-                                    <?xml version="1.0" ?>
-                                    <svg width="20px" height="20px" viewBox="0 0 24 24"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <title />
-                                        <g id="Complete">
-                                            <g id="arrow-up-right">
-                                                <g>
-                                                    <polyline data-name="Right" fill="none" id="Right-2"
-                                                        points="18.7 12.4 18.7 5.3 11.6 5.3" stroke="#000000"
-                                                        stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2" />
-                                                    <line fill="none" stroke="#000000" stroke-linecap="round"
-                                                        stroke-linejoin="round" stroke-width="2" x1="5.3"
-                                                        x2="17.1" y1="18.7" y2="6.9" />
-                                                </g>
-                                            </g>
-                                        </g>
-                                    </svg>
-                                </a>
-                            </div>
-                            <hr>
-                            <div class="row g-2 mb-3">
-                                <div class="col-md-3 col-6">
-                                    <div class="card text-white bg-success bg-gradient h-100">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Pegawai Terdaftar</h4>
-                                            <h1 class="fw-bold mb-0" id="counter1">{{ $countpegawai }}</h1>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-6">
-                                    <div class="card text-white bg-success bg-gradient h-100">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Kelas Materi</h4>
-                                            <h1 class="fw-bold mb-0" id="counter2">{{ $countkelas }}</h1>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-6">
-                                    <div class="card text-white bg-success bg-gradient h-100">
-                                        <div class="card-body">
-                                            <h4 class="card-title ">Topik Materi</h4>
-                                            <h1 class="fw-bold mb-0" id="counter3">{{ $countmateri }}</h1>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-6">
-                                    <div class="card text-white bg-success bg-gradient h-100">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Sertifikat Dikeluarkan</h4>
-                                            <h1 class="fw-bold mb-0" id="counter4">1003</h1>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row g-2">
-                                <div class="col-md-3 col-6">
-                                    <div class="card text-white bg-success bg-gradient h-100">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Petugas Terdaftar</h4>
-                                            <h1 class="fw-bold mb-0" id="counter5">{{ $countpetugas }}</h1>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-6">
-                                    <div class="card text-white bg-success bg-gradient h-100">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Bank Soal</h4>
-                                            <h1 class="fw-bold mb-0" id="counter6">{{ $countbank }}</h1>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-6">
-                                    <div class="card text-white bg-success bg-gradient h-100">
-                                        <div class="card-body">
-                                            <h4 class="card-title ">Pre-Test</h4>
-                                            <h1 class="fw-bold mb-0" id="counter7">{{ $countpretest }}</h1>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-6">
-                                    <div class="card text-white bg-success bg-gradient h-100">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Post-Test</h4>
-                                            <h1 class="fw-bold mb-0" id="counter8">{{ $countposttest }}</h1>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                     <div class="card shadow-sm bg-light bg-gradient mb-3">
                         <div class="card-body">
                             <div class="d-flex">
@@ -419,6 +420,34 @@
                                     <div class="card text-white bg-success bg-gradient h-100"
                                         data-bss-hover-animate="pulse">
                                         <div class="d-flex justify-content-center align-items-center d-inline-block">
+                                            <svg width="70px" height="70px" viewBox="0 0 512 512" version="1.1"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                xmlns:xlink="http://www.w3.org/1999/xlink" fill="#ffffff"
+                                                stroke="#ffffff">
+                                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
+                                                    stroke-linejoin="round"></g>
+                                                <g id="SVGRepo_iconCarrier">
+                                                    <title>report-text</title>
+                                                    <g id="Page-1" stroke="none" stroke-width="1" fill="none"
+                                                        fill-rule="evenodd">
+                                                        <g id="add" fill="#ffffff"
+                                                            transform="translate(42.666667, 85.333333)">
+                                                            <path
+                                                                d="M341.333333,1.42108547e-14 L426.666667,85.3333333 L426.666667,341.333333 L3.55271368e-14,341.333333 L3.55271368e-14,1.42108547e-14 L341.333333,1.42108547e-14 Z M330.666667,42.6666667 L42.6666667,42.6666667 L42.6666667,298.666667 L384,298.666667 L384,96 L330.666667,42.6666667 Z M149.333333,234.666667 L149.333333,266.666667 L85.3333333,266.666667 L85.3333333,234.666667 L149.333333,234.666667 Z M341.333333,234.666667 L341.333333,266.666667 L192,266.666667 L192,234.666667 L341.333333,234.666667 Z M149.333333,170.666667 L149.333333,202.666667 L85.3333333,202.666667 L85.3333333,170.666667 L149.333333,170.666667 Z M341.333333,170.666667 L341.333333,202.666667 L192,202.666667 L192,170.666667 L341.333333,170.666667 Z M149.333333,106.666667 L149.333333,138.666667 L85.3333333,138.666667 L85.3333333,106.666667 L149.333333,106.666667 Z M341.333333,106.666667 L341.333333,138.666667 L192,138.666667 L192,106.666667 L341.333333,106.666667 Z"
+                                                                id="Combined-Shape"> </path>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                        <h4 class="fw-bold text-center">Manajemen Kemajuan Pembelajaran</h4>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card text-white bg-success bg-gradient h-100"
+                                        data-bss-hover-animate="pulse">
+                                        <div class="d-flex justify-content-center align-items-center d-inline-block">
                                             <!DOCTYPE svg
                                                 PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 
@@ -444,6 +473,35 @@
                                         </div>
                                         <a href="/dashboard/petugas" class="stretched-link"></a>
                                         <h4 class="fw-bold text-center">Manajemen Data Petugas</h4>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card text-white bg-success bg-gradient h-100"
+                                        data-bss-hover-animate="pulse">
+                                        <div class="d-flex justify-content-center align-items-center d-inline-block">
+                                            <svg width="70px" height="70px" viewBox="0 0 512 512" version="1.1"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                xmlns:xlink="http://www.w3.org/1999/xlink" fill="#ffffff"
+                                                stroke="#ffffff">
+                                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
+                                                    stroke-linejoin="round"></g>
+                                                <g id="SVGRepo_iconCarrier">
+                                                    <title>report-text</title>
+                                                    <g id="Page-1" stroke="none" stroke-width="1" fill="none"
+                                                        fill-rule="evenodd">
+                                                        <g id="add" fill="#ffffff"
+                                                            transform="translate(42.666667, 85.333333)">
+                                                            <path
+                                                                d="M341.333333,1.42108547e-14 L426.666667,85.3333333 L426.666667,341.333333 L3.55271368e-14,341.333333 L3.55271368e-14,1.42108547e-14 L341.333333,1.42108547e-14 Z M330.666667,42.6666667 L42.6666667,42.6666667 L42.6666667,298.666667 L384,298.666667 L384,96 L330.666667,42.6666667 Z M149.333333,234.666667 L149.333333,266.666667 L85.3333333,266.666667 L85.3333333,234.666667 L149.333333,234.666667 Z M341.333333,234.666667 L341.333333,266.666667 L192,266.666667 L192,234.666667 L341.333333,234.666667 Z M149.333333,170.666667 L149.333333,202.666667 L85.3333333,202.666667 L85.3333333,170.666667 L149.333333,170.666667 Z M341.333333,170.666667 L341.333333,202.666667 L192,202.666667 L192,170.666667 L341.333333,170.666667 Z M149.333333,106.666667 L149.333333,138.666667 L85.3333333,138.666667 L85.3333333,106.666667 L149.333333,106.666667 Z M341.333333,106.666667 L341.333333,138.666667 L192,138.666667 L192,106.666667 L341.333333,106.666667 Z"
+                                                                id="Combined-Shape"> </path>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                        <a href="/dashboard/petugas" class="stretched-link"></a>
+                                        <h4 class="fw-bold text-center">Manajemen Sertifikasi</h4>
                                     </div>
                                 </div>
                             </div>
@@ -543,10 +601,14 @@
         let limit3 = {!! json_encode($countmateri) !!};
 
         function updated3() {
-            var count3 = document.getElementById("counter3");
-            count3.innerHTML = ++upto3;
-            if (upto3 === limit3) {
-                clearInterval(counts3);
+            if (limit3 == 0) {
+                count3.innerHTML = 0;
+            } else {
+                var count3 = document.getElementById("counter3");
+                count3.innerHTML = ++upto3;
+                if (upto3 === limit3) {
+                    clearInterval(counts3);
+                }
             }
         }
     </script>
@@ -556,10 +618,14 @@
         let limit2 = {!! json_encode($countkelas) !!};
 
         function updated2() {
-            var count2 = document.getElementById("counter2");
-            count2.innerHTML = ++upto2;
-            if (upto2 === limit2) {
-                clearInterval(counts2);
+            if (limit2 == 0) {
+                count2.innerHTML = 0;
+            } else {
+                var count2 = document.getElementById("counter2");
+                count2.innerHTML = ++upto2;
+                if (upto2 === limit2) {
+                    clearInterval(counts2);
+                }
             }
         }
     </script>
