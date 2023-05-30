@@ -259,6 +259,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                            </div>
                                         @endif
                                     @endforeach
                                 @elseif ($materi_list->jenis == 'Post Test')
@@ -408,7 +409,7 @@
                                                 @endif
                                             @endforeach
                                         </tbody>
-                                        @endif
+                                    @endif
                                 </table>
                                 <div class="row">
                                     <div class="col">
