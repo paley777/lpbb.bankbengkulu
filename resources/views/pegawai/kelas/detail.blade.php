@@ -89,11 +89,9 @@
                         <div class="card-body">
                             <div class="d-flex">
                                 <h4 class="card-title fw-semibold responsive-p1 me-3">Informasi Kelas</h4>
-                                <h4 class="card-title fw-normal fst-italic me-3">Anda belum mendaftar kelas, silakan daftar.
-                                </h4>
                                 @if ($active == 'unregist')
-                                    <a href="kelas/regist" class="btn btn-warning fw-semibold  ms-auto" type="button"
-                                        data-bss-hover-animate="tada">Mendaftar ke Kelas
+                                    <a href="/kelas/{{ $kelas->id }}/regist" class="btn btn-warning fw-semibold  ms-auto"
+                                        type="button" data-bss-hover-animate="tada">Mendaftar ke Kelas
                                         <?xml version="1.0" ?>
                                         <svg width="20px" height="20px" viewBox="0 0 24 24"
                                             xmlns="http://www.w3.org/2000/svg">
@@ -114,8 +112,8 @@
                                         </svg>
                                     </a>
                                 @else
-                                    <a class="btn btn-warning fw-semibold  ms-auto" type="button"
-                                        data-bss-hover-animate="tada">Masuk Kelas
+                                    <a href="/kelas/{{ $kelas->id }}/room" class="btn btn-warning fw-semibold  ms-auto"
+                                        type="button"data-bss-hover-animate="tada">Masuk Kelas
                                         <?xml version="1.0" ?>
                                         <svg width="20px" height="20px" viewBox="0 0 24 24"
                                             xmlns="http://www.w3.org/2000/svg">

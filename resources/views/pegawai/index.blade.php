@@ -70,7 +70,7 @@
                         <div class="card-body">
                             <div class="d-flex">
                                 <h4 class="card-title fw-semibold responsive-p1 me-auto">Sedang Berlangsung</h4>
-                                <a href="/dashboard/kelas" class="btn btn-warning fw-semibold" type="button"
+                                <a href="/kelas" class="btn btn-warning fw-semibold" type="button"
                                     data-bss-hover-animate="tada">Manajemen Kelas
                                     <?xml version="1.0" ?>
                                     <svg width="20px" height="20px" viewBox="0 0 24 24"
@@ -121,7 +121,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="card shadow-sm bg-light bg-gradient mb-3">
                         <div class="card-body">
                             <div class="d-flex">
@@ -146,7 +145,7 @@
                                                 </g>
                                             </svg>
                                         </div>
-                                        <a href="/dashboard/kelas" class="stretched-link"></a>
+                                        <a href="/kelas" class="stretched-link"></a>
                                         <h4 class="fw-bold text-center">Kelas</h4>
                                     </div>
                                 </div>

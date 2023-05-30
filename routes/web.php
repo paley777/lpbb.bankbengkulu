@@ -127,5 +127,21 @@ Route::put('/dashboard/materi-list/{kelas}/edit-materi', [MateriListController::
 Route::delete('/dashboard/materi-list/{kelas}/materi', [MateriListController::class, 'destroy_materi'])->middleware('auth');
 
 //KELAS - PEGAWAI
-//MATERI
+// INDEX MANAJEMEN KELAS
+Route::get('/kelas', [KelasController::class, 'index_pegawai'])->middleware('auth');
+//REGIST AND INDEX ROOM
 Route::get('/kelas/{kelas}', [KelasController::class, 'detail'])->middleware('auth');
+Route::get('/kelas/{kelas}/regist', [KelasController::class, 'regist'])->middleware('auth');
+Route::get('/kelas/{kelas}/room', [KelasController::class, 'room'])->middleware('auth');
+//PRETEST
+Route::get('/kelas/{kelas}/room/{materi}/pretest', [KelasController::class, 'start_pretest'])->middleware('auth');
+Route::get('/kelas/{kelas}/room/{materi}/pretest-remedial', [KelasController::class, 'start_pretest_remed'])->middleware('auth');
+Route::post('/kelas/{kelas}/room/{materi}/pretest', [KelasController::class, 'submit_pretest'])->middleware('auth');
+Route::post('/kelas/{kelas}/room/{materi}/pretest-remedial', [KelasController::class, 'submit_pretest_remed'])->middleware('auth');
+//MATERI TAGGING
+Route::get('/kelas/{kelas}/room/{materi}/done-materi', [KelasController::class, 'done_materi'])->middleware('auth');
+//POSTTEST
+Route::get('/kelas/{kelas}/room/{materi}/posttest', [KelasController::class, 'start_posttest'])->middleware('auth');
+Route::get('/kelas/{kelas}/room/{materi}/posttest-remedial', [KelasController::class, 'start_posttest_remed'])->middleware('auth');
+Route::post('/kelas/{kelas}/room/{materi}/posttest-remedial', [KelasController::class, 'submit_posttest_remed'])->middleware('auth');
+Route::post('/kelas/{kelas}/room/{materi}/posttest', [KelasController::class, 'submit_posttest'])->middleware('auth');
