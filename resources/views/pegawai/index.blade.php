@@ -173,6 +173,7 @@
                                                 </g>
                                             </svg>
                                         </div>
+                                        <a href="/my-progress" class="stretched-link"></a>
                                         <h4 class="fw-bold text-center">Kemajuan Pembelajaran</h4>
                                     </div>
                                 </div>

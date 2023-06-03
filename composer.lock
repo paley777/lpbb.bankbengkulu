@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "22b50100258d53f7efabae4c176d7966",
+    "content-hash": "385a9e6db75fa06be90aa9f50b2c8bc4",
     "packages": [
         {
             "name": "brick/math",
@@ -3517,6 +3517,50 @@
                 }
             ],
             "time": "2023-01-12T18:13:24+00:00"
+        },
+        {
+            "name": "sirajcse/laravel-unique-id-generator",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SirajCse/laravel-unique-id-generator.git",
+                "reference": "4982afb5a3c9d243500f516c1f9be565fceab4ba"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/SirajCse/laravel-unique-id-generator/zipball/4982afb5a3c9d243500f516c1f9be565fceab4ba",
+                "reference": "4982afb5a3c9d243500f516c1f9be565fceab4ba",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "sirajcse\\UniqueIdGenerator\\UniqueIdGeneratorServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "sirajcse\\UniqueIdGenerator\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Md. Siraj-Ud-Doulla",
+                    "email": "sirajuddoulla@gmail.com"
+                }
+            ],
+            "description": "Generate custom Unique ID or Code (With Prefix or Suffix Or Both Or Only Unique Id) Or reset your ID after change of Prefix or Suffix Or Both  in laravel framework",
+            "support": {
+                "issues": "https://github.com/SirajCse/laravel-unique-id-generator/issues",
+                "source": "https://github.com/SirajCse/laravel-unique-id-generator/tree/v1.0.1"
+            },
+            "time": "2022-05-12T17:25:31+00:00"
         },
         {
             "name": "symfony/console",

@@ -1242,8 +1242,8 @@
                                                         </div>
                                                         <div class="d-flex justify-content-center"> <a
                                                                 href="/kelas/{{ $kelas->id }}/room/{{ $materi1->id }}/pretest"
-                                                                class="btn btn-lg fw-bold bg-warning border-0 text-black">Buat
-                                                                Sertifikat Sekarang</a></div>
+                                                                class="btn btn-lg fw-bold bg-warning border-0 text-black">Cek
+                                                                Sertifikat</a></div>
                                                     @endif
                                                     <input type="button" name="previous-step" class="previous-step"
                                                         value="Sebelumnya" />

@@ -6,6 +6,7 @@ use App\Models\Kelas;
 use App\Models\PreTest;
 use App\Models\BankSoal;
 use App\Models\Soal;
+use App\Models\Sertifikat;
 use App\Models\PostTest;
 use App\Models\Materi_List;
 use App\Models\Materi;
@@ -16,6 +17,7 @@ use App\Http\Requests\StoreKelasRequest;
 use App\Http\Requests\UpdateKelasRequest;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
+use sirajcse\UniqueIdGenerator\UniqueIdGenerator;
 
 class KelasController extends Controller
 {
@@ -560,6 +562,12 @@ class KelasController extends Controller
                     'status' => 'Lulus',
                     'skor' => $skor,
                 ]);
+            $id1 = UniqueIdGenerator::generate(['table' => 'sertifikats', 'field' => 'no_sertifikat', 'length' => 6, 'suffix' => date('/Y'), 'reset_on_change' => 'suffix']);
+            Sertifikat::create([
+                'nrpp' => Auth::user()->nrpp,
+                'nama_modul' => $kelas->nama_modul,
+                'no_sertifikat' => $id1,
+            ]);
         }
         $materi = Materi_List::where('nama_modul', $kelas->nama_modul)->get();
         $status_pretest = Kemajuan_Pegawai::where('nama_modul', $kelas->nama_modul)
@@ -623,9 +631,15 @@ class KelasController extends Controller
             Kemajuan_Pegawai::where('jenis', 'Post Test')
                 ->where('nrpp', Auth::user()->nrpp)
                 ->update([
-                    'status' => 'Belum Lulus',
+                    'status' => 'Tidak Lulus',
                     'skor' => $skor,
                 ]);
+            $id1 = UniqueIdGenerator::generate(['table' => 'sertifikats', 'field' => 'no_sertifikat', 'length' => 6, 'suffix' => date('/Y'), 'reset_on_change' => 'suffix']);
+            Sertifikat::create([
+                'nrpp' => Auth::user()->nrpp,
+                'nama_modul' => $kelas->nama_modul,
+                'no_sertifikat' => $id1,
+            ]);
         } else {
             Kemajuan_Pegawai::where('jenis', 'Post Test')
                 ->where('nrpp', Auth::user()->nrpp)
@@ -633,6 +647,12 @@ class KelasController extends Controller
                     'status' => 'Lulus',
                     'skor' => $skor,
                 ]);
+            $id1 = UniqueIdGenerator::generate(['table' => 'sertifikats', 'field' => 'no_sertifikat', 'length' => 6, 'suffix' => date('/Y'), 'reset_on_change' => 'suffix']);
+            Sertifikat::create([
+                'nrpp' => Auth::user()->nrpp,
+                'nama_modul' => $kelas->nama_modul,
+                'no_sertifikat' => $id1,
+            ]);
         }
         $materi = Materi_List::where('nama_modul', $kelas->nama_modul)->get();
         $status_pretest = Kemajuan_Pegawai::where('nama_modul', $kelas->nama_modul)

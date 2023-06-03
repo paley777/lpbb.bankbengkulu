@@ -12,6 +12,7 @@ use App\Http\Controllers\PostTestController;
 use App\Http\Controllers\PetugasController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\MateriListController;
+use App\Http\Controllers\KemajuanPegawaiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -145,3 +146,6 @@ Route::get('/kelas/{kelas}/room/{materi}/posttest', [KelasController::class, 'st
 Route::get('/kelas/{kelas}/room/{materi}/posttest-remedial', [KelasController::class, 'start_posttest_remed'])->middleware('auth');
 Route::post('/kelas/{kelas}/room/{materi}/posttest-remedial', [KelasController::class, 'submit_posttest_remed'])->middleware('auth');
 Route::post('/kelas/{kelas}/room/{materi}/posttest', [KelasController::class, 'submit_posttest'])->middleware('auth');
+
+//Kemajuan Pribadi
+Route::get('/my-progress', [KemajuanPegawaiController::class, 'index'])->middleware('auth');

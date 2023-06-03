@@ -3,7 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '17de9e9936a2a0030ddf177b2fa7fa43506ec5d1',
+        'reference' => '8eabfdfe08018be6eb27085da67e972cf42d8b37',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -391,7 +391,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '17de9e9936a2a0030ddf177b2fa7fa43506ec5d1',
+            'reference' => '8eabfdfe08018be6eb27085da67e972cf42d8b37',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -982,6 +982,15 @@
             'install_path' => __DIR__ . '/../sebastian/version',
             'aliases' => array(),
             'dev_requirement' => true,
+        ),
+        'sirajcse/laravel-unique-id-generator' => array(
+            'pretty_version' => 'v1.0.1',
+            'version' => '1.0.1.0',
+            'reference' => '4982afb5a3c9d243500f516c1f9be565fceab4ba',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../sirajcse/laravel-unique-id-generator',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'spatie/backtrace' => array(
             'pretty_version' => '1.4.0',
