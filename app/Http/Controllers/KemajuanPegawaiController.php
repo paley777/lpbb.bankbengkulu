@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kemajuan_Pegawai;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StoreKemajuan_PegawaiRequest;
 use App\Http\Requests\UpdateKemajuan_PegawaiRequest;
 
@@ -13,7 +14,12 @@ class KemajuanPegawaiController extends Controller
      */
     public function index()
     {
-        //
+        return view('pegawai.progress.index', [
+            'active' => 'users',
+            'my_progreses' => Kemajuan_Pegawai::where('nrpp', Auth::user()->nrpp)
+                ->get()
+                ->groupBy('nama_modul'),
+        ]);
     }
 
     /**
