@@ -29,6 +29,22 @@ class SertifikatController extends Controller
             'users' => User::where('role', 'Pegawai')->get(),
         ]);
     }
+
+    /**
+     * Display a listing of the resource.
+     */
+    public function index_superadmin()
+    {
+        return view('dashboard.sertifikat.index', [
+            'active' => 'users',
+            'certificates' => Sertifikat::orderBy('nrpp', 'desc')
+                ->filter(request(['search']))
+                ->filter(request(['search1']))
+                ->paginate(20)
+                ->withQueryString(),
+            'users' => User::get(),
+        ]);
+    }
     public function generateCertificate($certificate)
     {
         $sertifikat = Sertifikat::where('id', $certificate)->first();
