@@ -128,6 +128,9 @@ Route::get('/dashboard/materi-list/{kelas}/edit-materi', [MateriListController::
 Route::put('/dashboard/materi-list/{kelas}/edit-materi', [MateriListController::class, 'update_materi'])->middleware('auth');
 Route::delete('/dashboard/materi-list/{kelas}/materi', [MateriListController::class, 'destroy_materi'])->middleware('auth');
 
+//SERTIFIKAT MANAJEMEN
+Route::get('/dashboard/certificate', [SertifikatController::class, 'index_superadmin'])->middleware('auth');
+
 //KELAS - PEGAWAI
 // INDEX MANAJEMEN KELAS
 Route::get('/kelas', [KelasController::class, 'index_pegawai'])->middleware('auth');

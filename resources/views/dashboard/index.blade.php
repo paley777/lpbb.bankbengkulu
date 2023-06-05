@@ -488,7 +488,7 @@
                                                 </g>
                                             </svg>
                                         </div>
-                                        <a href="/dashboard/petugas" class="stretched-link"></a>
+                                        <a href="/dashboard/certificate" class="stretched-link"></a>
                                         <h4 class="fw-bold text-center">Manajemen Sertifikasi</h4>
                                     </div>
                                 </div>
