@@ -202,7 +202,7 @@
                                                 </g>
                                             </svg>
                                         </div>
-                                        <a href="/dashboard/petugas" class="stretched-link"></a>
+                                        <a href="/my-certificate" class="stretched-link"></a>
                                         <h4 class="fw-bold text-center">Sertifikat</h4>
                                     </div>
                                 </div>
