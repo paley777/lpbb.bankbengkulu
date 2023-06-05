@@ -39,5 +39,8 @@ class Sertifikat extends Model
         $query->when($filters['search'] ?? false, function ($query, $search) {
             return $query->where('nrpp', 'like', '%' . $search . '%');
         });
+        $query->when($filters['search1'] ?? false, function ($query, $search) {
+            return $query->where('nama_modul', 'like', '%' . $search . '%');
+        });
     }
 }

@@ -13,6 +13,7 @@ use App\Http\Controllers\PetugasController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\MateriListController;
 use App\Http\Controllers\KemajuanPegawaiController;
+use App\Http\Controllers\SertifikatController;
 
 /*
 |--------------------------------------------------------------------------
@@ -149,3 +150,7 @@ Route::post('/kelas/{kelas}/room/{materi}/posttest', [KelasController::class, 's
 
 //Kemajuan Pribadi
 Route::get('/my-progress', [KemajuanPegawaiController::class, 'index'])->middleware('auth');
+
+//Sertifikat
+Route::get('/my-certificate', [SertifikatController::class, 'index'])->middleware('auth');
+Route::get('/my-certificate/{certificate}/print', [SertifikatController::class, 'generateCertificate'])->middleware('auth');
