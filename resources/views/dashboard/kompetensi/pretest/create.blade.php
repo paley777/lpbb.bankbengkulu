@@ -130,7 +130,7 @@
                                     (Wajib terisi untuk kolom dengan tanda "<span class="text-danger">*</span>").
                                 </p>
                                 <button class="btn btn-outline-primary responsive-small fw-semibold" type="submit">
-                                    Simpan Data
+                                    Simpan Data <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M20 4L3 9.31372L10.5 13.5M20 4L14.5 21L10.5 13.5M20 4L10.5 13.5" stroke="#0275d8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
                                 </button>
                             </form>
                         </div>

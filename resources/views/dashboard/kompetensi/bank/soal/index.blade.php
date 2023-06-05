@@ -167,8 +167,19 @@
                             @else
                                 <form method="post" action="{{ url('multiplesoalsdelete') }}">
                                     @csrf
-                                    <input class="btn btn-danger" type="submit" name="submit"
-                                        value="Delete Selected" />
+                                    <button class="btn btn-danger" type="submit" name="submit">Delete Selected <svg
+                                            width="16px" height="16px" viewBox="0 0 1024 1024"
+                                            xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
+                                            </g>
+                                            <g id="SVGRepo_iconCarrier">
+                                                <path fill="#ffffff"
+                                                    d="M195.2 195.2a64 64 0 0 1 90.496 0L512 421.504 738.304 195.2a64 64 0 0 1 90.496 90.496L602.496 512 828.8 738.304a64 64 0 0 1-90.496 90.496L512 602.496 285.696 828.8a64 64 0 0 1-90.496-90.496L421.504 512 195.2 285.696a64 64 0 0 1 0-90.496z">
+                                                </path>
+                                            </g>
+                                        </svg>
+                                    </button>
                             @endif
                             <div class="table-responsive">
                                 <table class="table table-hover responsive-small">
@@ -203,17 +214,57 @@
                                                     <td>{{ $soal->ans_c }}</td>
                                                     <td>{{ $soal->ans_d }}</td>
                                                     <td> <span
-                                                            class="badge rounded-pill text-bg-success">{{ $soal->correct_ans }}</span>
+                                                            class="badge rounded-pill text-bg-success"><svg width="16px" height="16px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill="#ffffff" fill-rule="evenodd" d="M3 10a7 7 0 019.307-6.611 1 1 0 00.658-1.889 9 9 0 105.98 7.501 1 1 0 00-1.988.22A7 7 0 113 10zm14.75-5.338a1 1 0 00-1.5-1.324l-6.435 7.28-3.183-2.593a1 1 0 00-1.264 1.55l3.929 3.2a1 1 0 001.38-.113l7.072-8z"></path> </g></svg> {{ $soal->correct_ans }}</span>
                                                     </td>
                                                     <td>
                                                         <a href="/dashboard/soal/{{ $soal->id }}/edit"
-                                                            class="badge bg-warning border-0 text-black">Edit</a>
+                                                            class="badge bg-warning border-0 text-black">Edit <svg
+                                                                width="16px" height="16px" viewBox="0 0 24 24"
+                                                                xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                                                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
+                                                                    stroke-linejoin="round"></g>
+                                                                <g id="SVGRepo_iconCarrier">
+                                                                    <title></title>
+                                                                    <g id="Complete">
+                                                                        <g id="edit">
+                                                                            <g>
+                                                                                <path
+                                                                                    d="M20,16v4a2,2,0,0,1-2,2H4a2,2,0,0,1-2-2V6A2,2,0,0,1,4,4H8"
+                                                                                    fill="none" stroke="#000000"
+                                                                                    stroke-linecap="round"
+                                                                                    stroke-linejoin="round"
+                                                                                    stroke-width="2"></path>
+                                                                                <polygon fill="none"
+                                                                                    points="12.5 15.8 22 6.2 17.8 2 8.3 11.5 8 16 12.5 15.8"
+                                                                                    stroke="#000000"
+                                                                                    stroke-linecap="round"
+                                                                                    stroke-linejoin="round"
+                                                                                    stroke-width="2"></polygon>
+                                                                            </g>
+                                                                        </g>
+                                                                    </g>
+                                                                </g>
+                                                            </svg></a>
                                                         <form action="/dashboard/soal/{{ $soal->id }}" method="post"
                                                             class="d-inline">
                                                             @method('delete')
                                                             @csrf
                                                             <button class="badge bg-danger border-0"
-                                                                onclick="return confirm('Anda yakin untuk menghapus data ini?')">Hapus</button>
+                                                                onclick="return confirm('Anda yakin untuk menghapus data ini?')">Hapus
+                                                                <svg width="16px" height="16px"
+                                                                    viewBox="0 0 1024 1024"
+                                                                    xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                                                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
+                                                                        stroke-linejoin="round">
+                                                                    </g>
+                                                                    <g id="SVGRepo_iconCarrier">
+                                                                        <path fill="#ffffff"
+                                                                            d="M195.2 195.2a64 64 0 0 1 90.496 0L512 421.504 738.304 195.2a64 64 0 0 1 90.496 90.496L602.496 512 828.8 738.304a64 64 0 0 1-90.496 90.496L512 602.496 285.696 828.8a64 64 0 0 1-90.496-90.496L421.504 512 195.2 285.696a64 64 0 0 1 0-90.496z">
+                                                                        </path>
+                                                                    </g>
+                                                                </svg></button>
                                                         </form>
                                                     </td>
                                                 </tr>
@@ -296,6 +347,36 @@
                                         </g>
                                     </g>
                                 </svg></button>
+                            <a href="{{ asset('storage/template/soalimport.xlsx') }}"
+                                class="btn btn-success fw-semibold">Unduh
+                                Template Excel <svg width="25px" height="25px" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                    <g id="SVGRepo_iconCarrier">
+                                        <title></title>
+                                        <g id="Complete">
+                                            <g id="download">
+                                                <g>
+                                                    <path d="M3,12.3v7a2,2,0,0,0,2,2H19a2,2,0,0,0,2-2v-7" fill="none"
+                                                        stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"></path>
+                                                    <g>
+                                                        <polyline data-name="Right" fill="none" id="Right-2"
+                                                            points="7.9 12.3 12 16.3 16.1 12.3" stroke="#ffffff"
+                                                            stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2">
+                                                        </polyline>
+                                                        <line fill="none" stroke="#ffffff" stroke-linecap="round"
+                                                            stroke-linejoin="round" stroke-width="2" x1="12"
+                                                            x2="12" y1="2.7" y2="14.2"></line>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </a>
                         </form>
                     </div>
                 </div>

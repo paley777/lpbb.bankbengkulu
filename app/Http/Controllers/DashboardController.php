@@ -12,6 +12,7 @@ use App\Models\PostTest;
 use App\Models\Kelas;
 use App\Models\Materi;
 use App\Models\Materi_List;
+use App\Models\Sertifikat;
 use App\Http\Requests\UpdateUserRequest;
 use App\Http\Requests\UpdateProfileRequest;
 use Illuminate\Support\Facades\Hash;
@@ -40,6 +41,7 @@ class DashboardController extends Controller
                 'countposttest' => PostTest::count(),
                 'countkelas' => Kelas::count(),
                 'countmateri' => Materi::count(),
+                'countsertifikat' => Sertifikat::count(),
                 'countpetugas' => User::where('role', 'Super Administrator')
                     ->orWhere('role', 'Operator')
                     ->count(),

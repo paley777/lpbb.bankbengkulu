@@ -135,7 +135,19 @@
                             <hr>
                             <form method="post" action="{{ url('multiplepretestsdelete') }}">
                                 @csrf
-                                <input class="btn btn-danger" type="submit" name="submit" value="Delete Selected" />
+                                <button class="btn btn-danger" type="submit" name="submit">Delete Selected <svg
+                                        width="16px" height="16px" viewBox="0 0 1024 1024"
+                                        xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
+                                        </g>
+                                        <g id="SVGRepo_iconCarrier">
+                                            <path fill="#ffffff"
+                                                d="M195.2 195.2a64 64 0 0 1 90.496 0L512 421.504 738.304 195.2a64 64 0 0 1 90.496 90.496L602.496 512 828.8 738.304a64 64 0 0 1-90.496 90.496L512 602.496 285.696 828.8a64 64 0 0 1-90.496-90.496L421.504 512 195.2 285.696a64 64 0 0 1 0-90.496z">
+                                            </path>
+                                        </g>
+                                    </svg>
+                                </button>
                                 <div class="table-responsive">
                                     <table class="table table-hover responsive-small">
                                         <thead>
@@ -162,17 +174,71 @@
                             </form>
                             <td>{{ $pretests->firstItem() + $key }}</td>
                             <td>{{ $pretest->nama_pretest }}</td>
-                            <td><span class="badge rounded-pill text-bg-success">{{ $pretest->nama_bank }}</span></td>
+                            <td><span class="badge rounded-pill text-bg-success"><svg width="16px" height="16px"
+                                        viewBox="0 0 1024 1024" class="icon" version="1.1"
+                                        xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                        <g id="SVGRepo_iconCarrier">
+                                            <path
+                                                d="M924.086857 282.843429l-362.057143 210.724571v415.378286s227.108571-137.728 238.738286-144.384c11.190857-6.436571 26.331429 0.731429 28.891429 17.554285 0.146286 0.731429 1.462857 4.973714 1.462857 5.705143 1.536 18.212571-0.731429 26.770286-12.580572 33.718857l-273.993143 162.742858c-6.948571 3.510857-16.091429 5.485714-30.72-1.755429-7.168-3.218286-424.301714-255.268571-424.301714-255.268571a24.649143 24.649143 0 0 1-11.702857-20.772572V251.611429c0-2.486857-2.413714-25.526857 13.385143-35.913143L517.558857 2.633143a24.137143 24.137143 0 0 1 21.796572 0l426.276571 213.138286c9.508571 4.827429 17.481143 14.628571 16.749714 23.844571a29.622857 29.622857 0 0 1 0.512 5.412571v437.028572c0 16.164571-13.165714 29.257143-29.330285 29.257143h-0.073143a29.403429 29.403429 0 0 1-29.403429-29.330286V282.843429zM495.908571 903.972571V493.714286L141.604571 290.230857v397.677714L495.908571 904.045714zM191.195429 236.251429l337.188571 191.122285 337.042286-191.122285L528.310857 67.876571 191.195429 236.251429z"
+                                                fill="#ffffff"></path>
+                                        </g>
+                                    </svg> {{ $pretest->nama_bank }}</span>
+                            </td>
                             <td><span class="badge rounded-pill text-bg-success">{{ $pretest->jumlah_soal }}</span></td>
-                            <td><span class="badge rounded-pill text-bg-success">{{ $pretest->durasi }}</span></td>
+                            <td><span class="badge rounded-pill text-bg-success"><svg width="16px" height="16px"
+                                        viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                        <g id="SVGRepo_iconCarrier">
+                                            <g id="Calendar / Timer">
+                                                <path id="Vector"
+                                                    d="M12 13V9M21 6L19 4M10 2H14M12 21C7.58172 21 4 17.4183 4 13C4 8.58172 7.58172 5 12 5C16.4183 5 20 8.58172 20 13C20 17.4183 16.4183 21 12 21Z"
+                                                    stroke="#ffffff" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round"></path>
+                                            </g>
+                                        </g>
+                                    </svg> {{ $pretest->durasi }}</span></td>
                             <td>
                                 <a href="/dashboard/pre-test/{{ $pretest->id }}/edit"
-                                    class="badge bg-warning border-0 text-black">Edit</a>
+                                    class="badge bg-warning border-0 text-black">Edit <svg width="16px" height="16px"
+                                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                        <g id="SVGRepo_iconCarrier">
+                                            <title></title>
+                                            <g id="Complete">
+                                                <g id="edit">
+                                                    <g>
+                                                        <path d="M20,16v4a2,2,0,0,1-2,2H4a2,2,0,0,1-2-2V6A2,2,0,0,1,4,4H8"
+                                                            fill="none" stroke="#000000" stroke-linecap="round"
+                                                            stroke-linejoin="round" stroke-width="2"></path>
+                                                        <polygon fill="none"
+                                                            points="12.5 15.8 22 6.2 17.8 2 8.3 11.5 8 16 12.5 15.8"
+                                                            stroke="#000000" stroke-linecap="round"
+                                                            stroke-linejoin="round" stroke-width="2"></polygon>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg></a>
                                 <form action="/dashboard/pre-test/{{ $pretest->id }}" method="post" class="d-inline">
                                     @method('delete')
                                     @csrf
                                     <button class="badge bg-danger border-0"
-                                        onclick="return confirm('Anda yakin untuk menghapus data ini?')">Hapus</button>
+                                        onclick="return confirm('Anda yakin untuk menghapus data ini?')">Hapus <svg
+                                            width="16px" height="16px" viewBox="0 0 1024 1024"
+                                            xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
+                                            </g>
+                                            <g id="SVGRepo_iconCarrier">
+                                                <path fill="#ffffff"
+                                                    d="M195.2 195.2a64 64 0 0 1 90.496 0L512 421.504 738.304 195.2a64 64 0 0 1 90.496 90.496L602.496 512 828.8 738.304a64 64 0 0 1-90.496 90.496L512 602.496 285.696 828.8a64 64 0 0 1-90.496-90.496L421.504 512 195.2 285.696a64 64 0 0 1 0-90.496z">
+                                                </path>
+                                            </g>
+                                        </svg></button>
                                 </form>
                             </td>
                             </tr>

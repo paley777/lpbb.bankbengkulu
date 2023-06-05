@@ -143,7 +143,43 @@
                                                     <td>{{ $certificate->no_sertifikat }}</td>
                                                     <td>
                                                         <a href="/my-certificate/{{ $certificate->id }}/print"
-                                                            class="badge bg-warning border-0 text-black">Unduh</a>
+                                                            class="badge bg-warning border-0 text-black">Unduh <svg
+                                                                width="16px" height="16px" viewBox="0 0 24 24"
+                                                                xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                                                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
+                                                                    stroke-linejoin="round"></g>
+                                                                <g id="SVGRepo_iconCarrier">
+                                                                    <title></title>
+                                                                    <g id="Complete">
+                                                                        <g id="download">
+                                                                            <g>
+                                                                                <path
+                                                                                    d="M3,12.3v7a2,2,0,0,0,2,2H19a2,2,0,0,0,2-2v-7"
+                                                                                    fill="none" stroke="#000000"
+                                                                                    stroke-linecap="round"
+                                                                                    stroke-linejoin="round"
+                                                                                    stroke-width="2"></path>
+                                                                                <g>
+                                                                                    <polyline data-name="Right"
+                                                                                        fill="none" id="Right-2"
+                                                                                        points="7.9 12.3 12 16.3 16.1 12.3"
+                                                                                        stroke="#000000"
+                                                                                        stroke-linecap="round"
+                                                                                        stroke-linejoin="round"
+                                                                                        stroke-width="2"></polyline>
+                                                                                    <line fill="none" stroke="#000000"
+                                                                                        stroke-linecap="round"
+                                                                                        stroke-linejoin="round"
+                                                                                        stroke-width="2" x1="12"
+                                                                                        x2="12" y1="2.7"
+                                                                                        y2="14.2"></line>
+                                                                                </g>
+                                                                            </g>
+                                                                        </g>
+                                                                    </g>
+                                                                </g>
+                                                            </svg></a>
                                                     </td>
                                                 </tr>
                                             @endforeach
@@ -163,125 +199,7 @@
                 </div>
             </div>
         </div>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        </script>
-        <script language="javascript">
-            $("#checkAll").click(function() {
-                $('input:checkbox').not(this).prop('checked', this.checked);
-            });
-        </script>
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
-            data-bs-backdrop="static" data-bs-keyboard="false">
-            <div class="modal-dialog modal-lg modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Impor Data dari Excel</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p class="responsive-small">Pilih file excel yang akan diimpor.</p>
-                        <p class="responsive-small fw-semibold">Format .xls dan .xlsx</p>
-                        <img src="{{ asset('storage/images/tatacara3.jpg') }}" alt="Logo" width="720" height="384"
-                            class="">
-                        <hr>
-                        <form action="{{ route('petugas-import') }}" method="POST" enctype="multipart/form-data">
-                            @csrf
-                            <div class="form-group mb-4">
-                                <div class="custom-file text-left">
-                                    <input type="file" name="file" class="custom-file-input responsive-small"
-                                        id="customFile"
-                                        accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">
-                                    <label class="custom-file-label" for="customFile">Pilih File</label>
-                                </div>
-                            </div>
-                            <button class="btn btn-warning fw-semibold">Import data <svg width="25px" height="25px"
-                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#000000">
-                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                                    <g id="SVGRepo_iconCarrier">
-                                        <title></title>
-                                        <g id="Complete">
-                                            <g id="download">
-                                                <g>
-                                                    <path d="M3,12.3v7a2,2,0,0,0,2,2H19a2,2,0,0,0,2-2v-7" fill="none"
-                                                        stroke="#000000" stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2"></path>
-                                                    <g>
-                                                        <polyline data-name="Right" fill="none" id="Right-2"
-                                                            points="7.9 12.3 12 16.3 16.1 12.3" stroke="#000000"
-                                                            stroke-linecap="round" stroke-linejoin="round"
-                                                            stroke-width="2">
-                                                        </polyline>
-                                                        <line fill="none" stroke="#000000" stroke-linecap="round"
-                                                            stroke-linejoin="round" stroke-width="2" x1="12"
-                                                            x2="12" y1="2.7" y2="14.2"></line>
-                                                    </g>
-                                                </g>
-                                            </g>
-                                        </g>
-                                    </g>
-                                </svg></button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Modal -->
-        <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
-            data-bs-backdrop="static" data-bs-keyboard="false">
-            <div class="modal-dialog modal-lg modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Update Data dari Excel</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p class="responsive-small">Pilih file excel yang akan diimpor.</p>
-                        <p class="responsive-small fw-semibold">Format .xls dan .xlsx</p>
-                        <img src="{{ asset('storage/images/tatacara3.jpg') }}" alt="Logo" width="720"
-                            height="384" class="">
-                        <hr>
-                        <form action="{{ route('petugas-edit') }}" method="POST" enctype="multipart/form-data">
-                            @csrf
-                            <div class="form-group mb-4">
-                                <div class="custom-file text-left">
-                                    <input type="file" name="file" class="custom-file-input responsive-small"
-                                        id="customFile"
-                                        accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">
-                                    <label class="custom-file-label" for="customFile">Pilih File</label>
-                                </div>
-                            </div>
-                            <button class="btn btn-warning fw-semibold">Update data <svg width="25px" height="25px"
-                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#000000">
-                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                                    <g id="SVGRepo_iconCarrier">
-                                        <title></title>
-                                        <g id="Complete">
-                                            <g id="download">
-                                                <g>
-                                                    <path d="M3,12.3v7a2,2,0,0,0,2,2H19a2,2,0,0,0,2-2v-7" fill="none"
-                                                        stroke="#000000" stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2"></path>
-                                                    <g>
-                                                        <polyline data-name="Right" fill="none" id="Right-2"
-                                                            points="7.9 12.3 12 16.3 16.1 12.3" stroke="#000000"
-                                                            stroke-linecap="round" stroke-linejoin="round"
-                                                            stroke-width="2">
-                                                        </polyline>
-                                                        <line fill="none" stroke="#000000" stroke-linecap="round"
-                                                            stroke-linejoin="round" stroke-width="2" x1="12"
-                                                            x2="12" y1="2.7" y2="14.2"></line>
-                                                    </g>
-                                                </g>
-                                            </g>
-                                        </g>
-                                    </g>
-                                </svg></button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    @endsection
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    </script>
+@endsection
