@@ -489,7 +489,7 @@
                                             </svg>
                                         </div>
                                         <a href="/dashboard/certificate" class="stretched-link"></a>
-                                        <h4 class="fw-bold text-center">Manajemen Sertifikasi</h4>
+                                        <h4 class="fw-bold text-center">Manajemen Sertifikat</h4>
                                     </div>
                                 </div>
                             </div>

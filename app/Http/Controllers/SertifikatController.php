@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Sertifikat;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Str;
 use App\Models\User;
 use App\Http\Requests\StoreSertifikatRequest;
 use App\Http\Requests\UpdateSertifikatRequest;
@@ -48,38 +49,81 @@ class SertifikatController extends Controller
     public function generateCertificate($certificate)
     {
         $sertifikat = Sertifikat::where('id', $certificate)->first();
-        $mypretest = Kemajuan_Pegawai::where('nrpp', Auth::user()->nrpp)
+        $user = User::where('nrpp', $sertifikat->nrpp)->first();
+        $mypretest = Kemajuan_Pegawai::where('nrpp', $user->nrpp)
             ->where('nama_modul', $sertifikat->nama_modul)
             ->where('jenis', 'Pre Test')
-            ->get();
-        $myposttest = Kemajuan_Pegawai::where('nrpp', Auth::user()->nrpp)
+            ->first();
+        $myposttest = Kemajuan_Pegawai::where('nrpp', $user->nrpp)
             ->where('nama_modul', $sertifikat->nama_modul)
             ->where('jenis', 'Post Test')
-            ->get();
-        $data = [
-            'certificate' => $sertifikat,
-            'pretest' => $mypretest,
-            'posttest' => $myposttest,
-        ];
+            ->first();
         // Get the template image file
-        $templateImagePath = public_path('template.jpg');
-        // Define the output path for the generated PDF
-        $outputPath = public_path('certificate.pdf');
+        $templateImagePath = public_path('template.png');
         // Load the template image using Intervention Image package
         $templateImage = \Image::make($templateImagePath);
         // Add the text to the template image
-        $templateImage->text($sertifikat->nama_modul, 500, 200, function ($font) {
+        $templateImage->text($sertifikat->nama_modul, 1000, 720, function ($font) {
+            $font->file(public_path('Arialn.ttf'));
+            $font->size(50);
+            $font->color('#000000');
+            $font->align('center');
+            $font->valign('center');
+        });
+        $templateImage->text('No. ' . $sertifikat->no_sertifikat, 960, 360, function ($font) {
+            $font->file(public_path('Arialn.ttf'));
+            $font->size(40);
+            $font->color('#000000');
+            $font->align('center');
+            $font->valign('center');
+        });
+        $templateImage->text($user->name, 960, 550, function ($font) {
             $font->file(public_path('Arialn.ttf'));
             $font->size(72);
             $font->color('#000000');
             $font->align('center');
-            $font->valign('top');
+            $font->valign('center');
+        });
+        $templateImage->text($sertifikat->created_at->format('d-m-Y'), 1080, 780, function ($font) {
+            $font->file(public_path('Arialn.ttf'));
+            $font->size(40);
+            $font->color('#000000');
+            $font->align('center');
+            $font->valign('center');
+        });
+        $templateImage->text($sertifikat->created_at->format('d-m-Y'), 1040, 1094, function ($font) {
+            $font->file(public_path('Arialn.ttf'));
+            $font->size(40);
+            $font->color('#000000');
+            $font->align('center');
+            $font->valign('center');
+        });
+        $templateImage->text($mypretest->skor, 970, 940, function ($font) {
+            $font->file(public_path('Arialn.ttf'));
+            $font->size(60);
+            $font->color('#000000');
+            $font->align('center');
+            $font->valign('center');
+        });
+        $templateImage->text($myposttest->skor, 1450, 940, function ($font) {
+            $font->file(public_path('Arialn.ttf'));
+            $font->size(60);
+            $font->color('#000000');
+            $font->align('center');
+            $font->valign('center');
+        });
+        $templateImage->text(Str::of($myposttest->status)->upper(), 1000, 1015, function ($font) {
+            $font->file(public_path('Arialn.ttf'));
+            $font->size(60);
+            $font->color('#000000');
+            $font->align('center');
+            $font->valign('center');
         });
         // Save the modified template image
-        $templateImage->save(public_path('mycertificate.png'));
+        $templateImage->save(public_path('my-certificate.png'));
         // Download the PDF
         return response()
-            ->download(public_path('mycertificate.png'))
+            ->download(public_path('my-certificate.png'))
             ->deleteFileAfterSend(true);
     }
     /**
