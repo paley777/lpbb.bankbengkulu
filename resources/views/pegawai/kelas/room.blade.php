@@ -291,7 +291,38 @@
                                                                                 <a href="/kelas/{{ $kelas->id }}/room/{{ $materi1->id }}/pretest"
                                                                                     class="btn fw-bold bg-warning border-0 text-black"
                                                                                     onclick="return confirm('Sebelum mulai ujian, pastikan perangkat Anda dalam kondisi optimal!')">Kerjakan
-                                                                                    Ujian</a>
+                                                                                    Ujian
+                                                                                    <?xml version="1.0" ?>
+                                                                                    <svg width="20px" height="20px"
+                                                                                        viewBox="0 0 24 24"
+                                                                                        xmlns="http://www.w3.org/2000/svg">
+                                                                                        <title />
+                                                                                        <g id="Complete">
+                                                                                            <g id="arrow-up-right">
+                                                                                                <g>
+                                                                                                    <polyline
+                                                                                                        data-name="Right"
+                                                                                                        fill="none"
+                                                                                                        id="Right-2"
+                                                                                                        points="18.7 12.4 18.7 5.3 11.6 5.3"
+                                                                                                        stroke="#000000"
+                                                                                                        stroke-linecap="round"
+                                                                                                        stroke-linejoin="round"
+                                                                                                        stroke-width="2" />
+                                                                                                    <line fill="none"
+                                                                                                        stroke="#000000"
+                                                                                                        stroke-linecap="round"
+                                                                                                        stroke-linejoin="round"
+                                                                                                        stroke-width="2"
+                                                                                                        x1="5.3"
+                                                                                                        x2="17.1"
+                                                                                                        y1="18.7"
+                                                                                                        y2="6.9" />
+                                                                                                </g>
+                                                                                            </g>
+                                                                                        </g>
+                                                                                    </svg>
+                                                                                </a>
                                                                             </div>
                                                                             @foreach ($pretest as $pretest)
                                                                                 @if ($pretest->nama_pretest == $materi1->nama_materi)
@@ -489,6 +520,36 @@
                                                                                     class="btn fw-bold bg-warning border-0 text-black"
                                                                                     onclick="return confirm('Sebelum mulai ujian, pastikan perangkat Anda dalam kondisi optimal!')">Remedial
                                                                                     (1x Kesempatan)
+                                                                                    <?xml version="1.0" ?>
+                                                                                    <svg width="20px" height="20px"
+                                                                                        viewBox="0 0 24 24"
+                                                                                        xmlns="http://www.w3.org/2000/svg">
+                                                                                        <title />
+                                                                                        <g id="Complete">
+                                                                                            <g id="arrow-up-right">
+                                                                                                <g>
+                                                                                                    <polyline
+                                                                                                        data-name="Right"
+                                                                                                        fill="none"
+                                                                                                        id="Right-2"
+                                                                                                        points="18.7 12.4 18.7 5.3 11.6 5.3"
+                                                                                                        stroke="#000000"
+                                                                                                        stroke-linecap="round"
+                                                                                                        stroke-linejoin="round"
+                                                                                                        stroke-width="2" />
+                                                                                                    <line fill="none"
+                                                                                                        stroke="#000000"
+                                                                                                        stroke-linecap="round"
+                                                                                                        stroke-linejoin="round"
+                                                                                                        stroke-width="2"
+                                                                                                        x1="5.3"
+                                                                                                        x2="17.1"
+                                                                                                        y1="18.7"
+                                                                                                        y2="6.9" />
+                                                                                                </g>
+                                                                                            </g>
+                                                                                        </g>
+                                                                                    </svg>
                                                                                 </a>
                                                                             </div>
                                                                             @foreach ($pretest as $pretest)
@@ -854,7 +915,40 @@
                                                                                         <a href="/kelas/{{ $kelas->id }}/room/{{ $materi2->id }}/posttest"
                                                                                             class="btn fw-bold bg-warning border-0 text-black"
                                                                                             onclick="return confirm('Sebelum mulai ujian, pastikan perangkat Anda dalam kondisi optimal!')">Kerjakan
-                                                                                            Ujian</a>
+                                                                                            Ujian
+                                                                                            <?xml version="1.0" ?>
+                                                                                            <svg width="20px"
+                                                                                                height="20px"
+                                                                                                viewBox="0 0 24 24"
+                                                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                                                <title />
+                                                                                                <g id="Complete">
+                                                                                                    <g id="arrow-up-right">
+                                                                                                        <g>
+                                                                                                            <polyline
+                                                                                                                data-name="Right"
+                                                                                                                fill="none"
+                                                                                                                id="Right-2"
+                                                                                                                points="18.7 12.4 18.7 5.3 11.6 5.3"
+                                                                                                                stroke="#000000"
+                                                                                                                stroke-linecap="round"
+                                                                                                                stroke-linejoin="round"
+                                                                                                                stroke-width="2" />
+                                                                                                            <line
+                                                                                                                fill="none"
+                                                                                                                stroke="#000000"
+                                                                                                                stroke-linecap="round"
+                                                                                                                stroke-linejoin="round"
+                                                                                                                stroke-width="2"
+                                                                                                                x1="5.3"
+                                                                                                                x2="17.1"
+                                                                                                                y1="18.7"
+                                                                                                                y2="6.9" />
+                                                                                                        </g>
+                                                                                                    </g>
+                                                                                                </g>
+                                                                                            </svg>
+                                                                                        </a>
                                                                                     </div>
                                                                                     @foreach ($posttest as $posttest)
                                                                                         @if ($posttest->nama_posttest == $materi2->nama_materi)
@@ -867,7 +961,7 @@
                                                                                                                 scope="row">
                                                                                                                 1
                                                                                                             </th>
-                                                                                                            <td>Nama Pre
+                                                                                                            <td>Nama Post
                                                                                                                 Test</td>
                                                                                                             <td>:</td>
                                                                                                             <td>{{ $posttest->nama_posttest }}
@@ -1092,6 +1186,38 @@
                                                                                             class="btn fw-bold bg-warning border-0 text-black"
                                                                                             onclick="return confirm('Sebelum mulai ujian, pastikan perangkat Anda dalam kondisi optimal!')">Remedial
                                                                                             (1x Kesempatan)
+                                                                                            <?xml version="1.0" ?>
+                                                                                            <svg width="20px"
+                                                                                                height="20px"
+                                                                                                viewBox="0 0 24 24"
+                                                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                                                <title />
+                                                                                                <g id="Complete">
+                                                                                                    <g id="arrow-up-right">
+                                                                                                        <g>
+                                                                                                            <polyline
+                                                                                                                data-name="Right"
+                                                                                                                fill="none"
+                                                                                                                id="Right-2"
+                                                                                                                points="18.7 12.4 18.7 5.3 11.6 5.3"
+                                                                                                                stroke="#000000"
+                                                                                                                stroke-linecap="round"
+                                                                                                                stroke-linejoin="round"
+                                                                                                                stroke-width="2" />
+                                                                                                            <line
+                                                                                                                fill="none"
+                                                                                                                stroke="#000000"
+                                                                                                                stroke-linecap="round"
+                                                                                                                stroke-linejoin="round"
+                                                                                                                stroke-width="2"
+                                                                                                                x1="5.3"
+                                                                                                                x2="17.1"
+                                                                                                                y1="18.7"
+                                                                                                                y2="6.9" />
+                                                                                                        </g>
+                                                                                                    </g>
+                                                                                                </g>
+                                                                                            </svg>
                                                                                         </a>
                                                                                     </div>
                                                                                     @foreach ($posttest as $posttest)
@@ -1241,9 +1367,34 @@
                                                             </h4>
                                                         </div>
                                                         <div class="d-flex justify-content-center"> <a
-                                                                href="/kelas/{{ $kelas->id }}/room/{{ $materi1->id }}/pretest"
+                                                                href="/my-certificate"
                                                                 class="btn btn-lg fw-bold bg-warning border-0 text-black">Cek
-                                                                Sertifikat</a></div>
+                                                                Sertifikat
+                                                                <?xml version="1.0" ?>
+                                                                <svg width="20px" height="20px" viewBox="0 0 24 24"
+                                                                    xmlns="http://www.w3.org/2000/svg">
+                                                                    <title />
+                                                                    <g id="Complete">
+                                                                        <g id="arrow-up-right">
+                                                                            <g>
+                                                                                <polyline data-name="Right" fill="none"
+                                                                                    id="Right-2"
+                                                                                    points="18.7 12.4 18.7 5.3 11.6 5.3"
+                                                                                    stroke="#000000"
+                                                                                    stroke-linecap="round"
+                                                                                    stroke-linejoin="round"
+                                                                                    stroke-width="2" />
+                                                                                <line fill="none" stroke="#000000"
+                                                                                    stroke-linecap="round"
+                                                                                    stroke-linejoin="round"
+                                                                                    stroke-width="2" x1="5.3"
+                                                                                    x2="17.1" y1="18.7"
+                                                                                    y2="6.9" />
+                                                                            </g>
+                                                                        </g>
+                                                                    </g>
+                                                                </svg>
+                                                            </a></div>
                                                     @endif
                                                     <input type="button" name="previous-step" class="previous-step"
                                                         value="Sebelumnya" />
