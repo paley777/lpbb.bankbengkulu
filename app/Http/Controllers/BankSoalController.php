@@ -27,8 +27,7 @@ class BankSoalController extends Controller
             'active' => 'bank',
             'banks' => BankSoal::orderBy('nama_bank', 'desc')
                 ->filter(request(['search']))
-                ->paginate(20)
-                ->withQueryString(),
+                ->get(),
             'soalcounts' => $soalcounts,
         ]);
     }

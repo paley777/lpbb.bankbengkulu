@@ -30,8 +30,7 @@ class KelasController extends Controller
             'active' => 'users',
             'kelases' => Kelas::orderBy('nama_modul', 'desc')
                 ->filter(request(['search']))
-                ->paginate(20)
-                ->withQueryString(),
+                ->get(),
         ]);
     }
     /**

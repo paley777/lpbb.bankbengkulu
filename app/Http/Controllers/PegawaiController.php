@@ -25,8 +25,7 @@ class PegawaiController extends Controller
             'users' => User::where('role', 'Pegawai')
                 ->orderBy('name', 'desc')
                 ->filter(request(['search']))
-                ->paginate(20)
-                ->withQueryString(),
+                ->get(),
         ]);
     }
 

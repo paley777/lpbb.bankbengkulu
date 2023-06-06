@@ -53,6 +53,7 @@
 
         }
     </style>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
     <div class="bg-success bg-gradient bg-opacity-10">
         <div class="container py-5 py-xl-5 mx-5 justify-content-center mx-auto" style="font-family: Raleway;">
             <div class="row mx-4">
@@ -60,7 +61,8 @@
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb responsive-small">
                             <li class="breadcrumb-item"><a href="/dashboard">Beranda</a></li>
-                            <li class="breadcrumb-item"><a href="/dashboard/uji-kompetensi">Manajemen Uji Kompetensi</a></li>
+                            <li class="breadcrumb-item"><a href="/dashboard/uji-kompetensi">Manajemen Uji Kompetensi</a>
+                            </li>
                             <li class="breadcrumb-item active" aria-current="page">Manajemen Post Test</li>
                         </ol>
                     </nav>
@@ -90,7 +92,7 @@
                         <div class="card-body">
                             <div class="d-flex">
                                 <h4 class="card-title fw-semibold responsive-p1 me-3">Tabel Data</h4>
-                                <div class="col-lg-5 col-md-4 me-3">
+                                {{-- <div class="col-lg-5 col-md-4 me-3">
                                     <form action="/dashboard/post-test">
                                         <div class="input-group">
                                             <input type="text" class="form-control responsive-small"
@@ -110,7 +112,7 @@
                                                 </svg></button>
                                         </div>
                                     </form>
-                                </div>
+                                </div> --}}
                                 <a href="/dashboard/post-test/create" class="btn btn-warning fw-semibold ms-3 ms-auto"
                                     type="button" data-bss-hover-animate="tada">Tambah Post Test
                                     <?xml version="1.0" ?>
@@ -148,8 +150,9 @@
                                         </g>
                                     </svg>
                                 </button>
+                                <br><br>
                                 <div class="table-responsive">
-                                    <table class="table table-hover responsive-small">
+                                    <table id="example" class="table table-hover responsive-small">
                                         <thead>
                                             <tr>
                                                 <th class="text-center"> <input type="checkbox" id="checkAll"></th>
@@ -172,7 +175,7 @@
                                                                 value="<?php echo $posttests[$key]->id; ?>">
                                                         </td>
                             </form>
-                            <td>{{ $posttests->firstItem() + $key }}</td>
+                            <td>{{ $loop->iteration }}</td>
                             <td>{{ $posttest->nama_posttest }}</td>
                             <td><span class="badge rounded-pill text-bg-success"><svg width="16px" height="16px"
                                         viewBox="0 0 1024 1024" class="icon" version="1.1"
@@ -245,13 +248,13 @@
                             </tbody>
                             @endif
                             </table>
-                            <div class="row">
+                            {{-- <div class="row">
                                 <div class="col">
                                     <div class="d-flex justify-content-center">
                                         {{ $posttests->links() }}
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -263,6 +266,12 @@
     <script language="javascript">
         $("#checkAll").click(function() {
             $('input:checkbox').not(this).prop('checked', this.checked);
+        });
+    </script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#example').DataTable();
         });
     </script>
 @endsection

@@ -21,8 +21,7 @@ class PreTestController extends Controller
             'active' => 'pretest',
             'pretests' => PreTest::orderBy('nama_pretest', 'desc')
                 ->filter(request(['search']))
-                ->paginate(20)
-                ->withQueryString(),
+                ->get(),
         ]);
     }
 

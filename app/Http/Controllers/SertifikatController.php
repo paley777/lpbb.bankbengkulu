@@ -25,8 +25,7 @@ class SertifikatController extends Controller
                 ->orderBy('no_sertifikat', 'desc')
                 ->filter(request(['search']))
                 ->filter(request(['search1']))
-                ->paginate(20)
-                ->withQueryString(),
+                ->get(),
             'users' => User::where('role', 'Pegawai')->get(),
         ]);
     }
@@ -41,8 +40,7 @@ class SertifikatController extends Controller
             'certificates' => Sertifikat::orderBy('nrpp', 'desc')
                 ->filter(request(['search']))
                 ->filter(request(['search1']))
-                ->paginate(20)
-                ->withQueryString(),
+                ->get(),
             'users' => User::get(),
         ]);
     }

@@ -21,8 +21,7 @@ class PostTestController extends Controller
             'active' => 'posttest',
             'posttests' => PostTest::orderBy('nama_posttest', 'desc')
                 ->filter(request(['search']))
-                ->paginate(20)
-                ->withQueryString(),
+                ->get(),
         ]);
     }
 
