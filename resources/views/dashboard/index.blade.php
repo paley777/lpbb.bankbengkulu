@@ -83,7 +83,7 @@
                         <div class="card-body">
                             <div class="d-flex">
                                 <h4 class="card-title fw-semibold responsive-p1 me-auto">Today's Overview</h4>
-                                <a href="/report" class="btn btn-warning fw-semibold" type="button"
+                                <a href="/dashboard/reports" class="btn btn-warning fw-semibold" type="button"
                                     data-bss-hover-animate="tada">Manajemen Laporan
                                     <?xml version="1.0" ?>
                                     <svg width="20px" height="20px" viewBox="0 0 24 24"
@@ -460,6 +460,7 @@
                                                 </g>
                                             </svg>
                                         </div>
+                                        <a href="/dashboard/reports" class="stretched-link"></a>
                                         <h4 class="fw-bold text-center">Manajemen Laporan</h4>
                                     </div>
                                 </div>

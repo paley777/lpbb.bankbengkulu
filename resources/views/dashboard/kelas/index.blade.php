@@ -53,6 +53,7 @@
 
         }
     </style>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
     <div class="bg-success bg-gradient bg-opacity-10">
         <div class="container py-5 py-xl-5 mx-5 justify-content-center mx-auto" style="font-family: Raleway;">
             <div class="row mx-4">
@@ -89,7 +90,7 @@
                         <div class="card-body">
                             <div class="d-flex">
                                 <h4 class="card-title fw-semibold responsive-p1 me-3">Tabel Data</h4>
-                                <div class="col-lg-5 col-md-4 me-3">
+                                {{-- <div class="col-lg-5 col-md-4 me-3">
                                     <form action="/dashboard/kelas">
                                         <div class="input-group">
                                             <input type="text" class="form-control responsive-small"
@@ -109,7 +110,7 @@
                                                 </svg></button>
                                         </div>
                                     </form>
-                                </div>
+                                </div> --}}
                                 <a href="/dashboard/kelas/create" class="btn btn-warning fw-semibold ms-auto" type="button"
                                     data-bss-hover-animate="tada">Tambah Kelas
                                     <?xml version="1.0" ?>
@@ -133,7 +134,7 @@
                             </div>
                             <hr>
                             <div class="table-responsive">
-                                <table class="table table-hover responsive-small">
+                                <table id="example" class="table table-hover responsive-small">
                                     <thead>
                                         <tr>
                                             <th scope="col">No.</th>
@@ -149,7 +150,7 @@
                                         <tbody>
                                             @foreach ($kelases as $key => $kelas)
                                                 <tr>
-                                                    <td>{{ $kelases->firstItem() + $key }}</td>
+                                                    <td>{{ $loop->iteration }}</td>
                                                     <td>{{ $kelas->nama_modul }}</td>
                                                     <td><span class="badge rounded-pill text-bg-success"><svg width="16px"
                                                                 height="16px" viewBox="0 0 24 24" fill="none"
@@ -289,19 +290,25 @@
                                         </tbody>
                                     @endif
                                 </table>
-                                <div class="row">
+                                {{-- <div class="row">
                                     <div class="col">
                                         <div class="d-flex justify-content-center">
                                             {{ $kelases->links() }}
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        </script>
-    @endsection
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#example').DataTable();
+        });
+    </script>
+@endsection

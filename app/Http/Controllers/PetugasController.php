@@ -24,8 +24,7 @@ class PetugasController extends Controller
                 ->orWhere('role', 'Operator')
                 ->orderBy('name', 'desc')
                 ->filter(request(['search']))
-                ->paginate(20)
-                ->withQueryString(),
+                ->get(),
         ]);
     }
 

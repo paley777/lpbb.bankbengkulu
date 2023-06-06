@@ -53,6 +53,7 @@
 
         }
     </style>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
     <div class="bg-success bg-gradient bg-opacity-10">
         <div class="container py-5 py-xl-5 mx-5 justify-content-center mx-auto" style="font-family: Raleway;">
             <div class="row mx-4">
@@ -60,7 +61,8 @@
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb responsive-small">
                             <li class="breadcrumb-item"><a href="/dashboard">Beranda</a></li>
-                            <li class="breadcrumb-item"><a href="/dashboard/uji-kompetensi">Manajemen Uji Kompetensi</a></li>
+                            <li class="breadcrumb-item"><a href="/dashboard/uji-kompetensi">Manajemen Uji Kompetensi</a>
+                            </li>
                             <li class="breadcrumb-item"><a href="/dashboard/bank-soal">Manajemen Bank Soal</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Manajemen Soal</li>
                         </ol>
@@ -93,7 +95,7 @@
                         <div class="card-body">
                             <div class="d-flex">
                                 <h4 class="card-title fw-semibold responsive-p1 me-3">Tabel Data</h4>
-                                <div class="col-lg-5 col-md-4 me-3">
+                                {{-- <div class="col-lg-5 col-md-4 me-3">
                                     <form action="/dashboard/soal/cari" method="POST">
                                         @csrf
                                         <div class="input-group">
@@ -116,7 +118,7 @@
                                                 </svg></button>
                                         </div>
                                     </form>
-                                </div>
+                                </div> --}}
                                 <button class="btn btn-warning fw-semibold ms-3" type="button"
                                     data-bss-hover-animate="tada" data-bs-toggle="modal"
                                     data-bs-target="#exampleModal">Impor dari Excel
@@ -151,8 +153,7 @@
                                                 <g>
                                                     <polyline data-name="Right" fill="none" id="Right-2"
                                                         points="18.7 12.4 18.7 5.3 11.6 5.3" stroke="#000000"
-                                                        stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2" />
+                                                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
                                                     <line fill="none" stroke="#000000" stroke-linecap="round"
                                                         stroke-linejoin="round" stroke-width="2" x1="5.3"
                                                         x2="17.1" y1="18.7" y2="6.9" />
@@ -180,9 +181,11 @@
                                             </g>
                                         </svg>
                                     </button>
+                                    <br>
+                                    <br>
                             @endif
                             <div class="table-responsive">
-                                <table class="table table-hover responsive-small">
+                                <table id="example" class="table table-hover responsive-small">
                                     <thead>
                                         <tr>
                                             <th class="text-center"> <input type="checkbox" id="checkAll"></th>
@@ -207,14 +210,24 @@
                                                             value="<?php echo $soals[$key]->id; ?>">
                                                     </td>
                                                     </form>
-                                                    <td>{{ $soals->firstItem() + $key }}</td>
+                                                    <td>{{ $loop->iteration }}</td>
                                                     <td>{{ $soal->soal }}</td>
                                                     <td>{{ $soal->ans_a }}</td>
                                                     <td>{{ $soal->ans_b }}</td>
                                                     <td>{{ $soal->ans_c }}</td>
                                                     <td>{{ $soal->ans_d }}</td>
-                                                    <td> <span
-                                                            class="badge rounded-pill text-bg-success"><svg width="16px" height="16px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill="#ffffff" fill-rule="evenodd" d="M3 10a7 7 0 019.307-6.611 1 1 0 00.658-1.889 9 9 0 105.98 7.501 1 1 0 00-1.988.22A7 7 0 113 10zm14.75-5.338a1 1 0 00-1.5-1.324l-6.435 7.28-3.183-2.593a1 1 0 00-1.264 1.55l3.929 3.2a1 1 0 001.38-.113l7.072-8z"></path> </g></svg> {{ $soal->correct_ans }}</span>
+                                                    <td> <span class="badge rounded-pill text-bg-success"><svg
+                                                                width="16px" height="16px" viewBox="0 0 20 20"
+                                                                xmlns="http://www.w3.org/2000/svg" fill="none">
+                                                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
+                                                                    stroke-linejoin="round"></g>
+                                                                <g id="SVGRepo_iconCarrier">
+                                                                    <path fill="#ffffff" fill-rule="evenodd"
+                                                                        d="M3 10a7 7 0 019.307-6.611 1 1 0 00.658-1.889 9 9 0 105.98 7.501 1 1 0 00-1.988.22A7 7 0 113 10zm14.75-5.338a1 1 0 00-1.5-1.324l-6.435 7.28-3.183-2.593a1 1 0 00-1.264 1.55l3.929 3.2a1 1 0 001.38-.113l7.072-8z">
+                                                                    </path>
+                                                                </g>
+                                                            </svg> {{ $soal->correct_ans }}</span>
                                                     </td>
                                                     <td>
                                                         <a href="/dashboard/soal/{{ $soal->id }}/edit"
@@ -272,13 +285,13 @@
                                         </tbody>
                                     @endif
                                 </table>
-                                <div class="row">
+                                {{-- <div class="row">
                                     <div class="col">
                                         <div class="d-flex justify-content-center">
                                             {{ $soals->links() }}
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>
@@ -290,6 +303,12 @@
         <script language="javascript">
             $("#checkAll").click(function() {
                 $('input:checkbox').not(this).prop('checked', this.checked);
+            });
+        </script>
+        <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('#example').DataTable();
             });
         </script>
         <!-- Modal -->

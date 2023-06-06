@@ -12,6 +12,7 @@ use App\Models\PostTest;
 use App\Models\Kelas;
 use App\Models\Materi;
 use App\Models\Materi_List;
+use App\Models\Kemajuan_Pegawai;
 use App\Models\Sertifikat;
 use App\Http\Requests\UpdateUserRequest;
 use App\Http\Requests\UpdateProfileRequest;
@@ -55,6 +56,45 @@ class DashboardController extends Controller
                 'dt' => $dt,
             ]);
         }
+    }
+    //Reports
+    public function index_reports()
+    {
+        return view('dashboard.reports.index', [
+            'active' => 'reports',
+        ]);
+    }
+    //Reports
+    public function export_pegawai()
+    {
+        return view('dashboard.reports.pegawai.index', [
+            'active' => 'reports',
+            'users' => User::where('role', 'Pegawai')
+                ->orderBy('name', 'desc')
+                ->filter(request(['search']))
+                ->get(),
+        ]);
+    }
+    //Reports
+    public function export_petugas()
+    {
+        return view('dashboard.reports.petugas.index', [
+            'active' => 'reports',
+            'users' => User::where('role', 'Super Administrator')
+                ->orWhere('role', 'Operator')
+                ->orderBy('name', 'desc')
+                ->filter(request(['search']))
+                ->get(),
+        ]);
+    }
+    //Reports
+    public function export_progress()
+    {
+        return view('dashboard.reports.progress.index', [
+            'active' => 'reports',
+            'progreses' => Kemajuan_Pegawai::orderBy('nrpp', 'desc')->get(),
+            'users' => User::where('role', 'Pegawai')->get(),
+        ]);
     }
     //Profile
     public function profile()

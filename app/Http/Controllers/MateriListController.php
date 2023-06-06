@@ -24,8 +24,7 @@ class MateriListController extends Controller
         return view('dashboard.kelas.materilist.index', [
             'materi_lists' => Materi_List::where('nama_modul', $nama_modul)
                 ->orderBy('created_at', 'asc')
-                ->paginate(50)
-                ->withQueryString(),
+                ->get(),
             'nama_modul' => $nama_modul,
             'kelas' => $kelas,
             'active' => 'users',
@@ -64,8 +63,7 @@ class MateriListController extends Controller
         return view('dashboard.kelas.materilist.index', [
             'materi_lists' => Materi_List::where('nama_modul', $request->nama_modul)
                 ->orderBy('created_at', 'desc')
-                ->paginate(20)
-                ->withQueryString(),
+                ->get(),
             'nama_modul' => $request->nama_modul,
             'kelas' => $kelas,
             'active' => 'users',
@@ -114,8 +112,7 @@ class MateriListController extends Controller
         return view('dashboard.kelas.materilist.index', [
             'materi_lists' => Materi_List::where('nama_modul', $request->nama_modul)
                 ->orderBy('created_at', 'desc')
-                ->paginate(20)
-                ->withQueryString(),
+                ->get(),
             'nama_modul' => $request->nama_modul,
             'kelas' => $kelas,
             'active' => 'users',
@@ -136,8 +133,7 @@ class MateriListController extends Controller
         return view('dashboard.kelas.materilist.index', [
             'materi_lists' => Materi_List::where('nama_modul', $kelas->nama_modul)
                 ->orderBy('created_at', 'desc')
-                ->paginate(20)
-                ->withQueryString(),
+                ->get(),
             'nama_modul' => $kelas->nama_modul,
             'kelas' => $id_kelas,
             'active' => 'users',
@@ -176,8 +172,7 @@ class MateriListController extends Controller
         return view('dashboard.kelas.materilist.index', [
             'materi_lists' => Materi_List::where('nama_modul', $request->nama_modul)
                 ->orderBy('created_at', 'desc')
-                ->paginate(20)
-                ->withQueryString(),
+                ->get(),
             'nama_modul' => $request->nama_modul,
             'kelas' => $kelas,
             'active' => 'users',
@@ -216,8 +211,7 @@ class MateriListController extends Controller
         return view('dashboard.kelas.materilist.index', [
             'materi_lists' => Materi_List::where('nama_modul', $request->nama_modul)
                 ->orderBy('created_at', 'desc')
-                ->paginate(20)
-                ->withQueryString(),
+                ->get(),
             'nama_modul' => $request->nama_modul,
             'kelas' => $kelas,
             'active' => 'users',
@@ -284,8 +278,7 @@ class MateriListController extends Controller
         return view('dashboard.kelas.materilist.index', [
             'materi_lists' => Materi_List::where('nama_modul', $request->nama_modul)
                 ->orderBy('created_at', 'desc')
-                ->paginate(20)
-                ->withQueryString(),
+                ->get(),
             'nama_modul' => $request->nama_modul,
             'kelas' => $kelas,
             'active' => 'users',
@@ -375,8 +368,7 @@ class MateriListController extends Controller
         return view('dashboard.kelas.materilist.index', [
             'materi_lists' => Materi_List::where('nama_modul', $request->nama_modul)
                 ->orderBy('created_at', 'desc')
-                ->paginate(20)
-                ->withQueryString(),
+                ->get(),
             'nama_modul' => $request->nama_modul,
             'kelas' => $kelas,
             'active' => 'users',
@@ -398,8 +390,7 @@ class MateriListController extends Controller
         return view('dashboard.kelas.materilist.index', [
             'materi_lists' => Materi_List::where('nama_modul', $kelas->nama_modul)
                 ->orderBy('created_at', 'desc')
-                ->paginate(20)
-                ->withQueryString(),
+                ->get(),
             'nama_modul' => $kelas->nama_modul,
             'kelas' => $id_kelas,
             'active' => 'users',

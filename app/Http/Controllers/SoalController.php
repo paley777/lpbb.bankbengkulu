@@ -31,8 +31,7 @@ class SoalController extends Controller
             'bankid' => $soal->id,
             'soals' => Soal::where('nama_bank', $soal->nama_bank)
                 ->orderBy('soal', 'desc')
-                ->paginate(25)
-                ->withQueryString(),
+                ->get(),
         ]);
     }
     //SEARCH
@@ -50,8 +49,7 @@ class SoalController extends Controller
             'soals' => Soal::where('nama_bank', $nama_bank)
                 ->where('soal', 'like', '%' . $cari . '%')
                 ->orderBy('soal', 'desc')
-                ->paginate(25)
-                ->withQueryString(),
+                ->get(),
         ]);
     }
     /**
@@ -86,8 +84,7 @@ class SoalController extends Controller
             'bankid' => $request->bankid,
             'soals' => Soal::where('nama_bank', $request->nama_bank)
                 ->orderBy('soal', 'desc')
-                ->paginate(25)
-                ->withQueryString(),
+                ->get(),
             'pesan' => 'Soal berhasil ditambahkan!',
         ]);
     }
@@ -126,8 +123,7 @@ class SoalController extends Controller
             'bankid' => $request->bankid,
             'soals' => Soal::where('nama_bank', $request->nama_bank)
                 ->orderBy('soal', 'desc')
-                ->paginate(25)
-                ->withQueryString(),
+                ->get(),
             'pesan' => 'Soal berhasil diubah!',
         ]);
     }
@@ -144,8 +140,7 @@ class SoalController extends Controller
             'bankid' => BankSoal::where('nama_bank', $soal->nama_bank)->first()->id,
             'soals' => Soal::where('nama_bank', $soal->nama_bank)
                 ->orderBy('soal', 'desc')
-                ->paginate(25)
-                ->withQueryString(),
+                ->get(),
             'pesan' => 'Soal berhasil dihapus!',
         ]);
     }
@@ -174,8 +169,7 @@ class SoalController extends Controller
             'bankid' => $bankid,
             'soals' => Soal::where('nama_bank', $nama_bank)
                 ->orderBy('soal', 'desc')
-                ->paginate(25)
-                ->withQueryString(),
+                ->get(),
             'pesan' => 'Soal berhasil dihapus!',
         ]);
     }

@@ -53,6 +53,7 @@
 
         }
     </style>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
     <div class="bg-success bg-gradient bg-opacity-10">
         <div class="container py-5 py-xl-5 mx-5 justify-content-center mx-auto" style="font-family: Raleway;">
             <div class="row mx-4">
@@ -89,7 +90,7 @@
                         <div class="card-body">
                             <div class="d-flex">
                                 <h4 class="card-title fw-semibold responsive-p1 me-3">Tabel Data</h4>
-                                <div class="col-lg-5 col-md-4 me-3">
+                                {{-- <div class="col-lg-5 col-md-4 me-3">
                                     <form action="/dashboard/petugas">
                                         <div class="input-group">
                                             <input type="text" class="form-control responsive-small"
@@ -109,7 +110,7 @@
                                                 </svg></button>
                                         </div>
                                     </form>
-                                </div>
+                                </div> --}}
                                 <button class="btn btn-warning fw-semibold ms-auto" type="button"
                                     data-bss-hover-animate="tada" data-bs-toggle="modal" data-bs-target="#editModal">Update
                                     dari Excel
@@ -144,8 +145,7 @@
                                                 d="M56 30c0-1.662 1.338-3 3-3h108c1.662 0 3 1.338 3 3v132c0 1.662-1.338 3-3 3H59c-1.662 0-3-1.338-3-3v-32m0-68V30"
                                                 style="fill-opacity:.402658;stroke:#000000;stroke-width:12;stroke-linecap:round;paint-order:stroke fill markers">
                                             </path>
-                                            <rect width="68" height="68" x="-58.1" y="40.3"
-                                                rx="3"
+                                            <rect width="68" height="68" x="-58.1" y="40.3" rx="3"
                                                 style="fill:none;fill-opacity:.402658;stroke:#000000;stroke-width:12;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
                                                 transform="translate(80.1 21.7)"></rect>
                                             <path
@@ -155,8 +155,8 @@
                                         </g>
                                     </svg>
                                 </button>
-                                <a href="/dashboard/petugas/create" class="btn btn-warning fw-semibold ms-3"
-                                    type="button" data-bss-hover-animate="tada">Tambah Petugas
+                                <a href="/dashboard/petugas/create" class="btn btn-warning fw-semibold ms-3" type="button"
+                                    data-bss-hover-animate="tada">Tambah Petugas
                                     <?xml version="1.0" ?>
                                     <svg width="20px" height="20px" viewBox="0 0 24 24"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -180,8 +180,8 @@
                             <hr>
                             <form method="post" action="{{ url('multiplepetugassdelete') }}">
                                 @csrf
-                                <button class="btn btn-danger" type="submit" name="submit">Delete Selected <svg
-                                        width="16px" height="16px" viewBox="0 0 1024 1024"
+                                <button class="btn btn-danger" type="submit" name="submit">Delete Selected
+                                    <svg width="16px" height="16px" viewBox="0 0 1024 1024"
                                         xmlns="http://www.w3.org/2000/svg" fill="#000000">
                                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                                         <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
@@ -193,8 +193,10 @@
                                         </g>
                                     </svg>
                                 </button>
+                                <br>
+                                <br>
                                 <div class="table-responsive">
-                                    <table class="table table-hover responsive-small">
+                                    <table id="example" class="table table-hover responsive-small">
                                         <thead>
                                             <tr>
                                                 <th class="text-center"> <input type="checkbox" id="checkAll"></th>
@@ -219,7 +221,7 @@
                                                                 value="<?php echo $users[$key]->id; ?>">
                                                         </td>
                             </form>
-                            <td>{{ $users->firstItem() + $key }}</td>
+                            <td>{{ $loop->iteration }}</td>
                             <td>
                                 @if ($user->role == 'Super Administrator')
                                     <span class="badge rounded-pill text-bg-success"><svg width="24px" height="24px"
@@ -304,13 +306,13 @@
                             </tbody>
                             @endif
                             </table>
-                            <div class="row">
+                            {{-- <div class="row">
                                 <div class="col">
                                     <div class="d-flex justify-content-center">
                                         {{ $users->links() }}
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -322,6 +324,12 @@
     <script language="javascript">
         $("#checkAll").click(function() {
             $('input:checkbox').not(this).prop('checked', this.checked);
+        });
+    </script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#example').DataTable();
         });
     </script>
     <!-- Modal -->
