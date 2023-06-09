@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\UsersImport;
@@ -20,13 +21,24 @@ class PegawaiController extends Controller
      */
     public function index()
     {
-        return view('dashboard.pegawai.index', [
-            'active' => 'users',
-            'users' => User::where('role', 'Pegawai')
-                ->orderBy('name', 'desc')
-                ->filter(request(['search']))
-                ->get(),
-        ]);
+        if (Auth::user()->role == 'Super Administrator') {
+            return view('dashboard.pegawai.index', [
+                'active' => 'users',
+                'users' => User::where('role', 'Pegawai')
+                    ->orderBy('name', 'desc')
+                    ->filter(request(['search']))
+                    ->get(),
+            ]);
+        } elseif (Auth::user()->role == 'Operator') {
+            return view('operator.pegawai.index', [
+                'active' => 'users',
+                'users' => User::where('role', 'Pegawai')
+                    ->where('unit_kerja', Auth::user()->unit_kerja)
+                    ->orderBy('name', 'desc')
+                    ->filter(request(['search']))
+                    ->get(),
+            ]);
+        }
     }
 
     /**
@@ -87,6 +99,7 @@ class PegawaiController extends Controller
     public function update(UpdateUserRequest $request, User $pegawai)
     {
         $validated = $request->validated();
+        $validated['password'] = Hash::make($validated['password']);
         User::where('id', $pegawai['id'])->update($validated);
 
         return redirect('/dashboard/pegawai')->with('success', 'Pegawai telah diubah!');

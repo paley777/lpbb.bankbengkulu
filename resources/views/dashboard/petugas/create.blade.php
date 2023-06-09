@@ -121,7 +121,7 @@
                                             class="text-danger">*</span></label>
                                     <select class="form-select responsive-small" name="role"
                                         aria-label="Default select example" required>
-                                        <option selected>Pilih Role</option>
+                                        <option value="" selected>Pilih Role</option>
                                         <option value="Super Administrator">Super Administrator</option>
                                         <option value="Operator">Operator</option>
                                     </select>

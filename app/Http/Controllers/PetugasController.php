@@ -86,6 +86,7 @@ class PetugasController extends Controller
     public function update(UpdatePetugasRequest $request, User $petuga)
     {
         $validated = $request->validated();
+        $validated['password'] = Hash::make($validated['password']);
         User::where('id', $petuga['id'])->update($validated);
 
         return redirect('/dashboard/petugas')->with('success', 'Petugas telah diubah!');

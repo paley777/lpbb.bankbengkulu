@@ -136,6 +136,9 @@ Route::get('/dashboard/reports/pegawai', [DashboardController::class, 'export_pe
 Route::get('/dashboard/reports/petugas', [DashboardController::class, 'export_petugas'])->middleware('auth');
 Route::get('/dashboard/reports/progress', [DashboardController::class, 'export_progress'])->middleware('auth');
 
+//MANAJEMEN KEMAJUAN PEMBELAJARAN - ADMIN
+Route::get('/dashboard/progress', [KemajuanPegawaiController::class, 'index_admin'])->middleware('auth');
+
 //KELAS - PEGAWAI
 // INDEX MANAJEMEN KELAS
 Route::get('/kelas', [KelasController::class, 'index_pegawai'])->middleware('auth');

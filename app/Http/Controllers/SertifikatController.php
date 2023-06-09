@@ -35,14 +35,25 @@ class SertifikatController extends Controller
      */
     public function index_superadmin()
     {
-        return view('dashboard.sertifikat.index', [
-            'active' => 'users',
-            'certificates' => Sertifikat::orderBy('nrpp', 'desc')
-                ->filter(request(['search']))
-                ->filter(request(['search1']))
-                ->get(),
-            'users' => User::get(),
-        ]);
+        if (Auth::user()->role == 'Super Administrator') {
+            return view('dashboard.sertifikat.index', [
+                'active' => 'users',
+                'certificates' => Sertifikat::orderBy('nrpp', 'desc')
+                    ->filter(request(['search']))
+                    ->filter(request(['search1']))
+                    ->get(),
+                'users' => User::get(),
+            ]);
+        } elseif (Auth::user()->role == 'Operator') {
+            return view('operator.sertifikat.index', [
+                'active' => 'users',
+                'certificates' => Sertifikat::orderBy('nrpp', 'desc')
+                    ->filter(request(['search']))
+                    ->filter(request(['search1']))
+                    ->get(),
+                'users' => User::get(),
+            ]);
+        }
     }
     public function generateCertificate($certificate)
     {
