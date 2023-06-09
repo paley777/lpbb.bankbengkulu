@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Charts\SampleChart;
 use Illuminate\Support\Facades\Auth;
 use Session;
+use ConsoleTVs\Charts\Facades\Charts;
 use App\Models\User;
 use App\Models\BankSoal;
 use App\Models\PreTest;
@@ -34,6 +36,32 @@ class DashboardController extends Controller
         //     return redirect('/login');
         // }
         if (Auth::user()->role == 'Super Administrator') {
+            $lulus = Kemajuan_Pegawai::where('jenis', 'Post Test')
+                ->where('skor', '>=', 70)
+                ->count();
+            $belumlulus = Kemajuan_Pegawai::where('jenis', 'Post Test')
+                ->where('skor', '<', 70)
+                ->count();
+            $chart = new SampleChart();
+            $chart->labels(['Lulus', 'Belum Lulus']);
+            $chart->dataset('My dataset', 'pie', [$lulus, $belumlulus])->options([
+                'backgroundColor' => ['rgb(255, 99, 132)', 'rgb(54, 162, 235)', 'rgb(255, 205, 86)'],
+            ]);
+
+            $data = User::where('role', 'Pegawai')->get();
+            $groupedData = $data->groupBy('unit_kerja');
+            // Prepare data for the pie chart
+            $chartData = [];
+            foreach ($groupedData as $category => $items) {
+                $chartData[] = [$category, count($items)];
+            }
+            // Create the pie chart
+            $chart1 = new SampleChart();
+            $chart1->labels(array_column($chartData, 0));
+            $chart1->dataset('My dataset1', 'pie', array_column($chartData, 1))->options([
+                'backgroundColor' => ['rgb(255, 99, 132)', 'rgb(54, 162, 235)', 'rgb(255, 205, 86)'],
+            ]);
+
             return view('dashboard.index', [
                 'active' => 'index',
                 'countpegawai' => User::where('role', 'Pegawai')->count(),
@@ -46,6 +74,8 @@ class DashboardController extends Controller
                 'countpetugas' => User::where('role', 'Super Administrator')
                     ->orWhere('role', 'Operator')
                     ->count(),
+                'chart' => $chart,
+                'chart1' => $chart1,
             ]);
         } elseif (Auth::user()->role == 'Pegawai') {
             $dt = Carbon::now()->format('Y-m-d');
@@ -55,25 +85,72 @@ class DashboardController extends Controller
                 'materi_lists' => Materi_List::where('jenis', 'materi')->get(),
                 'dt' => $dt,
             ]);
+        } elseif (Auth::user()->role == 'Operator') {
+            $data = User::where('role', 'Pegawai')->get();
+            $groupedData = $data->groupBy('unit_kerja');
+            // Prepare data for the pie chart
+            $chartData = [];
+            foreach ($groupedData as $category => $items) {
+                $chartData[] = [$category, count($items)];
+            }
+            // Create the pie chart
+            $chart1 = new SampleChart();
+            $chart1->labels(array_column($chartData, 0));
+            $chart1->dataset('My dataset1', 'pie', array_column($chartData, 1))->options([
+                'backgroundColor' => ['rgb(255, 99, 132)', 'rgb(54, 162, 235)', 'rgb(255, 205, 86)'],
+            ]);
+            return view('operator.index', [
+                'active' => 'index',
+                'countpegawai' => User::where('role', 'Pegawai')
+                    ->where('unit_kerja', Auth::user()->unit_kerja)
+                    ->count(),
+                'countbank' => BankSoal::count(),
+                'countpretest' => PreTest::count(),
+                'countposttest' => PostTest::count(),
+                'countkelas' => Kelas::count(),
+                'countmateri' => Materi::count(),
+                'countsertifikat' => Sertifikat::count(),
+                'countpetugas' => User::where('role', 'Super Administrator')
+                    ->orWhere('role', 'Operator')
+                    ->count(),
+                'chart1' => $chart1,
+            ]);
         }
     }
     //Reports
     public function index_reports()
     {
-        return view('dashboard.reports.index', [
-            'active' => 'reports',
-        ]);
+        if (Auth::user()->role == 'Super Administrator') {
+            return view('dashboard.reports.index', [
+                'active' => 'reports',
+            ]);
+        } elseif (Auth::user()->role == 'Operator') {
+            return view('operator.reports.index', [
+                'active' => 'reports',
+            ]);
+        }
     }
     //Reports
     public function export_pegawai()
     {
-        return view('dashboard.reports.pegawai.index', [
-            'active' => 'reports',
-            'users' => User::where('role', 'Pegawai')
-                ->orderBy('name', 'desc')
-                ->filter(request(['search']))
-                ->get(),
-        ]);
+        if (Auth::user()->role == 'Super Administrator') {
+            return view('dashboard.reports.pegawai.index', [
+                'active' => 'reports',
+                'users' => User::where('role', 'Pegawai')
+                    ->orderBy('name', 'desc')
+                    ->filter(request(['search']))
+                    ->get(),
+            ]);
+        } elseif (Auth::user()->role == 'Operator') {
+            return view('operator.reports.pegawai.index', [
+                'active' => 'reports',
+                'users' => User::where('role', 'Pegawai')
+                    ->where('unit_kerja', Auth::user()->unit_kerja)
+                    ->orderBy('name', 'desc')
+                    ->filter(request(['search']))
+                    ->get(),
+            ]);
+        }
     }
     //Reports
     public function export_petugas()
@@ -90,11 +167,21 @@ class DashboardController extends Controller
     //Reports
     public function export_progress()
     {
-        return view('dashboard.reports.progress.index', [
-            'active' => 'reports',
-            'progreses' => Kemajuan_Pegawai::orderBy('nrpp', 'desc')->get(),
-            'users' => User::where('role', 'Pegawai')->get(),
-        ]);
+        if (Auth::user()->role == 'Super Administrator') {
+            return view('dashboard.reports.progress.index', [
+                'active' => 'reports',
+                'progreses' => Kemajuan_Pegawai::orderBy('nrpp', 'desc')->get(),
+                'users' => User::where('role', 'Pegawai')->get(),
+            ]);
+        } elseif (Auth::user()->role == 'Operator') {
+            return view('operator.reports.progress.index', [
+                'active' => 'reports',
+                'progreses' => Kemajuan_Pegawai::orderBy('nrpp', 'desc')->get(),
+                'users' => User::where('role', 'Pegawai')
+                    ->where('unit_kerja', Auth::user()->unit_kerja)
+                    ->get(),
+            ]);
+        }
     }
     //Profile
     public function profile()

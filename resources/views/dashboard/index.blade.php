@@ -179,7 +179,7 @@
                         <div class="card-body">
                             <div class="d-flex">
                                 <h4 class="card-title fw-semibold responsive-p1 me-auto">Kemajuan Pembelajaran Pegawai</h4>
-                                <a href="/dashboard/kelas" class="btn btn-warning fw-semibold" type="button"
+                                <a href="/dashboard/progress" class="btn btn-warning fw-semibold" type="button"
                                     data-bss-hover-animate="tada">Manajemen Kemajuan Pembelajaran
                                     <?xml version="1.0" ?>
                                     <svg width="20px" height="20px" viewBox="0 0 24 24"
@@ -203,91 +203,23 @@
                             </div>
                             <hr>
                             <div class="row g-2">
-                                <div class="col-md-3 col-6">
-                                    <a href="/materi/detail" style="text-decoration: none;">
-                                        <div class="card bg-success text-white bg-gradient border border-0 p-4 h-100"
-                                            data-bss-hover-animate="pulse"
-                                            style="color: rgb(0,0,0);background: var(--bs-yellow);"><span
-                                                class="fw-semibold mb-2">Dibuka
-                                                mulai
-                                                27 Maret 2023 - 20 April 2023</span>
-                                            <h3 class="fw-bold">Manajemen Resiko I</h3>
-                                            <h6><span class="badge rounded-pill text-bg-warning">10 Modul</span> <span
-                                                    class="badge rounded-pill text-bg-warning">Berlangsung</span></h6>
+                                <div class="col">
+                                    <div class="card rounded">
+                                        <h4 class="card-title">Grafik Perbandingan Post Test (Lulus vs Tidak Lulus/Belum Lulus)</h4>
+                                        <div class="card-body py-3 px-3">
+                                            {!! $chart->container() !!}
                                         </div>
-                                    </a>
-                                </div>
-                                <div class="col-md-3 col-6">
-                                    <div class="card bg-success text-white bg-gradient border border-0 p-4 h-100"
-                                        style="color: rgb(0,0,0);background: var(--bs-yellow);"
-                                        data-bss-hover-animate="pulse"><span class="fw-semibold mb-2">Dibuka mulai
-                                            27 Maret 2023 - 20 April 2023</span>
-                                        <h3 class="fw-bold">Manajemen Resiko II</h3>
-                                        <h6><span class="badge rounded-pill text-bg-warning">10 Modul</span> <span
-                                                class="badge rounded-pill text-bg-warning">Berlangsung</span></h6>
                                     </div>
                                 </div>
-                                <div class="col-md-3 col-6">
-                                    <div class="card bg-success text-white bg-gradient border border-0 p-4 h-100"
-                                        style="color: rgb(0,0,0);background: var(--bs-yellow);"
-                                        data-bss-hover-animate="pulse"><span class="fw-semibold mb-2">Dibuka mulai
-                                            27 Maret 2023 - 20 April 2023</span>
-                                        <h3 class="fw-bold">Manajemen Resiko III</h3>
-                                        <h6><span class="badge rounded-pill text-bg-warning">10 Modul</span> <span
-                                                class="badge rounded-pill text-bg-warning">Berlangsung</span></h6>
+                                <div class="col">
+                                    <div class="card rounded">
+                                        <h4 class="card-title">Grafik Divisi Pegawai Terdaftar</h4>
+                                        <div class="card-body py-3 px-3">
+                                            {!! $chart1->container() !!}
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-md-3 col-6">
-                                    <div class="card bg-success text-white bg-gradient border border-0 p-4 h-100"
-                                        style="color: rgb(0,0,0);background: var(--bs-yellow);"
-                                        data-bss-hover-animate="pulse"><span class="fw-semibold mb-2">Dibuka mulai
-                                            27 Maret 2023 - 20 April 2023</span>
-                                        <h3 class="fw-bold">Anti-Fraud</h3>
-                                        <h6><span class="badge rounded-pill text-bg-warning">10 Modul</span> <span
-                                                class="badge rounded-pill text-bg-warning">Berlangsung</span></h6>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-6">
-                                    <div class="card bg-success text-white bg-gradient border border-0 p-4 h-100"
-                                        style="color: rgb(0,0,0);background: var(--bs-yellow);"
-                                        data-bss-hover-animate="pulse"><span class="fw-semibold mb-2">Dibuka
-                                            mulai
-                                            27 Maret 2023 - 20 April 2023</span>
-                                        <h3 class="fw-bold">Marketing</h3>
-                                        <h6><span class="badge rounded-pill text-bg-warning">10 Modul</span> <span
-                                                class="badge rounded-pill text-bg-warning">Berlangsung</span></h6>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-6">
-                                    <div class="card bg-success text-white bg-gradient border border-0 p-4 h-100"
-                                        style="color: rgb(0,0,0);background: var(--bs-yellow);"
-                                        data-bss-hover-animate="pulse"><span class="fw-semibold mb-2">Dibuka
-                                            mulai 27 Maret 2023 - 20 April 2023</span>
-                                        <h3 class="fw-bold">Microblog I</h3>
-                                        <h6><span class="badge rounded-pill text-bg-warning">10 Modul</span> <span
-                                                class="badge rounded-pill text-bg-warning">Berlangsung</span></h6>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-6">
-                                    <div class="card bg-success text-white bg-gradient border border-0 p-4 h-100"
-                                        style="color: rgb(0,0,0);background: var(--bs-yellow);"
-                                        data-bss-hover-animate="pulse"><span class="fw-semibold mb-2">Dibuka
-                                            mulai 27 Maret 2023 - 20 April 2023</span>
-                                        <h3 class="fw-bold">Microblog II</h3>
-                                        <h6><span class="badge rounded-pill text-bg-warning">10 Modul</span> <span
-                                                class="badge rounded-pill text-bg-warning">Berlangsung</span></h6>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-6">
-                                    <div class="card bg-success text-white bg-gradient border border-0 p-4 h-100"
-                                        style="color: rgb(0,0,0);background: var(--bs-yellow);"
-                                        data-bss-hover-animate="pulse"><span class="fw-semibold mb-2">Dibuka
-                                            mulai 27 Maret 2023 - 20 April 2023</span>
-                                        <h3 class="fw-bold">Etika Profesi</h3>
-                                        <h6><span class="badge rounded-pill text-bg-warning">10 Modul</span> <span
-                                                class="badge rounded-pill text-bg-warning">Berlangsung</span></h6>
-                                    </div>
-                                </div>
+                               
                             </div>
                         </div>
                     </div>
@@ -432,6 +364,7 @@
                                                 </g>
                                             </svg>
                                         </div>
+                                        <a href="/dashboard/progress" class="stretched-link"></a>
                                         <h4 class="fw-bold text-center">Manajemen Kemajuan Pembelajaran</h4>
                                     </div>
                                 </div>
@@ -613,7 +546,9 @@
             </div>
         </div>
     </div>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js" charset="utf-8"></script>
+    {!! $chart->script() !!}
+    {!! $chart1->script() !!}
     <script>
         let counts4 = setInterval(updated4);
         let upto4 = 0;
