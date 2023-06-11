@@ -479,7 +479,7 @@ class KelasController extends Controller
             Kemajuan_Pegawai::where('jenis', 'Pre Test')
                 ->where('nrpp', Auth::user()->nrpp)
                 ->update([
-                    'status' => 'Belum Lulus',
+                    'status' => 'Tidak Lulus',
                     'skor' => $skor,
                 ]);
         } else {

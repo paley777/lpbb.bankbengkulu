@@ -22,7 +22,7 @@ class LandingController extends Controller
     public function about()
     {
         return view('landing.tentang.index', [
-            'active' => 'index',
+            'active' => 'about',
         ]);
     }
     //Masuk
