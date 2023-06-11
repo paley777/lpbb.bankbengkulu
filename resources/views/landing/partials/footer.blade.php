@@ -72,8 +72,7 @@
                 <h3 class="fs-6 text-white">SITEMAP</h3>
                 <ul class="list-unstyled">
                     <li data-bss-hover-animate="pulse"><a class="link-light" href="/login">Masuk</a></li>
-                    <li data-bss-hover-animate="pulse"><a class="link-light" href="#">Tentang Kami</a></li>
-                    <li data-bss-hover-animate="pulse"><a class="link-light" href="#">Pengembang Sistem</a></li>
+                    <li data-bss-hover-animate="pulse"><a class="link-light" href="/tentang">Tentang</a></li>
                 </ul>
             </div>
             <div class="col-sm-4-text-center col-md-3 text-lg-start d-flex flex-column">
@@ -102,7 +101,7 @@
         </div>
         <hr />
         <div class="d-flex justify-content-between align-items-center pt-3">
-            <p class="mb-0">Copyright © 2023 PT. Bank Bengkulu | ValleyFeeds</p>
+            <p class="mb-0">Copyright © 2023 PT. Bank Bengkulu | Program Studi Informatika Universitas Bengkulu</p>
         </div>
     </div>
 </footer>

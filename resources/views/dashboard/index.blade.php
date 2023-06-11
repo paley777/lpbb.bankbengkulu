@@ -205,21 +205,32 @@
                             <div class="row g-2">
                                 <div class="col">
                                     <div class="card rounded">
-                                        <h4 class="card-title">Grafik Perbandingan Post Test (Lulus vs Tidak Lulus/Belum Lulus)</h4>
+                                        <h4 class="card-title text-center">Grafik Divisi Pegawai Terdaftar</h4>
+                                        <div class="card-body py-3 px-3" style="height: 50rem;">
+                                            {!! $chart1->container() !!}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="card rounded">
+                                        <h4 class="card-title text-center">Grafik Perbandingan Jumlah Pre Test (Lulus vs Tidak Lulus)
+                                        </h4>
                                         <div class="card-body py-3 px-3">
-                                            {!! $chart->container() !!}
+                                            {!! $chart2->container() !!}
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col">
                                     <div class="card rounded">
-                                        <h4 class="card-title">Grafik Divisi Pegawai Terdaftar</h4>
+                                        <h4 class="card-title text-center">Grafik Perbandingan Jumlah Post Test (Lulus vs Tidak Lulus)
+                                        </h4>
                                         <div class="card-body py-3 px-3">
-                                            {!! $chart1->container() !!}
+                                            {!! $chart->container() !!}
                                         </div>
                                     </div>
                                 </div>
-                               
                             </div>
                         </div>
                     </div>
@@ -326,7 +337,8 @@
                                                 version="1.1" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff">
                                                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                                                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
-                                                    stroke-linejoin="round"></g>
+                                                    stroke-linejoin="round">
+                                                </g>
                                                 <g id="SVGRepo_iconCarrier">
                                                     <title>book</title>
                                                     <path
@@ -349,7 +361,8 @@
                                                 stroke="#ffffff">
                                                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                                                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
-                                                    stroke-linejoin="round"></g>
+                                                    stroke-linejoin="round">
+                                                </g>
                                                 <g id="SVGRepo_iconCarrier">
                                                     <title>report-text</title>
                                                     <g id="Page-1" stroke="none" stroke-width="1" fill="none"
@@ -378,7 +391,8 @@
                                                 stroke="#ffffff">
                                                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                                                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
-                                                    stroke-linejoin="round"></g>
+                                                    stroke-linejoin="round">
+                                                </g>
                                                 <g id="SVGRepo_iconCarrier">
                                                     <title>report-text</title>
                                                     <g id="Page-1" stroke="none" stroke-width="1" fill="none"
@@ -407,7 +421,8 @@
                                                 stroke="#ffffff">
                                                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                                                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
-                                                    stroke-linejoin="round"></g>
+                                                    stroke-linejoin="round">
+                                                </g>
                                                 <g id="SVGRepo_iconCarrier">
                                                     <title>report-text</title>
                                                     <g id="Page-1" stroke="none" stroke-width="1" fill="none"
@@ -549,6 +564,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js" charset="utf-8"></script>
     {!! $chart->script() !!}
     {!! $chart1->script() !!}
+    {!! $chart2->script() !!}
     <script>
         let counts4 = setInterval(updated4);
         let upto4 = 0;

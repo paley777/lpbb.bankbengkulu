@@ -43,9 +43,20 @@ class DashboardController extends Controller
                 ->where('skor', '<', 70)
                 ->count();
             $chart = new SampleChart();
-            $chart->labels(['Lulus', 'Belum Lulus']);
+            $chart->labels(['Lulus', 'Tidak Lulus']);
             $chart->dataset('My dataset', 'pie', [$lulus, $belumlulus])->options([
-                'backgroundColor' => ['rgb(255, 99, 132)', 'rgb(54, 162, 235)', 'rgb(255, 205, 86)'],
+                'backgroundColor' => ['rgb(0, 128, 0)', 'rgb(255, 0, 0)'],
+            ]);
+            $lulus1 = Kemajuan_Pegawai::where('jenis', 'Pre Test')
+                ->where('skor', '>=', 70)
+                ->count();
+            $belumlulus1 = Kemajuan_Pegawai::where('jenis', 'Pre Test')
+                ->where('skor', '<', 70)
+                ->count();
+            $chart2 = new SampleChart();
+            $chart2->labels(['Lulus', 'Tidak Lulus']);
+            $chart2->dataset('My dataset', 'pie', [$lulus1, $belumlulus1])->options([
+                'backgroundColor' => ['rgb(0, 128, 0)', 'rgb(255, 0, 0)'],
             ]);
 
             $data = User::where('role', 'Pegawai')->get();
@@ -55,11 +66,20 @@ class DashboardController extends Controller
             foreach ($groupedData as $category => $items) {
                 $chartData[] = [$category, count($items)];
             }
+            $colors = [];
+
+            for ($i = 0; $i < 60; $i++) {
+                $red = rand(0, 255);
+                $green = rand(0, 255);
+                $blue = rand(0, 255);
+
+                $colors[] = "rgb($red, $green, $blue)";
+            }
             // Create the pie chart
             $chart1 = new SampleChart();
             $chart1->labels(array_column($chartData, 0));
             $chart1->dataset('My dataset1', 'pie', array_column($chartData, 1))->options([
-                'backgroundColor' => ['rgb(255, 99, 132)', 'rgb(54, 162, 235)', 'rgb(255, 205, 86)'],
+                'backgroundColor' => $colors,
             ]);
 
             return view('dashboard.index', [
@@ -76,6 +96,7 @@ class DashboardController extends Controller
                     ->count(),
                 'chart' => $chart,
                 'chart1' => $chart1,
+                'chart2' => $chart2,
             ]);
         } elseif (Auth::user()->role == 'Pegawai') {
             $dt = Carbon::now()->format('Y-m-d');
@@ -93,11 +114,20 @@ class DashboardController extends Controller
             foreach ($groupedData as $category => $items) {
                 $chartData[] = [$category, count($items)];
             }
+            $colors = [];
+
+            for ($i = 0; $i < 60; $i++) {
+                $red = rand(0, 255);
+                $green = rand(0, 255);
+                $blue = rand(0, 255);
+
+                $colors[] = "rgb($red, $green, $blue)";
+            }
             // Create the pie chart
             $chart1 = new SampleChart();
             $chart1->labels(array_column($chartData, 0));
             $chart1->dataset('My dataset1', 'pie', array_column($chartData, 1))->options([
-                'backgroundColor' => ['rgb(255, 99, 132)', 'rgb(54, 162, 235)', 'rgb(255, 205, 86)'],
+                'backgroundColor' => $colors,
             ]);
             return view('operator.index', [
                 'active' => 'index',
