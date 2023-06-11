@@ -30,7 +30,7 @@
                 <li class="nav-item "><a class="nav-link {{ $active === 'login' ? 'active' : '' }}"
                         data-bss-hover-animate="pulse" href="/login">MASUK</a></li>
                 <li class="nav-item "><a class="nav-link {{ $active === 'about' ? 'active' : '' }}"
-                        data-bss-hover-animate="pulse" href="/tentang">TENTANG KAMI</a>
+                        data-bss-hover-animate="pulse" href="/tentang">TENTANG</a>
                 </li>
             </ul>
         </div>

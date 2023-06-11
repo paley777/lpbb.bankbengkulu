@@ -10,6 +10,7 @@ use App\Models\User;
 use App\Http\Requests\StoreSertifikatRequest;
 use App\Http\Requests\UpdateSertifikatRequest;
 use PDF;
+use Carbon\Carbon;
 use App\Models\Kemajuan_Pegawai;
 
 class SertifikatController extends Controller
@@ -67,62 +68,79 @@ class SertifikatController extends Controller
             ->where('nama_modul', $sertifikat->nama_modul)
             ->where('jenis', 'Post Test')
             ->first();
+
         // Get the template image file
         $templateImagePath = public_path('template.png');
         // Load the template image using Intervention Image package
         $templateImage = \Image::make($templateImagePath);
         // Add the text to the template image
         $templateImage->text($sertifikat->nama_modul, 1000, 720, function ($font) {
-            $font->file(public_path('Arialn.ttf'));
+            $font->file(public_path('hussar.otf'));
             $font->size(50);
             $font->color('#000000');
             $font->align('center');
             $font->valign('center');
         });
         $templateImage->text('No. ' . $sertifikat->no_sertifikat, 960, 360, function ($font) {
-            $font->file(public_path('Arialn.ttf'));
+            $font->file(public_path('hussar.otf'));
             $font->size(40);
             $font->color('#000000');
             $font->align('center');
             $font->valign('center');
         });
         $templateImage->text($user->name, 960, 550, function ($font) {
-            $font->file(public_path('Arialn.ttf'));
+            $font->file(public_path('hussar.otf'));
             $font->size(72);
             $font->color('#000000');
             $font->align('center');
             $font->valign('center');
         });
-        $templateImage->text($sertifikat->created_at->format('d-m-Y'), 1080, 780, function ($font) {
-            $font->file(public_path('Arialn.ttf'));
-            $font->size(40);
+        $templateImage->text(
+            Carbon::parse($sertifikat->created_at)
+                ->locale('id')
+                ->settings(['formatFunction' => 'translatedFormat'])
+                ->format('j F Y '),
+            1000,
+            780,
+            function ($font) {
+                $font->file(public_path('hussar.otf'));
+                $font->size(35);
+                $font->color('#000000');
+                $font->align('left');
+                $font->valign('center');
+            },
+        );
+        $templateImage->text(
+            Carbon::parse($sertifikat->created_at)
+                ->locale('id')
+                ->settings(['formatFunction' => 'translatedFormat'])
+                ->format('j F Y '),
+            1080,
+            1094,
+            function ($font) {
+                $font->file(public_path('hussar.otf'));
+                $font->size(35);
+                $font->color('#000000');
+                $font->align('center');
+                $font->valign('center');
+            },
+        );
+        $templateImage->text($mypretest->skor, 950, 940, function ($font) {
+            $font->file(public_path('hussar.otf'));
+            $font->size(45);
             $font->color('#000000');
             $font->align('center');
             $font->valign('center');
         });
-        $templateImage->text($sertifikat->created_at->format('d-m-Y'), 1040, 1094, function ($font) {
-            $font->file(public_path('Arialn.ttf'));
-            $font->size(40);
-            $font->color('#000000');
-            $font->align('center');
-            $font->valign('center');
-        });
-        $templateImage->text($mypretest->skor, 970, 940, function ($font) {
-            $font->file(public_path('Arialn.ttf'));
-            $font->size(60);
-            $font->color('#000000');
-            $font->align('center');
-            $font->valign('center');
-        });
-        $templateImage->text($myposttest->skor, 1450, 940, function ($font) {
-            $font->file(public_path('Arialn.ttf'));
-            $font->size(60);
+        $templateImage->text($myposttest->skor, 1460, 940, function ($font) {
+            $font->file(public_path('hussar.otf'));
+            $font->size(45);
             $font->color('#000000');
             $font->align('center');
             $font->valign('center');
         });
         $templateImage->text(Str::of($myposttest->status)->upper(), 1000, 1015, function ($font) {
-            $font->file(public_path('Arialn.ttf'));
+            $font->file(public_path('hussar.otf'));
             $font->size(60);
             $font->color('#000000');
             $font->align('center');
