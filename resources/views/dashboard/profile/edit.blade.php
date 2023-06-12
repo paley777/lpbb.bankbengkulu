@@ -97,27 +97,29 @@
                                     <label for="validationCustom01" class="form-label ">Nama Lengkap<span
                                             class="text-danger">*</span></label>
                                     <input type="text" id="validationCustom01" class="form-control responsive-small"
-                                        name="name" value="{{ Auth()->user()->name }}" placeholder="Isi Nama" required>
+                                        name="name" value="{{ Auth()->user()->name }}" placeholder="Isi Nama" required
+                                        disabled>
                                 </div>
                                 <div class="col-md-2 position-relative">
                                     <label for="validationCustom01" class="form-label">NRPP<span
                                             class="text-danger">*</span></label>
                                     <input type="text" id="validationCustom01" class="form-control responsive-small"
-                                        name="nrpp" value="{{ Auth()->user()->nrpp }}" placeholder="Isi NRPP" required>
+                                        name="nrpp" value="{{ Auth()->user()->nrpp }}" placeholder="Isi NRPP" required
+                                        disabled>
                                 </div>
                                 <div class="col-md-3">
                                     <label for="validationCustom01" class="form-label">Jabatan<span
                                             class="text-danger">*</span></label>
                                     <input type="text" value="{{ Auth()->user()->jabatan }}" id="validationCustom01"
                                         class="form-control responsive-small" name="jabatan"
-                                        placeholder="Isi Jabatan"required>
+                                        placeholder="Isi Jabatan"required disabled>
                                 </div>
                                 <div class="col-md-3">
                                     <label for="validationCustom01" class="form-label">Unit Kerja<span
                                             class="text-danger">*</span></label>
                                     <input type="text" value="{{ Auth()->user()->unit_kerja }}" id="validationCustom01"
                                         class="form-control responsive-small" name="unit_kerja" placeholder="Isi Unit Kerja"
-                                        required>
+                                        required disabled>
                                     {{-- <select class="form-select responsive-small" name="unit_kerja"
                                         aria-label="Default select example" required>
                                         <option selected>Pilih Unit Kerja</option>
@@ -142,7 +144,7 @@
                                             class="text-danger">*</span></label>
                                     <input type="text" value="{{ Auth()->user()->email }}" id="validationCustom01"
                                         class="form-control responsive-small" name="email" placeholder="Isi Username"
-                                        required>
+                                        required disabled>
                                     <input type="text" id="validationCustom01" class="form-control responsive-small"
                                         name="role" value="{{ Auth()->user()->role }}" required hidden>
                                 </div>
@@ -163,7 +165,16 @@
                                     (Wajib terisi untuk kolom dengan tanda "<span class="text-danger">*</span>").
                                 </p>
                                 <button class="btn btn-outline-primary responsive-small fw-semibold" type="submit">
-                                    Ubah Data <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M20 4L3 9.31372L10.5 13.5M20 4L14.5 21L10.5 13.5M20 4L10.5 13.5" stroke="#0275d8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                                    Ubah Data <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                        <g id="SVGRepo_iconCarrier">
+                                            <path d="M20 4L3 9.31372L10.5 13.5M20 4L14.5 21L10.5 13.5M20 4L10.5 13.5"
+                                                stroke="#0275d8" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round"></path>
+                                        </g>
+                                    </svg>
                                 </button>
                             </form>
                         </div>
