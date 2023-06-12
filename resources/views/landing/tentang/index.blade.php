@@ -155,10 +155,6 @@
                                 <div class="card" style="border-radius: 15px;">
                                     <div class="card-body p-4">
                                         <div class="d-flex text-black">
-                                            <div class="flex-shrink-0">
-                                                <img src="{{ asset('storage/images/3x4.png') }}" class="img-fluid"
-                                                    style="width: 180px; border-radius: 10px;">
-                                            </div>
                                             <div class="flex-grow-1 ms-3">
                                                 <h5 class="mb-1">Valleryan Virgil Zuliuskandar</h5>
                                                 <p class="mb-2 pb-1" style="color: #2b2a2a;">Pengembang Sistem</p>
