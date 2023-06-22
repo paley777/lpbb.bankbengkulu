@@ -318,7 +318,7 @@
                 <div class="modal-body">
                     <p class="responsive-small">Pilih file excel yang akan diimpor.</p>
                     <p class="responsive-small fw-semibold">Format .xls dan .xlsx</p>
-                    <img src="{{ asset('storage/images/tatacara.jpg') }}" alt="Logo" width="720" height="384"
+                    <img src="{{ asset('storage/images/tatacara_.jpg') }}" alt="Logo" width="720" height="384"
                         class="">
                     <hr>
                     <form action="{{ route('file-import') }}" method="POST" enctype="multipart/form-data">
